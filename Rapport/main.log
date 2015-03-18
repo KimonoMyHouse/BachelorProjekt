@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  18 MAR 2015 16:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  18 MAR 2015 17:17
 entering extended mode
 **main.tex
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.tex
@@ -139,45 +139,44 @@ Package: amsthm 2004/08/06 v2.20
 \dth@everypar=\toks31
 )
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections/universa
-lhashing.tex) [1
+lhashing.tex)
+(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.bbl)
+[1
 
-{C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (C:\Users\Us
-er\Documents\KU\Attending\BachelorProjekt\Rapport\main.bbl)
-[2
-
-] (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.aux) ) 
+{C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.aux) ) 
 Here is how much of TeX's memory you used:
  1453 strings out of 493921
- 19312 string characters out of 3144878
+ 19317 string characters out of 3144878
  75248 words of memory out of 3000000
  4770 multiletter control sequences out of 15000+200000
  4591 words of font info for 17 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,4n,24p,304b,135s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (2 pages, 44912 bytes).
+<C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (1 page, 43670 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
+ 18 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

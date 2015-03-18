@@ -1,14 +1,14 @@
 \begin{thebibliography}{1}
 
-\bibitem{Edgar1}
-Robert~C. Edgar.
-\newblock Search and clustering order of magnitude faster than blast.
-\newblock {\em Bioinformatics}, 2010.
+\bibitem{Comparison16S}
+Wei Chen, Clarence~K. Zhang, Yongmei Cheng, Shaowu Zhang, and Hongyu Zhao.
+\newblock A comparison of methods for clustering 16s rrna sequences into otus.
+\newblock {\em PLoS ONE}, 8(8):e70837, 08 2013.
 
-\bibitem{Kazimianec}
-M.~Kazimianec and A.~Mazeika.
-\newblock Clustering of short strings in large databases.
-\newblock In {\em Database and Expert Systems Application, 2009. DEXA '09. 20th
-  International Workshop on}, pages 368--372, Aug 2009.
+\bibitem{DNAclust}
+Mohammadreza Ghodsi, Bo~Liu, and Mihai Pop.
+\newblock Dnaclust: accurate and efficient clustering of phylogenetic marker
+  genes.
+\newblock {\em BMC Bioinformatics}, 12(1):271, 2011.
 
 \end{thebibliography}

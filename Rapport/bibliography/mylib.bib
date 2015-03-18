@@ -72,3 +72,137 @@ URL = {http://bioinformatics.oxfordjournals.org/content/28/23/3150.abstract},
 eprint = {http://bioinformatics.oxfordjournals.org/content/28/23/3150.full.pdf+html}, 
 journal = {Bioinformatics} 
 }
+
+@article{ultrafast,
+author = {Li, Weizhong and Fu, Limin and Niu, Beifang and Wu, Sitao and Wooley, John}, 
+title = {Ultrafast clustering algorithms for metagenomic sequence analysis},
+year = {2012}, 
+doi = {10.1093/bib/bbs035}, 
+abstract ={The rapid advances of high-throughput sequencing technologies dramatically prompted metagenomic studies of microbial communities that exist at various environments. Fundamental questions in metagenomics include the identities, composition and dynamics of microbial populations and their functions and interactions. However, the massive quantity and the comprehensive complexity of these sequence data pose tremendous challenges in data analysis. These challenges include but are not limited to ever-increasing computational demand, biased sequence sampling, sequence errors, sequence artifacts and novel sequences. Sequence clustering methods can directly answer many of the fundamental questions by grouping similar sequences into families. In addition, clustering analysis also addresses the challenges in metagenomics. Thus, a large redundant data set can be represented with a small non-redundant set, where each cluster can be represented by a single entry or a consensus. Artifacts can be rapidly detected through clustering. Errors can be identified, filtered or corrected by using consensus from sequences within clusters.}, 
+URL = {http://bib.oxfordjournals.org/content/early/2012/07/06/bib.bbs035.abstract}, 
+eprint = {http://bib.oxfordjournals.org/content/early/2012/07/06/bib.bbs035.full.pdf+html}, 
+journal = {Briefings in Bioinformatics} 
+}
+
+@article{LargeScaleXiao,
+author = {Yang, Xiao and Zola, Jaroslaw and Aluru, Srinivas},
+title = {LARGE-SCALE METAGENOMIC SEQUENCE CLUSTERING ON MAP-REDUCE CLUSTERS},
+journal = {Journal of Bioinformatics and Computational Biology},
+volume = {11},
+number = {01},
+pages = {1340001},
+year = {2013},
+doi = {10.1142/S0219720013400015},
+    note ={PMID: 23427983},
+
+URL = {http://www.worldscientific.com/doi/abs/10.1142/S0219720013400015},
+eprint = {http://www.worldscientific.com/doi/pdf/10.1142/S0219720013400015}
+}
+
+@INPROCEEDINGS{MinhashMapreduce, 
+author={Rasheed, Z. and Rangwala, H.}, 
+booktitle={Parallel and Distributed Processing Symposium Workshops PhD Forum (IPDPSW), 2013 IEEE 27th International}, 
+title={A Map-Reduce Framework for Clustering Metagenomes}, 
+year={2013}, 
+month={May}, 
+pages={549-558}, 
+keywords={biology computing;genomics;greedy algorithms;microorganisms;parallel algorithms;pattern clustering;MapReduce based Hadoop platform;MrMC-MinH;agglomerative hierarchical clustering;collective genome determination;distributed algorithm;external ground truth;greedy clustering approach;met genome sequence read clustering;metagenome clustering algorithm;metagenomic data;microorganisms;minwise hashing approach;pairwise sequence similarity;Algorithm design and analysis;Approximation algorithms;Bioinformatics;Clustering algorithms;Communities;Genomics;Sequential analysis;map-reduce;metagenome clustering;minwise hashing}, 
+doi={10.1109/IPDPSW.2013.100},}
+
+@article{SmithWaterman,
+author = {Farrar, Michael}, 
+title = {Striped Smith–Waterman speeds database searches six times over other SIMD implementations},
+volume = {23}, 
+number = {2}, 
+pages = {156-161}, 
+year = {2007}, 
+doi = {10.1093/bioinformatics/btl582}, 
+abstract ={Motivation: The only algorithm guaranteed to find the optimal local alignment is the Smith–Waterman. It is also one of the slowest due to the number of computations required for the search. To speed up the algorithm, Single-Instruction Multiple-Data (SIMD) instructions have been used to parallelize the algorithm at the instruction level.Results: A faster implementation of the Smith–Waterman algorithm is presented. This algorithm achieved 2–8 times performance improvement over other SIMD based Smith–Waterman implementations. On a 2.0 GHz Xeon Core 2 Duo processor, speeds of >3.0 billion cell updates/s were achieved.Availability:http://farrar.michael.googlepages.com/Smith-watermanContact:farrar.michael@gmail.com}, 
+URL = {http://bioinformatics.oxfordjournals.org/content/23/2/156.abstract}, 
+eprint = {http://bioinformatics.oxfordjournals.org/content/23/2/156.full.pdf+html}, 
+journal = {Bioinformatics} 
+}
+
+@ARTICLE{MinwiseIndependent,
+    author = {Andrei Z. Broder and Moses Charikar and Alan M. Frieze and Michael Mitzenmacher},
+    title = {Min-wise Independent Permutations},
+    journal = {Journal of Computer and System Sciences},
+    year = {1998},
+    volume = {60},
+    pages = {327--336}
+}
+
+@Article{DNAclust,
+AUTHOR = {Ghodsi, Mohammadreza and Liu, Bo and Pop, Mihai},
+TITLE = {DNACLUST: accurate and efficient clustering of phylogenetic marker genes},
+JOURNAL = {BMC Bioinformatics},
+VOLUME = {12},
+YEAR = {2011},
+NUMBER = {1},
+PAGES = {271},
+URL = {http://www.biomedcentral.com/1471-2105/12/271},
+DOI = {10.1186/1471-2105-12-271},
+PubMedID = {21718538},
+ISSN = {1471-2105},
+ABSTRACT = {BACKGROUND:Clustering is a fundamental operation in the analysis of biological sequence data. New DNA sequencing technologies have dramatically increased the rate at which we can generate data, resulting in datasets that cannot be efficiently analyzed by traditional clustering methods.This is particularly true in the context of taxonomic profiling of microbial communities through direct sequencing of phylogenetic markers (e.g. 16S rRNA) - the domain that motivated the work described in this paper. Many analysis approaches rely on an initial clustering step aimed at identifying sequences that belong to the same operational taxonomic unit (OTU). When defining OTUs (which have no universally accepted definition), scientists must balance a trade-off between computational efficiency and biological accuracy, as accurately estimating an environment's phylogenetic composition requires computationally-intensive analyses. We propose that efficient and mathematically well defined clustering methods can benefit existing taxonomic profiling approaches in two ways: (i) the resulting clusters can be substituted for OTUs in certain applications; and (ii) the clustering effectively reduces the size of the data-sets that need to be analyzed by complex phylogenetic pipelines (e.g., only one sequence per cluster needs to be provided to downstream analyses).RESULTS:To address the challenges outlined above, we developed DNACLUST, a fast clustering tool specifically designed for clustering highly-similar DNA sequences.Given a set of sequences and a sequence similarity threshold, DNACLUST creates clusters whose radius is guaranteed not to exceed the specified threshold. Underlying DNACLUST is a greedy clustering strategy that owes its performance to novel sequence alignment and k-mer based filtering algorithms.DNACLUST can also produce multiple sequence alignments for every cluster, allowing users to manually inspect clustering results, and enabling more detailed analyses of the clustered data.CONCLUSIONS:We compare DNACLUST to two popular clustering tools: CD-HIT and UCLUST. We show that DNACLUST is about an order of magnitude faster than CD-HIT and UCLUST (exact mode) and comparable in speed to UCLUST (approximate mode). The performance of DNACLUST improves as the similarity threshold is increased (tight clusters) making it well suited for rapidly removing duplicates and near-duplicates from a dataset, thereby reducing the size of the data being analyzed through more elaborate approaches.},
+}
+
+
+@article{Comparison16S,
+    author = {Chen, Wei AND Zhang, Clarence K. AND Cheng, Yongmei AND Zhang, Shaowu AND Zhao, Hongyu},
+    journal = {PLoS ONE},
+    publisher = {Public Library of Science},
+    title = {A Comparison of Methods for Clustering 16S rRNA Sequences into OTUs},
+    year = {2013},
+    month = {08},
+    volume = {8},
+    url = {http://dx.doi.org/10.1371%2Fjournal.pone.0070837},
+    pages = {e70837},
+    abstract = {<p>Recent studies of 16S rRNA sequences through next-generation sequencing have revolutionized our understanding of the microbial community composition and structure. One common approach in using these data to explore the genetic diversity in a microbial community is to cluster the 16S rRNA sequences into Operational Taxonomic Units (OTUs) based on sequence similarities. The inferred OTUs can then be used to estimate species, diversity, composition, and richness. Although a number of methods have been developed and commonly used to cluster the sequences into OTUs, relatively little guidance is available on their relative performance and the choice of key parameters for each method. In this study, we conducted a comprehensive evaluation of ten existing OTU inference methods. We found that the appropriate dissimilarity value for defining distinct OTUs is not only related with a specific method but also related with the sample complexity. For data sets with low complexity, all the algorithms need a higher dissimilarity threshold to define OTUs. Some methods, such as, CROP and SLP, are more robust to the specific choice of the threshold than other methods, especially for shorter reads. For high-complexity data sets, hierarchical cluster methods need a more strict dissimilarity threshold to define OTUs because the commonly used dissimilarity threshold of 3% often leads to an under-estimation of the number of OTUs. In general, hierarchical clustering methods perform better at lower dissimilarity thresholds. Our results show that sequence abundance plays an important role in OTU inference. We conclude that care is needed to choose both a threshold for dissimilarity and abundance for OTU inference.</p>},
+    number = {8},
+    doi = {10.1371/journal.pone.0070837}
+}        
+
+@ARTICLE{BatchHierarchal,
+   author = {{Kaisers}, W. and {Schwender}, H. and {Schaal}, H.},
+    title = "{Hierarchical clustering of DNA k-mer counts in RNA-seq fastq files reveals batch effects}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1405.0114},
+ primaryClass = "q-bio.GN",
+ keywords = {Quantitative Biology - Genomics},
+     year = 2014,
+    month = may,
+   adsurl = {http://adsabs.harvard.edu/abs/2014arXiv1405.0114K},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@inproceedings{similarityEstimation,
+ author = {Charikar, Moses S.},
+ title = {Similarity Estimation Techniques from Rounding Algorithms},
+ booktitle = {Proceedings of the Thiry-fourth Annual ACM Symposium on Theory of Computing},
+ series = {STOC '02},
+ year = {2002},
+ isbn = {1-58113-495-9},
+ location = {Montreal, Quebec, Canada},
+ pages = {380--388},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/509907.509965},
+ doi = {10.1145/509907.509965},
+ acmid = {509965},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@INPROCEEDINGS{minmaxhash, 
+author={Jianqiu Ji and Jianmin Li and Shuicheng Yan and Qi Tian and Bo Zhang}, 
+booktitle={Data Mining (ICDM), 2013 IEEE 13th International Conference on}, 
+title={Min-Max Hash for Jaccard Similarity}, 
+year={2013}, 
+month={Dec}, 
+pages={301-309}, 
+keywords={mean square error methods;minimax techniques;pattern clustering;search problems;approximate nearest neighbor search;b-bit minwise hash;best approximate ratio;hash code;hashing method;hashing time reduction;mean squared error;min-max hash estimator;min-max hash method;min-wise hash;pairwise Jaccard similarity estimation;pairwise equality checking;scalable similarity search;Approximation algorithms;Approximation methods;Computational efficiency;Computer science;Educational institutions;Laboratories;Nearest neighbor searches;Jaccard similarity;approximate nearest neighbor search;min-max hash;min-wise hash}, 
+doi={10.1109/ICDM.2013.119}, 
+ISSN={1550-4786},}
+
+
