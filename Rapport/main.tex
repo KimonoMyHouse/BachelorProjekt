@@ -1,0 +1,45 @@
+\documentclass[10pt,a4paper]{article} %a3paper, a2paper osv.
+\usepackage[utf8x]{inputenc}
+
+\usepackage{subfiles}
+
+
+\usepackage{ucs}
+%Math pakker og indstillinger:
+\usepackage{amsmath} %Math ting
+\usepackage{amsfonts} %Math fonts og symboler
+\usepackage{amssymb} %Math ting
+\usepackage{amsthm}
+
+
+\begin{document}
+\subfile{sections/universalhashing}
+
+\clearpage
+here\cite{Kazimianec}. there \cite{Edgar1}
+
+\bibliographystyle{plain}
+\bibliography{bibliography/mylib}{}
+
+
+%\bibitem{ultrafast}
+%  Weizhong Li \emph{et al.}, \emph{Ultrafast clustering algorithm for metagenomic sequence analysis}, 2012
+%\bibitem{Xiao}
+%  Xiao Yang, J. Zola, \emph{et al.}, \emph{Large Scale Metagenomic Sequence Clustering via Sketching and Maximal Quasi-clique Enumeration on Map-Reduce Clusters}, 2012
+%\bibitem{minwiseclust}
+%  Zeehasham Rasheed, Huzefa Rangwala, \emph{A Map-Reduce Framework for Clustering Metagenomes}, 2013
+%\bibitem{farrar}
+%  Michael Farrar, \emph{Striped Smith-Waterman speeds database searches six times over other SIMD implementations}, 2006
+%\bibitem{minwiseart}
+%  Andrei Z. Broder, \emph{et al.}, \emph{Min-Wise Independent Permutations}, 1998
+%\bibitem{dnaclust}
+%  Mohammadreza Ghodsi, Bo Liu, Mihai Pop, \emph{DNACLUST: accurate and efficient clustering of phylogenetic marker genes}, 2011
+%\bibitem{comparison}
+%  Chen W, Zhang CK, Cheng Y, Zhang S., Zhao H, \emph{A Comparison of Methods for Clustering 16S rRNA Sequences into OTUs}, 2013
+%\bibitem{Wei et al}
+%  Leonard M. Adleman, \emph{Computing with DNA}, Scientific America, 1998.
+%\bibitem{minmaxhash}
+%  Jianqiu Ji and Jianmin Li and Shuicheng Yan and Qi Tian and Bo Zhang, \emph{Min-Max Hash for Jaccard Similarity}, 2013
+%\end{thebibliography}
+
+\end{document}

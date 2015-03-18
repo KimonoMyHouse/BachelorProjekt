@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{Edgar1}
+Robert~C. Edgar.
+\newblock Search and clustering order of magnitude faster than blast.
+\newblock {\em Bioinformatics}, 2010.
+
+\bibitem{Kazimianec}
+M.~Kazimianec and A.~Mazeika.
+\newblock Clustering of short strings in large databases.
+\newblock In {\em Database and Expert Systems Application, 2009. DEXA '09. 20th
+  International Workshop on}, pages 368--372, Aug 2009.
+
+\end{thebibliography}
