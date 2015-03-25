@@ -1,14 +1,8 @@
 \begin{thebibliography}{1}
 
-\bibitem{Comparison16S}
-Wei Chen, Clarence~K. Zhang, Yongmei Cheng, Shaowu Zhang, and Hongyu Zhao.
-\newblock A comparison of methods for clustering 16s rrna sequences into otus.
-\newblock {\em PLoS ONE}, 8(8):e70837, 08 2013.
-
-\bibitem{DNAclust}
-Mohammadreza Ghodsi, Bo~Liu, and Mihai Pop.
-\newblock Dnaclust: accurate and efficient clustering of phylogenetic marker
-  genes.
-\newblock {\em BMC Bioinformatics}, 12(1):271, 2011.
+\bibitem{dikuHash}
+Mikkel Thorup.
+\newblock High speed hashing for integers and strings.
+\newblock 2014.
 
 \end{thebibliography}

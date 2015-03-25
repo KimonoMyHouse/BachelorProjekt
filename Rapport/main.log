@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  18 MAR 2015 17:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  25 MAR 2015 11:27
 entering extended mode
 **main.tex
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.tex
@@ -163,20 +163,19 @@ lhashing.tex)
 {C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.aux) ) 
 Here is how much of TeX's memory you used:
- 1453 strings out of 493921
- 19317 string characters out of 3144878
- 75248 words of memory out of 3000000
- 4770 multiletter control sequences out of 15000+200000
- 4591 words of font info for 17 fonts, out of 3000000 for 9000
+ 1450 strings out of 493921
+ 19281 string characters out of 3144878
+ 74248 words of memory out of 3000000
+ 4768 multiletter control sequences out of 15000+200000
+ 4245 words of font info for 16 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,4n,24p,304b,135s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,4n,24p,304b,115s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (1 page, 43670 bytes).
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on main.pdf (1 page, 27156 bytes).
 PDF statistics:
- 18 PDF objects out of 1000 (max. 8388607)
+ 14 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
