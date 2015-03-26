@@ -1,8 +1,23 @@
 \begin{thebibliography}{1}
 
+\bibitem{carterWegman}
+J.~Carter and M.~N. Wegman.
+\newblock Universal classes of hash functions.
+\newblock {\em Journal of Computer and System Sciences}, 18(2):143 -- 154,
+  1979.
+
+\bibitem{introToAlg}
+T.~H. Cormen, C.~E. Leiserson, R.~L. Rivest, and C.~Stein.
+\newblock {\em Introduction to Algorithms, Third Edition}.
+\newblock The MIT Press, 3rd edition, 2009.
+
+\bibitem{Dietzfelbinger}
+M.~Dietzfelbinger, T.~Hagerup, J.~Katajainen, and M.~Penttonen.
+\newblock A reliable randomized algorithm for the closest-pair problem.
+\newblock {\em Journal of Algorithms}, 25(1):19 -- 51, 1997.
+
 \bibitem{dikuHash}
-Mikkel Thorup.
-\newblock High speed hashing for integers and strings.
-\newblock 2014.
+M.~Thorup.
+\newblock High speed hashing for integers and strings, 2014.
 
 \end{thebibliography}
