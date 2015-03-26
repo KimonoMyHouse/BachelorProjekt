@@ -20,4 +20,10 @@ M.~Dietzfelbinger, T.~Hagerup, J.~Katajainen, and M.~Penttonen.
 M.~Thorup.
 \newblock High speed hashing for integers and strings, 2014.
 
+\bibitem{multiplyshiftTruly}
+P.~Wölfel.
+\newblock {\em Über die Komplexität der Multiplikation in eingeschränkten
+  Branchingprogrammmodellen}.
+\newblock PhD thesis, Dortmund, Univ, 2003.
+
 \end{thebibliography}

@@ -34,16 +34,16 @@ That is, $H$ is said to be universal if
 \mathrm{Pr}_h[h(x)=h(y)]\leq 1/m
 \end{equation}
 for a random $h \in H$.
- In many applications, Pr$_h[h(x)=h(y)]\leq c/m$ for $c=O(1)$ is sufficiently low collision probability.
+ In many applications, Pr$_h[h(x)=h(y)]\leq c/m$ for $c=O(1)$ is sufficiently low.
 
 \subsubsection*{Carter and Wegman\cite{carterWegman}}
-Given a prime $p\geq m$ and a hash function $h_{a,b}:[U]\rightarrow [r]$,
+Given a prime $p\geq m$ and a hash function $h_{a,b}^C:[U]\rightarrow [r]$,
 \begin{equation}\label{carterhash}
-h_{a,b}(x)=((a*x + b) \mod p) \mod m
+h_{a,b}^{C}(x)=((a*x + b) \mod p) \mod m
 \end{equation}
-where $a$ and $b$ are integers mod $m$, where $a\neq 0$. We want to prove that $h_{a,b}(x)$ satisfies Eq. \ref{universalProb}; thus proving that it is universal.\\
+where $a$ and $b$ are integers mod $m$, where $a\neq 0$. We want to prove that $h_{a,b}^{C}(x)$ satisfies Eq. \ref{universalProb}; thus proving that it is universal.\\
 
-\noindent Let $x$ and $y$ be two randomly selected keys in $U$ where $x\neq y$. For a given hash function $h_{a,b}$,
+\noindent Let $x$ and $y$ be two randomly selected keys in $U$ where $x\neq y$. For a given hash function $h_{a,b}^{C}$,
 $$
 r = a\cdot x + b \mod p
 $$
@@ -63,17 +63,29 @@ Therefore, $\forall a\forall b, h_{a,b}$ will map to distinct values for the giv
 \subsubsection*{Dietzfelbinger et al.\cite{Dietzfelbinger}}
 Also commonly refered to as \textbf{multiply-shift}, this state of the art scheme described in \cite{Dietzfelbinger} reduces computation time by eliminating the need for the \textbf{mod} operator. This is especially useful when the key is larger than 32 bits, in which case Carter and Wegman's suggestion is quite costly\cite{dikuHash}.\\
 
-\noindent Take a universe $U\geq 2^k$ which is all $k$-bit numbers. For $l=\{1,..,k\}$, the hash functions $h_a(x):\{0,...,2^k-1\}\rightarrow\{0,...,2^l-1\}$ are then defined as
+\noindent Take a universe $U\geq 2^k$ which is all $k$-bit numbers. For $l=\{1,..,k\}$, the hash functions $h_a^D(x):\{0,...,2^k-1\}\rightarrow\{0,...,2^l-1\}$ are then defined as
 \begin{equation}\label{dietzhash}
-h_a(x)=(a\cdot x \mod 2^k) \div 2^{k-l}
+h_a^D(x)=(a\cdot x \mod 2^k) \div 2^{k-l}
 \end{equation}
-\noindent for a random odd number $0<a<2^k$. $l$ is bitsize of the value the keys map to. 
+\noindent for a random odd number $0<a<2^k$. $l$ is bitsize of the value the keys map to. The following C-like code shows just how easy the implementation of such an algorithm is
+\begin{lstlisting}
+h(x)=(unsigned) (a*x) >> (k-l)
+\end{lstlisting} 
 
 This scheme only nearly satisfies Eq. \ref{universalProb}, as for two distinct $x,y\in U$ and any allowed $a$
 \begin{equation}\label{probDietz}
-\mathrm{Pr}_{h_a}[h_a(x)=h_a(y)]\leq \frac{1}{2^{l-1}}=\frac{2}{m}
+\mathrm{Pr}_{h_a^D}[h_a^D(x)=h_a^D(y)]\leq \frac{1}{2^{l-1}}=\frac{2}{m}
 \end{equation}
 
+If Eq. \ref{probDietz} is not sufficently precise, Wölfel \cite[p.18-19]{multiplyshiftTruly} modified this scheme so that it met the requirement in Eq. \ref{universalProb}. The hash function is then
+$$
+h_{a,b}^{D}=((a\cdot x + b) \mod 2^k)\div 2^{k-l} 
+$$
+where $a<2^k$ is a positive odd number, and $0\leq b<2^{k-l}$. This way Eq. \ref{universalProb} is met for $x\neq y \ (\mathrm{mod}\ 2^k)$. For a proof of this, consult \cite{multiplyshiftTruly}\footnote{The text is in german}. The C-like implementation shown below reveals that the modifications are only minimal
+
+\begin{lstlisting}
+h(x)=(unsigned)((a*x) + b) >> (k-l)
+\end{lstlisting}
 
 \end{document}
 
