@@ -1,0 +1,126 @@
+\begin{thebibliography}{10}
+
+\bibitem{clustData}
+R.~C.~D. Anil K.~Jain.
+\newblock {\em Algorithms for Clustering Data}.
+\newblock First edition, 1988.
+
+\bibitem{MinwiseIndependent}
+A.~Z. Broder, M.~Charikar, A.~M. Frieze, and M.~Mitzenmacher.
+\newblock Min-wise independent permutations.
+\newblock {\em Journal of Computer and System Sciences}, 60:327--336, 1998.
+
+\bibitem{carterWegman}
+J.~Carter and M.~N. Wegman.
+\newblock Universal classes of hash functions.
+\newblock {\em Journal of Computer and System Sciences}, 18(2):143 -- 154,
+  1979.
+
+\bibitem{similarityEstimation}
+M.~S. Charikar.
+\newblock Similarity estimation techniques from rounding algorithms.
+\newblock In {\em Proceedings of the Thiry-fourth Annual ACM Symposium on
+  Theory of Computing}, STOC '02, pages 380--388, New York, NY, USA, 2002. ACM.
+
+\bibitem{Comparison16S}
+W.~Chen, C.~K. Zhang, Y.~Cheng, S.~Zhang, and H.~Zhao.
+\newblock A comparison of methods for clustering 16s rrna sequences into otus.
+\newblock {\em PLoS ONE}, 8(8):e70837, 08 2013.
+
+\bibitem{introToAlg}
+T.~H. Cormen, C.~E. Leiserson, R.~L. Rivest, and C.~Stein.
+\newblock {\em Introduction to Algorithms, Third Edition}.
+\newblock The MIT Press, 3rd edition, 2009.
+
+\bibitem{Dietzfelbinger}
+M.~Dietzfelbinger, T.~Hagerup, J.~Katajainen, and M.~Penttonen.
+\newblock A reliable randomized algorithm for the closest-pair problem.
+\newblock {\em Journal of Algorithms}, 25(1):19 -- 51, 1997.
+
+\bibitem{Edgar1}
+R.~C. Edgar.
+\newblock Search and clustering order of magnitude faster than blast.
+\newblock {\em Bioinformatics}, 2010.
+
+\bibitem{SmithWaterman}
+M.~Farrar.
+\newblock Striped smith–waterman speeds database searches six times over
+  other simd implementations.
+\newblock {\em Bioinformatics}, 23(2):156--161, 2007.
+
+\bibitem{CDHit}
+L.~Fu, B.~Niu, Z.~Zhu, S.~Wu, and W.~Li.
+\newblock Cd-hit: accelerated for clustering the next-generation sequencing
+  data.
+\newblock {\em Bioinformatics}, 28(23):3150--3152, 2012.
+
+\bibitem{DNAclust}
+M.~Ghodsi, B.~Liu, and M.~Pop.
+\newblock Dnaclust: accurate and efficient clustering of phylogenetic marker
+  genes.
+\newblock {\em BMC Bioinformatics}, 12(1):271, 2011.
+
+\bibitem{minmaxhash}
+J.~Ji, J.~Li, S.~Yan, Q.~Tian, and B.~Zhang.
+\newblock Min-max hash for jaccard similarity.
+\newblock In {\em Data Mining (ICDM), 2013 IEEE 13th International Conference
+  on}, pages 301--309, Dec 2013.
+
+\bibitem{BatchHierarchal}
+W.~{Kaisers}, H.~{Schwender}, and H.~{Schaal}.
+\newblock {Hierarchical clustering of DNA k-mer counts in RNA-seq fastq files
+  reveals batch effects}.
+\newblock {\em ArXiv e-prints}, May 2014.
+
+\bibitem{Kazimianec}
+M.~Kazimianec and A.~Mazeika.
+\newblock Clustering of short strings in large databases.
+\newblock In {\em Database and Expert Systems Application, 2009. DEXA '09. 20th
+  International Workshop on}, pages 368--372, Aug 2009.
+
+\bibitem{ultrafast}
+W.~Li, L.~Fu, B.~Niu, S.~Wu, and J.~Wooley.
+\newblock Ultrafast clustering algorithms for metagenomic sequence analysis.
+\newblock {\em Briefings in Bioinformatics}, 2012.
+
+\bibitem{MinhashMapreduce}
+Z.~Rasheed and H.~Rangwala.
+\newblock A map-reduce framework for clustering metagenomes.
+\newblock In {\em Parallel and Distributed Processing Symposium Workshops PhD
+  Forum (IPDPSW), 2013 IEEE 27th International}, pages 549--558, May 2013.
+
+\bibitem{russell}
+D.~Russell, S.~Way, A.~Benson, and K.~Sayood.
+\newblock A grammar-based distance metric enables fast and accurate clustering
+  of large sets of 16s sequences.
+\newblock {\em BMC Bioinformatics}, 11(1):601, 2010.
+
+\bibitem{modelClust}
+Y.~Si, P.~Liu, P.~Li, and T.~P. Brutnell.
+\newblock Model-based clustering for rna-seq data.
+\newblock {\em Bioinformatics}, 2013.
+
+\bibitem{dikuHash}
+M.~Thorup.
+\newblock High speed hashing for integers and strings, 2014.
+
+\bibitem{statlearn}
+J.~F. Trevor~Hastie, Robert~Tibshirani.
+\newblock {\em The Elements of Statistical Learning: Datamining, Inference, and
+  Prediction}.
+\newblock Springer Series in Statistics, second edition, 2008.
+
+\bibitem{multiplyshiftTruly}
+P.~Wölfel.
+\newblock {\em Über die Komplexität der Multiplikation in eingeschränkten
+  Branchingprogrammmodellen}.
+\newblock PhD thesis, Dortmund, Univ, 2003.
+
+\bibitem{LargeScaleXiao}
+X.~Yang, J.~Zola, and S.~Aluru.
+\newblock Large-scale metagenomic sequence clustering on map-reduce clusters.
+\newblock {\em Journal of Bioinformatics and Computational Biology},
+  11(01):1340001, 2013.
+\newblock PMID: 23427983.
+
+\end{thebibliography}

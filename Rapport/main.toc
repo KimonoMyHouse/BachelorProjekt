@@ -1,0 +1,6 @@
+\contentsline {section}{Introduction}{3}
+\contentsline {section}{Minhash}{3}
+\contentsline {section}{Hashing}{3}
+\contentsline {subsection}{Introduction to hash functions}{3}
+\contentsline {subsection}{Universal hash functions}{3}
+\contentsline {subsubsection}{Carter and Wegman\cite {carterWegman}}{4}

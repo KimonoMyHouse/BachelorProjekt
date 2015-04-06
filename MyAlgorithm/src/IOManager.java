@@ -19,7 +19,7 @@ public class IOManager {
 		reader.close();
 		mg.SEQUENCES_SIZE = nSeq;
 		
-		System.out.println(mg.SEQUENCES_SIZE);
+		System.out.println("there are " + mg.SEQUENCES_SIZE + " sequences");
 		
 		InsertSequencesInMemory(ic.inputfileString, mg);
 

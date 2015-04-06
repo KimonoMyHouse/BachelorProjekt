@@ -1,12 +1,5 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.LineNumberReader;
-import java.time.Clock;
-import java.util.Arrays;
 
-import javax.crypto.spec.IvParameterSpec;
-import javax.print.DocFlavor.READER;
 public class MinHashMain {
 	public static void main(String[] args) throws IOException {
 		MetagenomeSample mg = new MetagenomeSample();
@@ -22,9 +15,8 @@ public class MinHashMain {
         ic.program = "dna";
         
         hm.prime_div = 112211;
-		hm.HASH_SIZE = 70;
+		hm.HASH_SIZE = 100;
 		long now = System.nanoTime();
-		System.out.println("Begins :" + now);
 		StringMapper strmap = new StringMapper(ic.program);
 		io.ReadMetagenomeData(mg, strmap, ic);
 		
@@ -34,7 +26,8 @@ public class MinHashMain {
 		long then = System.nanoTime();
 		long taken = then - now;
 		
-		System.out.println("The time it took was " + taken);
+		double seconds =(double) taken / 1000000000.0; 
+		System.out.println("The time it took in seconds was " + seconds);
 		
 		
 	}

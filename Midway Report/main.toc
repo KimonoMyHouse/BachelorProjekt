@@ -1,0 +1,10 @@
+\contentsline {section}{Midway Report}{3}
+\contentsline {subsection}{Problem Statement}{3}
+\contentsline {subsection}{Analysis}{3}
+\contentsline {subsection}{Status}{3}
+\contentsline {subsection}{Time plan}{4}
+\contentsline {section}{Minhash}{6}
+\contentsline {section}{Hashing}{6}
+\contentsline {subsection}{Introduction to hash functions}{6}
+\contentsline {subsection}{Universal hash functions}{6}
+\contentsline {subsubsection}{Carter and Wegman\cite {carterWegman}}{7}

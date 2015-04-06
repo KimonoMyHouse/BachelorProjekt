@@ -28,8 +28,8 @@ public class MinHash{
 		hm.hash_b = new int[hm.HASH_SIZE];
 		Random r = new Random();
 		for (int i = 0; i < hm.HASH_SIZE; i++){
-			hm.hash_a[i] = i;
-			hm.hash_b[i] = i+1;
+			hm.hash_a[i] = i+1;
+			hm.hash_b[i] = i;
 		}
 	}
 	
@@ -64,7 +64,7 @@ public class MinHash{
 				hm.minhash_values[i][j] = Integer.MAX_VALUE;
 				hm.maxhash_values[i][j] = Integer.MIN_VALUE; 
 				for(int k = 0; k < mg.seqlen[i] - ic.KMER_SIZE + 1; k++){
-					perm_value = (((hm.hash_a[j] * mg.kmers[i].kmerTrans[k] + hm.hash_b[j] )) % hm.prime_div) ;
+					perm_value = (((hm.hash_a[j] * mg.kmers[i].kmerTrans[k] + hm.hash_b[j] ) % hm.prime_div));
 					if(hm.minhash_values[i][j] > perm_value ){
 						hm.minhash_values[i][j] = (int)perm_value;
 					}
@@ -105,6 +105,6 @@ public class MinHash{
 			}
 		}
 		
-		System.out.print("Number of clusters is  " + current_cluster);
+		System.out.println("Number of clusters is  " + current_cluster);
 	}
 }
