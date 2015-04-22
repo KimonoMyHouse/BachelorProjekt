@@ -20,7 +20,7 @@ public class MinHashMain {
 		StringMapper strmap = new StringMapper(ic.program);
 		io.ReadMetagenomeData(mg, strmap, ic);
 		
-		mg.BASES_LENGTH = strmap.Bases.size();
+		mg.BASES_LENGTH = strmap.Bases.size() - 2;
 		MinHash minHash = new MinHash(mg, ic, hm);
 
 		long then = System.nanoTime();

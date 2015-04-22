@@ -1,13 +1,13 @@
 public class Kmers {
-	long[] kmerTrans;
+	int[] kmerTrans;
 	int number_of_kmers;
 	
 	public Kmers(int size) {
-		kmerTrans = new long[size];
+		kmerTrans = new int[size];
 		number_of_kmers = size;
 	}
 	
-	public void setKmer(int i, long kmerRepresentation){
+	public void setKmer(int i, int kmerRepresentation){
 		kmerTrans[i] = kmerRepresentation;
 	}
 	
