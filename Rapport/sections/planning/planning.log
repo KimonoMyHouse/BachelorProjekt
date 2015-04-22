@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  4 APR 2015 14:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  22 APR 2015 12:40
 entering extended mode
-**Intro.tex
+**planning.tex
 
-(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\Intro\In
-tro.tex
+(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\planning
+\planning.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -64,6 +64,12 @@ File: uni-global.def 2013/05/13 UCS: Unicode global data
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfiles\subfiles.sty"
 Package: subfiles 2012/05/23 Federico Garcia
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count88
+\c@@ppsavesec=\count89
+\c@@ppsaveapp=\count90
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
@@ -84,13 +90,13 @@ Package: amsbsy 1999/11/29 v1.2d
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count88
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count89
-\leftroot@=\count90
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count91
-\DOTSCASE@=\count92
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -99,15 +105,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count93
-\c@MaxMatrixCols=\count94
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count95
-\dspbrk@lvl=\count96
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks22
-\row@=\count97
-\column@=\count98
-\maxfields@=\count99
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks23
 \eqnshift@=\dimen106
 \alignsep@=\dimen107
@@ -149,23 +155,23 @@ Package: amsthm 2004/08/06 v2.20
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks32
 )
-\lst@mode=\count100
+\lst@mode=\count103
 \lst@gtempboxa=\box28
 \lst@token=\toks33
-\lst@length=\count101
+\lst@length=\count104
 \lst@currlwidth=\dimen112
-\lst@column=\count102
-\lst@pos=\count103
+\lst@column=\count105
+\lst@pos=\count106
 \lst@lostspace=\dimen113
 \lst@width=\dimen114
-\lst@newlines=\count104
-\lst@lineno=\count105
+\lst@newlines=\count107
+\lst@lineno=\count108
 \lst@maxwidth=\dimen115
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count106
-\lst@skipnumbers=\count107
+\c@lstnumber=\count109
+\lst@skipnumbers=\count110
 \lst@framebox=\box29
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
@@ -173,8 +179,8 @@ File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
 Package: listings 2013/08/26 1.5b (Carsten Heinz)
 ))
-(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\Intro\In
-tro.aux)
+(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\planning
+\planning.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
@@ -190,58 +196,34 @@ LaTeX Font Info:    ... okay on input line 2.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-\c@lstlisting=\count108
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
+\c@lstlisting=\count111
 
 
-LaTeX Warning: Citation `MinhashMapreduce' on page 1 undefined on input line 11
-.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-
-LaTeX Warning: Citation `MinhashMapreduce' on page 1 undefined on input line 22
-.
+LaTeX Warning: Citation `Dietzfelbinger' on page 1 undefined on input line 10.
 
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-
- []
-
-[3]
-(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\Intro\In
-tro.aux)
+(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\planning
+\planning.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2824 strings out of 493921
- 38911 string characters out of 3144878
- 100796 words of memory out of 3000000
- 6126 multiletter control sequences out of 15000+200000
- 5158 words of font info for 19 fonts, out of 3000000 for 9000
+ 2921 strings out of 493921
+ 40369 string characters out of 3144878
+ 99192 words of memory out of 3000000
+ 6220 multiletter control sequences out of 15000+200000
+ 4553 words of font info for 17 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,4n,34p,345b,240s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,4n,34p,348b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on Intro.pdf (3 pages, 53913 bytes).
+Output written on planning.pdf (1 page, 43951 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
+ 18 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

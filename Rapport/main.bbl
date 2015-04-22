@@ -16,6 +16,13 @@ M.~Dietzfelbinger, T.~Hagerup, J.~Katajainen, and M.~Penttonen.
 \newblock A reliable randomized algorithm for the closest-pair problem.
 \newblock {\em Journal of Algorithms}, 25(1):19 -- 51, 1997.
 
+\bibitem{thorupEven}
+M.~Thorup.
+\newblock Even strongly universal hashing is pretty fast.
+\newblock In {\em Proceedings of the Eleventh Annual ACM-SIAM Symposium on
+  Discrete Algorithms}, SODA '00, pages 496--497, Philadelphia, PA, USA, 2000.
+  Society for Industrial and Applied Mathematics.
+
 \bibitem{dikuHash}
 M.~Thorup.
 \newblock High speed hashing for integers and strings, 2014.
