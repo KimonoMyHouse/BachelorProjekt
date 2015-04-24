@@ -16,6 +16,7 @@ public class IOManager {
 		while((line = reader.readLine())!= null){
 			nSeq++;
 		}
+		nSeq = nSeq / 2;
 		reader.close();
 		mg.SEQUENCES_SIZE = nSeq;
 		
@@ -38,17 +39,20 @@ public class IOManager {
 		String line;
 		
 		int i = 0;
+		int j = 0;
 		mg.maxseqlength = 0;
 		mg.sequences = new String[mg.SEQUENCES_SIZE];
 		mg.seqlen = new int[mg.SEQUENCES_SIZE];
 		while((line = reader.readLine())!= null){
-			
-			mg.sequences[i] = line;
-			mg.seqlen[i] = line.length();
-			if(mg.seqlen[i] > mg.maxseqlength){
-				mg.maxseqlength = mg.seqlen[i];
+			if((j % 2) == 1){
+				mg.sequences[i] = line;
+				mg.seqlen[i] = line.length();
+				if(mg.seqlen[i] > mg.maxseqlength){
+					mg.maxseqlength = mg.seqlen[i];
+				}
+				i++;
 			}
-			i++;
+			j++;
 		}
 		reader.close();
 	}

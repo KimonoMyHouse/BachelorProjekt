@@ -6,16 +6,16 @@ public class MinHashMain {
 		InputController ic = new InputController();
 		HashManager hm = new HashManager();
 		IOManager io = new IOManager();
-		String file = "C:\\MC-MinH\\SampleSeq.txt";
+		String file = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test5.fna";
 		
 		ic.inputfileString = file;
 		
-        ic.KMER_SIZE = 7;
+        ic.KMER_SIZE = 5;
         ic.threshold = 0.95;
         ic.program = "dna";
         
-        hm.prime_div = 112211;
-		hm.HASH_SIZE = 100;
+        hm.prime_div = 1845587707;
+		hm.HASH_SIZE = 30;
 		long now = System.nanoTime();
 		StringMapper strmap = new StringMapper(ic.program);
 		io.ReadMetagenomeData(mg, strmap, ic);
