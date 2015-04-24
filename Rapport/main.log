@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  22 APR 2015 12:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  24 APR 2015 14:45
 entering extended mode
 **main.tex
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.tex
@@ -252,16 +252,32 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 ))
-(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.bbl [4])
+(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections/HashTest
+ing/HashTesting.tex [4]
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Overfull \hbox (99.66708pt too wide) in paragraph at lines 11--23
+[][] 
+ []
+
+) (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.bbl)
 [5]
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections/planning
 /planning.tex) [6]
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.aux) ) 
 Here is how much of TeX's memory you used:
- 3787 strings out of 493921
- 49568 string characters out of 3144878
- 105160 words of memory out of 3000000
- 7040 multiletter control sequences out of 15000+200000
+ 3794 strings out of 493921
+ 49892 string characters out of 3144878
+ 105167 words of memory out of 3000000
+ 7042 multiletter control sequences out of 15000+200000
  12455 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  28i,12n,32p,462b,1267s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -281,7 +297,7 @@ nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (6 pages, 192207 bytes).
+Output written on main.pdf (6 pages, 195310 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
