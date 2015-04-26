@@ -87,7 +87,136 @@
     <Task-category name="&lt;default&gt;"/>
 </Task-table>
 <Task/><Presentation-Block>
-<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L3" drawlabel="true">
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L8" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">with(plots):</Text-field>
+</Input>
+</Group>
+<Group labelreference="L28" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">makePlotFromLargeFNASet:=proc(filename, goldstandard,numK,numH)
+    data := readdata(filename,integer,3):
+    
+    for k from 1 to nops(data) do
+      data[k,3] := abs(data[k,3]-goldstandard);
+    end do:
+    
+    ResultMatrix:=[]:
+    beginning:=0:
+    for i from 0 to numK-1 do
+      beginning:=i*numH+1:
+      ending:= beginning + numH-1:
+      ResultMatrix:= [op(ResultMatrix), data[beginning..ending]]:
+    end do:
+
+    tempx:=0:
+    tempy:=0:
+    tempmin:=1000000000:
+    for j from 1 to nops(data) do
+       if(data[j,3]&lt;tempmin) then
+          tempmin:=data[j,3];
+          tempx:=data[j,1];
+          tempy:=data[j,2];
+       fi:
+    end do:
+    return [ResultMatrix,[tempx,tempy,tempmin]]:
+end proc:</Text-field>
+</Input>
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+</Input>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60data%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `data` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60k%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `k` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60ResultMatrix%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `ResultMatrix` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60beginning%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `beginning` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60i%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `i` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60ending%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `ending` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60tempx%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `tempx` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60tempy%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `tempy` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60tempmin%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `tempmin` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60j%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromFNAOutputFile%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `j` is implicitly declared local to procedure `makePlotFromFNAOutputFile`</Font></Hyperlink></Text-field>
+</Output>
+</Group>
+<Group labelreference="L31" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">points:= makePlotFromFNAOutputFile(&quot;test1out.fna&quot;,423,10,8):points[2];</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NyUiIiYiI3EiJHMi</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L137" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">surfdata(points[1],dimension=2,colorscheme=[&quot;Orange&quot;,&quot;MediumBlue&quot;]);</Text-field>
+</Input>
+<Output>
+<Text-field style="Maple Plot" layout="Maple Plot"><Plot height="400.0" type="two-dimensional" width="400.0" plot-scale="1.0" plot-xtrans="0.0" plot-ytrans="0.0" gridlinevisibility="1" legendvisibility="false">NigtJSVNRVNIRzYkNyw3KjclJCIjPyEiIiQiJF0jISIiJCImISlvIiEiIjclJCIjPyEiIiQiJCslISIiJCImISlvIiEiIjclJCIjPyEiIiQiJCsmISIiJCImISlvIiEiIjclJCIjPyEiIiQiJCsoISIiJCImISlvIiEiIjclJCIjPyEiIiQiJSs1ISIiJCImISlvIiEiIjclJCIjPyEiIiQiJSs6ISIiJCImISlvIiEiIjclJCIjPyEiIiQiJSs/ISIiJCImISlvIiEiIjclJCIjPyEiIiQiJStTISIiJCImISlvIiEiIjcqNyUkIiNTISIiJCIkXSMhIiIkIiYrbyIhIiI3JSQiI1MhIiIkIiQrJSEiIiQiJitvIiEiIjclJCIjUyEiIiQiJCsmISIiJCImU2siISIiNyUkIiNTISIiJCIkKyghIiIkIiYhRzshIiI3JSQiI1MhIiIkIiUrNSEiIiQiJitZIiEiIjclJCIjUyEiIiQiJSs6ISIiJCImU1MiISIiNyUkIiNTISIiJCIlKz8hIiIkIiZnTCIhIiI3JSQiI1MhIiIkIiUrUyEiIiQiJitFIiEiIjcqNyUkIiNdISIiJCIkXSMhIiIkIiY/LiIhIiI3JSQiI10hIiIkIiQrJSEiIiQiJWdAISIiNyUkIiNdISIiJCIkKyYhIiIkIiUrRyEiIjclJCIjXSEiIiQiJCsoISIiJCIlPzwhIiI3JSQiI10hIiIkIiUrNSEiIiQiJSEzJiEiIjclJCIjXSEiIiQiJSs6ISIiJCIlK20hIiI3JSQiI10hIiIkIiUrPyEiIiQiJSFHKCEiIjclJCIjXSEiIiQiJStTISIiJCIlZyQpISIiNyo3JSQiI3EhIiIkIiRdIyEiIiQiJSEpKSohIiI3JSQiI3EhIiIkIiQrJSEiIiQiJiFvPiEiIjclJCIjcSEiIiQiJCsmISIiJCImK2ciISIiNyUkIiNxISIiJCIkKyghIiIkIiZTNSMhIiI3JSQiI3EhIiIkIiUrNSEiIiQiJitlIyEiIjclJCIjcSEiIiQiJSs6ISIiJCImISlbIyEiIjclJCIjcSEiIiQiJSs/ISIiJCImKylHISIiNyUkIiNxISIiJCIlK1MhIiIkIiZnJkchIiI3KjclJCIkKyIhIiIkIiRdIyEiIiQiJStDISIiNyUkIiQrIiEiIiQiJCslISIiJCImZz4iISIiNyUkIiQrIiEiIiQiJCsmISIiJCImIVs2ISIiNyUkIiQrIiEiIiQiJCsoISIiJCImPzQjISIiNyUkIiQrIiEiIiQiJSs1ISIiJCImZ0IkISIiNyUkIiQrIiEiIiQiJSs6ISIiJCImK3MkISIiNyUkIiQrIiEiIiQiJSs/ISIiJCImK10lISIiNyUkIiQrIiEiIiQiJStTISIiJCImKzUmISIiNyo3JSQiJD8iISIiJCIkXSMhIiIkIiVnUiEiIjclJCIkPyIhIiIkIiQrJSEiIiQiJlM3IiEiIjclJCIkPyIhIiIkIiQrJiEiIiQiJmcyIiEiIjclJCIkPyIhIiIkIiQrKCEiIiQiJmc0IyEiIjclJCIkPyIhIiIkIiUrNSEiIiQiJmdcJCEiIjclJCIkPyIhIiIkIiUrOiEiIiQiJiFHVSEiIjclJCIkPyIhIiIkIiUrPyEiIiQiJj9EJiEiIjclJCIkPyIhIiIkIiUrUyEiIiQiJiFHaSEiIjcqNyUkIiRdIiEiIiQiJF0jISIiJCImITNjISIiNyUkIiRdIiEiIiQiJCslISIiJCImP1woISIiNyUkIiRdIiEiIiQiJCsmISIiJCImZyRwISIiNyUkIiRdIiEiIiQiJCsoISIiJCImP1QoISIiNyUkIiRdIiEiIiQiJSs1ISIiJCImU0kpISIiNyUkIiRdIiEiIiQiJSs6ISIiJCImZzopISIiNyUkIiRdIiEiIiQiJSs/ISIiJCImU1spISIiNyUkIiRdIiEiIiQiJStTISIiJCImU3EpISIiNyo3JSQiJCsjISIiJCIkXSMhIiIkIiYhR28hIiI3JSQiJCsjISIiJCIkKyUhIiIkIiZnJiopISIiNyUkIiQrIyEiIiQiJCsmISIiJCImU1EpISIiNyUkIiQrIyEiIiQiJCsoISIiJCImISkzKiEiIjclJCIkKyMhIiIkIiUrNSEiIiQiJlMhKSohIiI3JSQiJCsjISIiJCIlKzohIiIkIiZncCohIiI3JSQiJCsjISIiJCIlKz8hIiIkIiZnIioqISIiNyUkIiQrIyEiIiQiJStTISIiJCInIVsrIiEiIjcqNyUkIiRdIyEiIiQiJF0jISIiJCImITMqKSEiIjclJCIkXSMhIiIkIiQrJSEiIiQiJyFvNyIhIiI3JSQiJF0jISIiJCIkKyYhIiIkIidnejUhIiI3JSQiJF0jISIiJCIkKyghIiIkIicrOTYhIiI3JSQiJF0jISIiJCIlKzUhIiIkIicrKT0iISIiNyUkIiRdIyEiIiQiJSs6ISIiJCInU182ISIiNyUkIiRdIyEiIiQiJSs/ISIiJCInPyg9IiEiIjclJCIkXSMhIiIkIiUrUyEiIiQiJ2diNiEiIjcqNyUkIiQrJCEiIiQiJF0jISIiJCInITM0IiEiIjclJCIkKyQhIiIkIiQrJSEiIiQiJyFbRiIhIiI3JSQiJCskISIiJCIkKyYhIiIkIic/Kj4iISIiNyUkIiQrJCEiIiQiJCsoISIiJCInZ0w3ISIiNyUkIiQrJCEiIiQiJSs1ISIiJCInPyhHIiEiIjclJCIkKyQhIiIkIiUrOiEiIiQiJ1N1NyEiIjclJCIkKyQhIiIkIiUrPyEiIiQiJ1NHOCEiIjclJCIkKyQhIiIkIiUrUyEiIiQiJyFHTSIhIiItJSZDT0xPUkc2XXolJFJHQkckIihYRicpKSEiKCQiKTBcRGQhIikkIigzJz4hKiEiKSQiKFhGJykpISIoJCIpMFxEZCEiKSQiKDMnPiEqISIpJCIoWEYnKSkhIigkIikwXERkISIpJCIoMyc+ISohIikkIihYRicpKSEiKCQiKTBcRGQhIikkIigzJz4hKiEiKSQiKFhGJykpISIoJCIpMFxEZCEiKSQiKDMnPiEqISIpJCIoWEYnKSkhIigkIikwXERkISIpJCIoMyc+ISohIikkIihYRicpKSEiKCQiKTBcRGQhIikkIigzJz4hKiEiKSQiKFhGJykpISIoJCIpMFxEZCEiKSQiKDMnPiEqISIpJCIoWEYnKSkhIigkIikwXERkISIpJCIoMyc+ISohIikkIihYRicpKSEiKCQiKTBcRGQhIikkIigzJz4hKiEiKSQiKGg+ISopISIoJCIoMVp3JiEiKCQiKDMnPiEqISIpJCIoaD4hKikhIigkIigxWncmISIoJCIoMyc+ISohIikkIigzJz4hKiEiKCQiKXY4VmUhIikkIil2OFZ5ISIqJCIpTyMpZSEqISIpJCIoYEIpZSEiKCQiKCIpNFgoISIpJCIoYnM4KiEiKCQiKHA6I2YhIigkIihDKWVxISIpJCIpMVp3IiohIikkIihwOiNmISIoJCIobm1tJyEiKSQiKU1MTCQqISIpJCIoOyNSZyEiKCQiKSRSISk0JiEiKiQiKVZ5ZyoqISIpJCIodDhWJyEiKCQiKHA6I1IhIiokIiknbzojKiohIikkIih0OFYnISIoJCIoUUoleSEiKiQiIzUhIiIkIiklKWVxayEiKSQiIiEhIiIkIigxWncqISIoJCIoRVBKJyEiKCQiKVd5Zz4hIiokIihmcWsqISIoJCIpVkhOaSEiKSQiKGJzOCQhIikkIil2aW8mKiEiKSQiKSh5Zz4nISIpJCIoNyVITiEiKSQiKCc+IVwqISIoJCIoam86JyEiKCQiKSlvOiNSISIqJCIoXERQKiEiKCQiKTtWeWchIikkIikkUiEpNCYhIiokIihedWkpISIoJCIpTSV5ZyYhIikkIikjUiEpNCIhIikkIilsPFQqKSEiKSQiKDFadyYhIigkIihedWkpISIpJCIpKD4hXCYpISIpJCIoNyVIYiEiKCQiKTFadzYhIikkIikmeWc+KSEiKSQiKD1USCYhIigkIikwKTRYIiEiKSQiKCVITiMpISIoJCIpT0xMYCEiKSQiKVt3NjkhIikkIilXeWd6ISIpJCIoYnM4JiEiKCQiKSplcWsiISIpJCIpV3lneiEiKSQiKHJrPCYhIigkIikqZXFrIiEiKSQiKVZ5ZyoqISIpJCIodDhWJyEiKCQiKHA6I1IhIiokIilqbzojKiEiKSQiKVl5Z2YhIikkIidedWkhIigkIigtXEQqISIoJCIiJyEiIiQiKGBCKWUhIikkIikoPiFcJikhIikkIig3JUhiISIoJCIpMVp3NiEiKSQiKVlGJ28oISIpJCIpQVIhKVwhIikkIil0OFY9ISIpJCIpTkxMdCEiKSQiKCk0WFohIigkIilHJ286IyEiKSQiKCk0WG4hIigkIik3JUhOJSEiKSQiKF51aSMhIigkIidedWkhIickIik5VnlTISIpJCIpQlIhKUghIikkIihQSiUpKiEiKCQiKTklSE4nISIpJCIpMVp3NiEiKiQiKXg2JUgqISIpJCIiJyEiIiQiKGBCKWUhIikkIilNTEwkKiEiKSQiKDsjUmchIigkIignPiFcJiEiKSQiKSg+IVwmKSEiKSQiKDclSGIhIigkIikxWnc2ISIpJCIoJz4hXCghIigkIihYRidbISIoJCIiIyEiIiQiKW48VHAhIikkIigvKTRYISIoJCIpIyllcUMhIikkIihqbzonISIoJCIiJSEiIiQiKSRSISk0JCEiKSQiKTIpNFgmISIpJCIoNyVITiEiKCQiKVlGJ28kISIpJCIoYEIpZSEiKCQiKTsjUiFRISIpJCIpeDYlSCQhIikkIikkKWVxVyEiKSQiKGg+IUghIigkIilFUEpXISIpJCIpMyc+IVwhIikkIikyWndKISIpJCIoWnc2JSEiKCQiKSc+IVxYISIpJCIpbTxUSCEiKSQiKGRAUiUhIigkIihgQilRISIoJCIoLyk0RCEiKCQiKWw8VFwhIikkIilXeWdSISIpJCIpYUIpZSMhIikkIiklSE4jWyEiKSQiKS5cRFAhIikkIilFUEpDISIpJCIoQyllXSEiKCQiKXZpb04hIikkIiliczhCISIpJCIocms8JiEiKCQiKUFSISlcISIpJCIpa286SyEiKSQiKWRAUlMhIikkIihcRFAkISIoJCIpJXlnPiMhIikkIilPTExgISIpJCIpOyNSIVEhIikkIikjKWVxQyEiKSQiKUFSISlcISIpJCIoLVxEJCEiKCQiKXJrPEAhIikkIihsPFQmISIoJCIpIyk0WEYhIikkIigxWnciISIoJCIpdjhWZSEiKSQiKSZITiNHISIpJCIpOyNSIT0hIikkIigxWncmISIoJCIpb21tRSEiKSQiKS1cRDwhIikkIihwOiNmISIoJCIpKT4hXEQhIikkIikqZXFrIiEiKSQiIichIiIkIilbdzZNISIpJCIpJXlnPiMhIikkIig9VEgmISIoJCIpKmVxayIhIikkIiphQillNSEiKiQiKCk0WG4hIigkIiIjISIiJCIpeDYlSCIhIikkIih0OFYnISIoJCIpLVxEPCEiKSQiKSNSISk0IiEiKSQiKG5tbSchIigkIikxWnc2ISIpJCIoIik0WCghIikkIiklUiEpNCghIikkIikwKTRYIiEiKSQiKGw8VCohIikkIihoPiFwISIoJCIpMVp3NiEiKSQiKCIpNFgoISIpJCIpJVIhKTQoISIpJCIpW3c2OSEiKSQiKDMnPiEqISIpJCIoaD4hcCEiKCQiKGBCKT0hIigkIilqbzo3ISIpJCIoLyk0bCEiKCQiKSRSISk0JiEiKiQiKGJzOCQhIikkIihWeWcoISIoJCIpI1IhKTQiISIpJCIoQyllcSEiKSQiKHJrPCghIigkIiglSE4jKSEiKSQiKCc+IVwmISIpJCIoXERQKCEiKCQiKWNzOFYhIiokIigpNFhGISIpJCIpWUYnbyghIikkIikkUiEpNCYhIiokIig3JUhOISIpJCIoVnlnKCEiKCQiKTFadzYhIiokIihRSiV5ISIqJCIpV3lneiEiKSQiIiEhIiIkIiIhISIiJCIoOyNSISkhIigtJiUmX0FYSVNHNiMiIiI2Jy0lK19HUklETElORVNHNictJSZDT0xPUkc2JiUkUkdCRyQiIiEhIiIkIiIhISIiJCIiISEiIi0lKkxJTkVTVFlMRUc2IyIiIS0lKlRISUNLTkVTU0c2IyIiIS0lLVRSQU5TUEFSRU5DWUc2IyQiIiEhIiItJSlfVklTSUJMRUc2IyIiIS0lJkNPTE9SRzYmJSRSR0JHJCIiISEiIiQiIiEhIiIkIiIhISIiLSUqTElORVNUWUxFRzYjIiIhLSUqVEhJQ0tORVNTRzYjIiIhLSUtVFJBTlNQQVJFTkNZRzYjJCIiISEiIi0mJSZfQVhJU0c2IyIiIzYnLSUrX0dSSURMSU5FU0c2Jy0lJkNPTE9SRzYmJSRSR0JHJCIiISEiIiQiIiEhIiIkIiIhISIiLSUqTElORVNUWUxFRzYjIiIhLSUqVEhJQ0tORVNTRzYjIiIhLSUtVFJBTlNQQVJFTkNZRzYjJCIiISEiIi0lKV9WSVNJQkxFRzYjIiIhLSUmQ09MT1JHNiYlJFJHQkckIiIhISIiJCIiISEiIiQiIiEhIiItJSpMSU5FU1RZTEVHNiMiIiEtJSpUSElDS05FU1NHNiMiIiEtJS1UUkFOU1BBUkVOQ1lHNiMkIiIhISIiLSUpX1ZJU0lCTEVHNiMiIiItJSVST09URzYnLSUpQk9VTkRTX1hHNiMkIiRdJCEiIi0lKUJPVU5EU19ZRzYjJCIkSSIhIiItJS1CT1VORFNfV0lEVEhHNiMkIiVJTiEiIi0lLkJPVU5EU19IRUlHSFRHNiMkIiUhZSQhIiItJSlDSElMRFJFTkc2Ii0lK0FOTk9UQVRJT05HNictJSlCT1VORFNfWEc2IyQiIiEhIiItJSlCT1VORFNfWUc2IyQiIiEhIiItJS1CT1VORFNfV0lEVEhHNiMkIiUrUyEiIi0lLkJPVU5EU19IRUlHSFRHNiMkIiUrUyEiIi0lKUNISUxEUkVORzYiRzYi</Plot></Text-field>
+</Output>
+</Group>
+<Group labelreference="L146" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">makePlotFromPreciseFNASet:=proc(filename, goldstandard)
+    data := readdata(filename,integer,3):
+    
+    ResultVector:=[];
+    for i from 1 to nops(data) do
+      ResultVector:=[op(ResultVector), [data[i, 2], abs(data[i,3]-goldstandard)]];
+    end do:
+    
+    return ResultVector;
+end proc:</Text-field>
+</Input>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60data%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromPreciseFNASet%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `data` is implicitly declared local to procedure `makePlotFromPreciseFNASet`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60ResultVector%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromPreciseFNASet%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `ResultVector` is implicitly declared local to procedure `makePlotFromPreciseFNASet`</Font></Hyperlink></Text-field>
+</Output>
+<Output>
+<Text-field style="HyperlinkWarning" layout="HyperlinkWarning"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Warning,%20%60i%60%20is%20implicitly%20declared%20local%20to%20procedure%20%60makePlotFromPreciseFNASet%60" hyperlink="true"><Font style="HyperlinkWarning">Warning, `i` is implicitly declared local to procedure `makePlotFromPreciseFNASet`</Font></Hyperlink></Text-field>
+</Output>
+</Group>
+<Group labelreference="L149" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">line:=makePlotFromPreciseFNASet(&quot;test5outprecise.fna&quot;,481);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYoLUkjbWlHRiQ2JVElbGluZUYnLyUnaXRhbGljR1EldHJ1ZUYnLyUsbWF0aHZhcmlhbnRHUSdpdGFsaWNGJy1JI21vR0YkNi1RIzo9RicvRjNRJ25vcm1hbEYnLyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y9LyUpc3RyZXRjaHlHRj0vJSpzeW1tZXRyaWNHRj0vJShsYXJnZW9wR0Y9LyUubW92YWJsZWxpbWl0c0dGPS8lJ2FjY2VudEdGPS8lJ2xzcGFjZUdRLDAuMjc3Nzc3OGVtRicvJSdyc3BhY2VHRkwtSShtZmVuY2VkR0YkNiYtRiM2Si1GUDYmLUYjNigtSSNtbkdGJDYkUSM2MEYnRjktRjY2LVEiLEYnRjlGOy9GP0YxRkBGQkZERkZGSC9GS1EmMC4wZW1GJy9GTlEsMC4zMzMzMzMzZW1GJy1GWTYkUSM4NkYnRjkvJStmb3JlZ3JvdW5kR1EoWzAsMCwwXUYnLyUpcmVhZG9ubHlHRj1GOUY5LyUlb3BlbkdRIltGJy8lJmNsb3NlR1EiXUYnRmZuLUZQNiYtRiM2KC1GWTYkUSM2MUYnRjlGZm4tRlk2JFEjNjlGJ0Y5RmFvRmRvRjlGOUZmb0Zpb0Zmbi1GUDYmLUYjNigtRlk2JFEjNjJGJ0Y5RmZuRlhGYW9GZG9GOUY5RmZvRmlvRmZuLUZQNiYtRiM2KC1GWTYkUSM2M0YnRjlGZm4tRlk2JFEjNTBGJ0Y5RmFvRmRvRjlGOUZmb0Zpb0Zmbi1GUDYmLUYjNigtRlk2JFEjNjRGJ0Y5RmZuLUZZNiRRIzMzRidGOUZhb0Zkb0Y5RjlGZm9GaW9GZm4tRlA2Ji1GIzYoLUZZNiRRIzY1RidGOUZmbi1GWTYkUSMxM0YnRjlGYW9GZG9GOUY5RmZvRmlvRmZuLUZQNiYtRiM2KC1GWTYkUSM2NkYnRjlGZm4tRlk2JFEiM0YnRjlGYW9GZG9GOUY5RmZvRmlvRmZuLUZQNiYtRiM2KC1GWTYkUSM2N0YnRjlGZm4tRlk2JFEjMjFGJ0Y5RmFvRmRvRjlGOUZmb0Zpb0Zmbi1GUDYmLUYjNigtRlk2JFEjNjhGJ0Y5RmZuLUZZNiRRIzM4RidGOUZhb0Zkb0Y5RjlGZm9GaW9GZm4tRlA2Ji1GIzYoRmNwRmZuLUZZNiRRIzQyRidGOUZhb0Zkb0Y5RjlGZm9GaW9GZm4tRlA2Ji1GIzYoLUZZNiRRIzcwRidGOUZmbi1GWTYkUSM0NUYnRjlGYW9GZG9GOUY5RmZvRmlvRmZuLUZQNiYtRiM2KC1GWTYkUSM3MUYnRjlGZm4tRlk2JFEjNTNGJ0Y5RmFvRmRvRjlGOUZmb0Zpb0Zmbi1GUDYmLUYjNigtRlk2JFEjNzJGJ0Y5RmZuRlhGYW9GZG9GOUY5RmZvRmlvRmZuLUZQNiYtRiM2KC1GWTYkUSM3M0YnRjlGZm5GY3BGYW9GZG9GOUY5RmZvRmlvRmZuLUZQNiYtRiM2KC1GWTYkUSM3NEYnRjlGZm4tRlk2JFEjODNGJ0Y5RmFvRmRvRjlGOUZmb0Zpb0Zmbi1GUDYmLUYjNigtRlk2JFEjNzVGJ0Y5RmZuLUZZNiRRIzg0RidGOUZhb0Zkb0Y5RjlGZm9GaW9GZm4tRlA2Ji1GIzYoLUZZNiRRIzc2RidGOUZmbkZjeEZhb0Zkb0Y5RjlGZm9GaW9GZm4tRlA2Ji1GIzYoLUZZNiRRIzc3RidGOUZmbi1GWTYkUSQxMDZGJ0Y5RmFvRmRvRjlGOUZmb0Zpb0Zmbi1GUDYmLUYjNigtRlk2JFEjNzhGJ0Y5RmZuLUZZNiRRJDExMEYnRjlGYW9GZG9GOUY5RmZvRmlvRmFvRmRvRjlGOUZmb0Zpb0Zhb0Zkb0Y5">NzU3JCIjZyIjJyk3JCIjaCIjcDckIiNpRiQ3JCIjaiIjXTckIiNrIiNMNyQiI2wiIzg3JCIjbSIiJDckIiNuIiNANyQiI28iI1E3JEYoIiNVNyQiI3EiI1g3JCIjciIjYDckIiNzRiQ3JCIjdEYoNyQiI3UiIyQpNyQiI3YiIyUpNyQiI3dGTjckIiN4IiQxIjckIiN5IiQ1Ig==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L150" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">plot(line);</Text-field>
+</Input>
+<Output>
+<Text-field style="Maple Plot" layout="Maple Plot"><Plot height="400.0" type="two-dimensional" width="400.0" plot-scale="1.0" plot-xtrans="0.0" plot-ytrans="0.0" gridlinevisibility="1" legendvisibility="false">NiktJSdDVVJWRVNHNiQ3NTckJCIkKychIiIkIiRnKSEiIjckJCIkNSchIiIkIiQhcCEiIjckJCIkPychIiIkIiQrJyEiIjckJCIkSSchIiIkIiQrJiEiIjckJCIkUychIiIkIiRJJCEiIjckJCIkXSchIiIkIiRJIiEiIjckJCIkZychIiIkIiNJISIiNyQkIiRxJyEiIiQiJDUjISIiNyQkIiQhbyEiIiQiJCFRISIiNyQkIiQhcCEiIiQiJD8lISIiNyQkIiQrKCEiIiQiJF0lISIiNyQkIiQ1KCEiIiQiJEkmISIiNyQkIiQ/KCEiIiQiJCsnISIiNyQkIiRJKCEiIiQiJCFwISIiNyQkIiRTKCEiIiQiJEkpISIiNyQkIiRdKCEiIiQiJFMpISIiNyQkIiRnKCEiIiQiJFMpISIiNyQkIiRxKCEiIiQiJWc1ISIiNyQkIiQheSEiIiQiJSs2ISIiLSUmQ09MT1JHNiclJFJHQkckIilDKWVxJSEiKSQiIiEhIiIkIignPiFcJiEiKS0lK19BVFRSSUJVVEVHNiMvJSdzb3VyY2VHJSxtYXRoZGVmYXVsdEctJiUmX0FYSVNHNiMiIiI2Jy0lK19HUklETElORVNHNictJSZDT0xPUkc2JiUkUkdCRyQiIiEhIiIkIiIhISIiJCIiISEiIi0lKkxJTkVTVFlMRUc2IyIiIS0lKlRISUNLTkVTU0c2IyIiIS0lLVRSQU5TUEFSRU5DWUc2IyQiIiEhIiItJSlfVklTSUJMRUc2IyIiIS0lJkNPTE9SRzYmJSRSR0JHJCIiISEiIiQiIiEhIiIkIiIhISIiLSUqTElORVNUWUxFRzYjIiIhLSUqVEhJQ0tORVNTRzYjIiIhLSUtVFJBTlNQQVJFTkNZRzYjJCIiISEiIi0mJSZfQVhJU0c2IyIiIzYnLSUrX0dSSURMSU5FU0c2Jy0lJkNPTE9SRzYmJSRSR0JHJCIiISEiIiQiIiEhIiIkIiIhISIiLSUqTElORVNUWUxFRzYjIiIhLSUqVEhJQ0tORVNTRzYjIiIhLSUtVFJBTlNQQVJFTkNZRzYjJCIiISEiIi0lKV9WSVNJQkxFRzYjIiIhLSUmQ09MT1JHNiYlJFJHQkckIiIhISIiJCIiISEiIiQiIiEhIiItJSpMSU5FU1RZTEVHNiMiIiEtJSpUSElDS05FU1NHNiMiIiEtJS1UUkFOU1BBUkVOQ1lHNiMkIiIhISIiLSUrQVhFU0xBQkVMU0c2JFEhNiJRITYiLSUpX1ZJU0lCTEVHNiMiIiItJSVST09URzYnLSUpQk9VTkRTX1hHNiMkIiRxJSEiIi0lKUJPVU5EU19ZRzYjJCIjcSEiIi0lLUJPVU5EU19XSURUSEc2IyQiJTVNISIiLSUuQk9VTkRTX0hFSUdIVEc2IyQiJSFcJCEiIi0lKUNISUxEUkVORzYiLSUrQU5OT1RBVElPTkc2Jy0lKUJPVU5EU19YRzYjJCIiISEiIi0lKUJPVU5EU19ZRzYjJCIiISEiIi0lLUJPVU5EU19XSURUSEc2IyQiJStTISIiLSUuQk9VTkRTX0hFSUdIVEc2IyQiJStTISIiLSUpQ0hJTERSRU5HNiI=NiI=</Plot></Text-field>
+</Output>
+</Group>
+<Group labelreference="L156" drawlabel="true">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Equation executable="true" style="2D Input" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRicvJStleGVjdXRhYmxlR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRic=">JSFH</Equation></Text-field>
+</Input>
+</Group></Presentation-Block><Presentation-Block>
+<Group view="presentation" hide-input="false" hide-output="true" inline-output="false" labelreference="L134" drawlabel="true">
 <Input>
 <Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYkLUkjbWlHRiQ2I1EhRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn">JSFH</Equation></Text-field>
 </Input>
