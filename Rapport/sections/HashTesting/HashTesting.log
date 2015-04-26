@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  24 APR 2015 15:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  26 APR 2015 14:21
 entering extended mode
 **HashTesting.tex
 
@@ -233,12 +233,12 @@ Overfull \hbox (99.66708pt too wide) in paragraph at lines 13--25
 ing\HashTesting.aux) ) 
 Here is how much of TeX's memory you used:
  2969 strings out of 493921
- 41088 string characters out of 3144878
+ 41090 string characters out of 3144878
  103200 words of memory out of 3000000
  6248 multiletter control sequences out of 15000+200000
  9352 words of font info for 37 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,9n,34p,553b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,9n,34p,556b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
@@ -248,7 +248,7 @@ cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7
 .pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on HashTesting.pdf (1 page, 94467 bytes).
+Output written on HashTesting.pdf (1 page, 94280 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

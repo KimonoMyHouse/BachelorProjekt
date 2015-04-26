@@ -13,15 +13,14 @@ Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{m-1}\}$ and a range $[r]=\{0,
   \end{array} \right.
 \end{equation}
 
-for a given hashfunction $h$ and two keys $x$ and $y$. The goal of a hashing algorithm is then to minimize the number of collisions across all possible keys. A truly random hash function can assure that there are no collision at all. Unfortunately, to implement such a function would require at least $|U|\log_2 m$ bits\cite{dikuHash}, defeating the purpose of hash functions altogether.
-Fixed hashing algorithms have attempted to solve this problem. Unfortunately, its dependence on input causes a worst case average retrieval time of $\Theta(m)$.\cite{introToAlg}
+for a given hashfunction $h$ and two keys $x$ and $y$. The goal of a hashing algorithm is then to minimize the number of collisions across all possible keys. A truly random hash function can assure that there are no collision at all. Unfortunately, to implement such a function would require at least $|U|\log_2 m$ bits\cite{dikuHash}, defeating the purpose of hash functions altogether. Fixed hashing algorithms have attempted to solve this problem. Unfortunately, its dependence on input causes a worst case average retrieval time of $\Theta(m)$.\cite{introToAlg}\\
 
 Universal hashing can circumvent the memory and computation cost of both random- and fixed hashing, without losing much precision. An introduction to universal hashing will follow, alongside two applications of said hashing which will be tested later in this paper.
 
 \subsection{Universal hash functions}
 The first mention of universal hashing was in \cite{carterWegman}, in which they define universality of hash functions as follows:\\
 
-\noindent Given a class of hash functions $H:U\rightarrow [r]$, $H$ is said to be universal if $\forall x \forall y \in U$
+Given a class of hash functions $H:U\rightarrow [r]$, $H$ is said to be universal if $\forall x \forall y \in U$
 $$
 	\delta_H (x,y) \leq |H|/|[r]|
 $$

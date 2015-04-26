@@ -6,7 +6,7 @@ public class MinHashMain {
 		InputController ic = new InputController();
 		HashManager hm = new HashManager();
 		IOManager io = new IOManager();
-		String file = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test5.fna";
+		String file = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test1.fna";
 		
 		ic.inputfileString = file;
 		
@@ -20,7 +20,7 @@ public class MinHashMain {
 		StringMapper strmap = new StringMapper(ic.program);
 		io.ReadMetagenomeData(mg, strmap, ic);
 		
-		mg.BASES_LENGTH = strmap.Bases.size() - 2;
+		mg.BASES_LENGTH = 4;
 		MinHash minHash = new MinHash(mg, ic, hm);
 
 		long then = System.nanoTime();

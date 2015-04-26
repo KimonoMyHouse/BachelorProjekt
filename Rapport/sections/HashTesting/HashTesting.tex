@@ -6,10 +6,10 @@ Two hashing functions are described in the Hashing section. In order two decide 
 
 To perform these tests, I wrote a short java program. It randomized a given number of k-mer transformations\footnote{which are 2$\cdot$k bits long}, and then counted the number of nanoseconds it took the Carter Wegman- and multiply-shift hashing schemes to hash all the transformations. The multiply-shift algorithm was set to shift only if the input was longer than 32 bits. In this case, the shift was $2\cdot k - 32$.\\
 
-The results of the tests can be seen in Figure \ref{fig:hashTest}. As we can note, the Carter Wegman implementation is consequently smaller than multiply-shift, in addition to having larger margin of error. We may note that the difference in speed is most notable at $k=10$, diminishing at higher $k$. It should be noted however that the differences in speed are less than 50 ms, even at 100 mio. input hash values. Also, as the time increases linearly with the number of input values, so will the difference in speed.\\
+The results of the tests can be seen in Table \ref{table:hashTest}. As we can note, the Carter Wegman implementation is consequently smaller than multiply-shift, in addition to having larger margin of error. We may note that the difference in speed is most notable at $k=10$, diminishing at higher $k$. It should be noted however that the differences in speed are less than 50 ms, even at 100 mio. input hash values. Also, as the time increases linearly with the number of input values, so will the difference in speed.\\
 
 Conclusively, since the multiply-shift proved slightly quicker than the Carter Wegman scheme, I shall use {\bf multiply-shift} for my algorithm.
-\begin{figure}[h]
+\begin{table}[h]
 \begin{tabular}{| l | l | l | l | l | l | l |}
 \hline
 k-mer size & \multicolumn{2}{c|}{10} & \multicolumn{2}{c|}{20} & \multicolumn{2}{c|}{30} \\
@@ -23,7 +23,8 @@ k-mer size & \multicolumn{2}{c|}{10} & \multicolumn{2}{c|}{20} & \multicolumn{2}
 \hline
 \end{tabular}
 \caption{$ms$ for multiply-shift- and Carter Wegman hashing schemes to 4 different numbers of randomized k-mer transformations.}
-\label{fig:hashTest}
-\end{figure}
+\label{table:hashTest}
+\end{table}
+
 \end{document}
 
