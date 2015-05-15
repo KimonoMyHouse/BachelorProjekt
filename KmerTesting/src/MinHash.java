@@ -58,13 +58,19 @@ public class MinHash{
 		long perm_value;
 		hm.minhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE];
 		hm.maxhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE];
-
+		int setsize = 0;
+		int num = 1;
+		for(int i = 0; i < ic.KMER_SIZE; i++){
+			setsize += num * 3;
+			num = 4 * num;
+		}
+		
 		for(int i = 0; i < mg.SEQUENCES_SIZE; i++){
 			for(int j = 0; j < hm.HASH_SIZE; j++){
 				hm.minhash_values[i][j] = Integer.MAX_VALUE;
 				hm.maxhash_values[i][j] = Integer.MIN_VALUE; 
 				for(int k = 0; k < mg.seqlen[i] - ic.KMER_SIZE + 1; k++){
-					perm_value = (((hm.hash_a[j] * mg.kmers[i].kmerTrans[k] + hm.hash_b[j] ) % hm.prime_div)) % mg.SEQUENCES_SIZE;
+					perm_value = (((hm.hash_a[j] * mg.kmers[i].kmerTrans[k] + hm.hash_b[j] ) % hm.prime_div)) % setsize;
 					if(hm.minhash_values[i][j] > perm_value ){
 						hm.minhash_values[i][j] = (int)perm_value;
 					}
