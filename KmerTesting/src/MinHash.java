@@ -21,10 +21,10 @@ public class MinHash{
     // The hashfunctions have the form ((a * x + b) mod p) mod m
     // where p > m is a primenumber, and m is the size of feature set.
 	private void InitHashFunctions(){
-		hm.hash_a = new int[hm.HASH_SIZE/2];
-		hm.hash_b = new int[hm.HASH_SIZE/2];
+		hm.hash_a = new int[hm.HASH_SIZE];
+		hm.hash_b = new int[hm.HASH_SIZE];
 		Random r = new Random();
-		for (int i = 0; i < hm.HASH_SIZE/2; i++){
+		for (int i = 0; i < hm.HASH_SIZE; i++){
 			hm.hash_a[i] = i+1;
 			hm.hash_b[i] = i;
 		}
@@ -53,11 +53,11 @@ public class MinHash{
     
 	private void SetupHashValues(){
 		long perm_value;
-		hm.minhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE/2];
-		hm.maxhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE/2];
+		hm.minhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE];
+		hm.maxhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE];
 		
 		for(int i = 0; i < mg.SEQUENCES_SIZE; i++){
-			for(int j = 0; j < hm.HASH_SIZE/2; j++){
+			for(int j = 0; j < hm.HASH_SIZE; j++){
 				hm.minhash_values[i][j] = Integer.MAX_VALUE;
 				hm.maxhash_values[i][j] = Integer.MIN_VALUE; 
 				for(int k = 0; k < mg.seqlen[i] - ic.KMER_SIZE + 1; k++){
@@ -90,10 +90,9 @@ public class MinHash{
 				for(int j = 0; j < mg.SEQUENCES_SIZE;j++){
 					if(seq_cluster[j]!= 0){}
 					else{
-						for(intersections=0,unions=0,k=0;k<hm.HASH_SIZE/2;k++){
-							intersections += (hm.minhash_values[i][k] == hm.minhash_values[j][k]) ? 1: 0;
-							intersections += (hm.maxhash_values[i][k]== hm.maxhash_values[j][k])? 1 : 0;
-							unions = unions + 2;
+						for(intersections=0,unions=0,k=0;k<hm.HASH_SIZE;k++){
+							intersections += (((hm.minhash_values[i][k] == hm.minhash_values[j][k]) || hm.maxhash_values[i][k]== hm.maxhash_values[j][k])?1:0);
+							unions++;
 						}
 						similarity =((float) intersections) / ((float) unions);
 						if(similarity >= ic.threshold){

@@ -1,14 +1,11 @@
-import java.util.Arrays;
 import java.util.Random;
 
-import sun.launcher.resources.launcher;
-
-public class MinHash{	
+public class MinMaxHalf{	
     MetagenomeSample mg;
     InputController ic;
 	HashManager hm;
 	
-    public MinHash(MetagenomeSample mg, InputController ic, HashManager hm) {
+    public MinMaxHalf(MetagenomeSample mg, InputController ic, HashManager hm) {
 		this.mg = mg;
 		this.ic = ic;
 		this.hm = hm;
@@ -24,10 +21,10 @@ public class MinHash{
     // The hashfunctions have the form ((a * x + b) mod p) mod m
     // where p > m is a primenumber, and m is the size of feature set.
 	private void InitHashFunctions(){
-		hm.hash_a = new int[hm.HASH_SIZE];
-		hm.hash_b = new int[hm.HASH_SIZE];
+		hm.hash_a = new int[hm.HASH_SIZE/2];
+		hm.hash_b = new int[hm.HASH_SIZE/2];
 		Random r = new Random();
-		for (int i = 0; i < hm.HASH_SIZE; i++){
+		for (int i = 0; i < hm.HASH_SIZE/2; i++){
 			hm.hash_a[i] = i+1;
 			hm.hash_b[i] = i;
 		}
@@ -56,15 +53,16 @@ public class MinHash{
     
 	private void SetupHashValues(){
 		long perm_value;
-		hm.minhash_values = new long[mg.SEQUENCES_SIZE][hm.HASH_SIZE];
-		hm.maxhash_values = new long[mg.SEQUENCES_SIZE][hm.HASH_SIZE];
-
+		hm.minhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE/2];
+		hm.maxhash_values = new int[mg.SEQUENCES_SIZE][hm.HASH_SIZE/2];
+		
 		for(int i = 0; i < mg.SEQUENCES_SIZE; i++){
-			for(int j = 0; j < hm.HASH_SIZE; j++){
+			for(int j = 0; j < hm.HASH_SIZE/2; j++){
 				hm.minhash_values[i][j] = Integer.MAX_VALUE;
 				hm.maxhash_values[i][j] = Integer.MIN_VALUE; 
 				for(int k = 0; k < mg.seqlen[i] - ic.KMER_SIZE + 1; k++){
-					perm_value = (((hm.hash_a[j] * mg.kmers[i].kmerTrans[k] + hm.hash_b[j] ) % hm.prime_div)) % mg.SEQUENCES_SIZE;
+					perm_value = ((((long) hm.hash_a[j] * mg.kmers[i].kmerTrans[k] + hm.hash_b[j] ) % hm.prime_div)) % 10000;
+					
 					if(hm.minhash_values[i][j] > perm_value ){
 						hm.minhash_values[i][j] = (int)perm_value;
 					}
@@ -92,9 +90,10 @@ public class MinHash{
 				for(int j = 0; j < mg.SEQUENCES_SIZE;j++){
 					if(seq_cluster[j]!= 0){}
 					else{
-						for(intersections=0,unions=0,k=0;k<hm.HASH_SIZE;k++){
-							intersections += (((hm.minhash_values[i][k] == hm.minhash_values[j][k]) | hm.maxhash_values[i][k]== hm.maxhash_values[j][k])?1:0);
-							unions++;
+						for(intersections=0,unions=0,k=0;k<hm.HASH_SIZE/2;k++){
+							intersections += (hm.minhash_values[i][k] == hm.minhash_values[j][k]) ? 1: 0;
+							intersections += (hm.maxhash_values[i][k]== hm.maxhash_values[j][k])? 1 : 0;
+							unions = unions + 2;
 						}
 						similarity =((float) intersections) / ((float) unions);
 						if(similarity >= ic.threshold){
@@ -104,7 +103,8 @@ public class MinHash{
 				}
 			}
 		}
+
 		
-		System.out.println("Number of clusters is  " + current_cluster);
+		ic.pw.println(ic.KMER_SIZE + " " + hm.HASH_SIZE + " " + current_cluster);
 	}
 }

@@ -48,7 +48,48 @@ public class MinHashMain {
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
-			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMaxHalf/test" + n + "outhalf.fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMaxHalf/test" + n + "out.fna";
+
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
+			
+			ic.inputfileString = filein;
+			ic.pw = pw;
+			
+	        ic.threshold = 0.95;
+	        ic.program = "dna";
+	        
+	
+			StringMapper strmap = new StringMapper(ic.program);
+			mg.BASES_LENGTH = 4;
+	        hm.prime_div = 1845587707;
+	
+			io.ReadMetagenomeData(mg, strmap, ic);
+	
+			
+			int[] kmerTestSizes = {2,4,5,7,10,12,15,20,25,30};
+			int[] hashTestSizes = {10,20,30,40,50,60,70,100,150,200};
+	
+			for (int i : kmerTestSizes) {
+				System.out.println(n + " " + i);
+				ic.KMER_SIZE = i;
+				for (int j = 2; j < 50; j = j + 2) {
+					hm.HASH_SIZE = j;
+					MinMaxHalf minHash = new MinMaxHalf(mg, ic, hm);
+				}
+			}
+			ic.pw.close();
+		}
+		long now = System.nanoTime();
+		
+		long taken = now - then;
+
+		double seconds =(double) taken / 1000000000.0; 
+		System.out.println("The time it took in seconds was " + seconds);
+		
+		for(int n = 1; n < 6; n++){
+			
+			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "out.fna";
 
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
 			
@@ -79,18 +120,17 @@ public class MinHashMain {
 			}
 			ic.pw.close();
 		}
-		long now = System.nanoTime();
+		now = System.nanoTime();
 		
-		long taken = now - then;
+		taken = now - then;
 
-		double seconds =(double) taken / 1000000000.0; 
+		seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
 		
-		/*
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
-			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + "outprecise5.fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "outprecise5.fna";
 
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
 			
@@ -120,18 +160,18 @@ public class MinHashMain {
 			}
 			ic.pw.close();
 		}
-		long now = System.nanoTime();
+		now = System.nanoTime();
 		
-		long taken = now - then;
+		taken = now - then;
 
-		double seconds =(double) taken / 1000000000.0; 
+		seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
 
 		// for Testing at k=6
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
-			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + "outprecise6.fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "outprecise6.fna";
 
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
 			
@@ -167,7 +207,7 @@ public class MinHashMain {
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
-			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + "outprecise10.fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "outprecise10.fna";
 
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
 			
@@ -202,14 +242,14 @@ public class MinHashMain {
 
 		seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
-		*/
+		
 		
 		// The big one
-		/*
+		
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
-			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/TheLargeOne/test" + n + "outpreciselarge.fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "outpreciselarge.fna";
 
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
 			
@@ -236,12 +276,12 @@ public class MinHashMain {
 			}
 			ic.pw.close();
 		}
-		long now = System.nanoTime();
+		now = System.nanoTime();
 		
-		long taken = now - then;
+		taken = now - then;
 
-		double seconds =(double) taken / 1000000000.0; 
-		System.out.println("The time it took in seconds was " + seconds);*/
+		seconds =(double) taken / 1000000000.0; 
+		System.out.println("The time it took in seconds was " + seconds);
 		/*
 			String filein = "C:/Users/User/Desktop/long.fasta";
 			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/TheLargeOne/longpreciselarge.fna";
