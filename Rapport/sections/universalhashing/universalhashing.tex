@@ -1,10 +1,10 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
 \section{Hashing}
-In the implementation of randomized algorithms, a strong need for data representation is needed. Truly independent hash functions are extremely useful in these situations. It allows generalization of arrays, where it is possible to access an arbitrary position in an array in \textit{O(1)} time.\\
+Hashing functions are an integral part of minwise hashing, as it uses the values of hashing functions to determine similarity between two sets. Therefore, it is necessary that we have a small insight into universal hash functions before moving on to minwise hashing in the next section.
 
 \subsection{Introduction to hash functions}
-Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{m-1}\}$ and a range $[r]=\{0,1,...,m-1\}$ where $u_i$ are integers module $m$. Given a hash function $h(x)\rightarrow [r]$ which takes any $u_i,i=0,1,..m-1$ as argument, it should hold that $\forall u_i,\exists r_j \in [r]$ such that $h(u_i)= r_j$. What remains is to consider collisions, which we define as
+Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{n-1}\}$ and a range $[r]=\{0,1,...,m-1\}$. Given a hash function $h(x)\rightarrow [r]$ which takes any $u_i,i=0,1,..n-1$ as argument, it should hold that $\forall u_i,\exists r_j \in [r]$ such that $h(u_i)= r_j$. What remains is to consider collisions, which we define as
 \begin{equation}\label{collision}
 \delta_h(x,y) = \left\{ 
   \begin{array}{l l}
@@ -13,7 +13,7 @@ Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{m-1}\}$ and a range $[r]=\{0,
   \end{array} \right.
 \end{equation}
 
-for a given hashfunction $h$ and two keys $x$ and $y$. The goal of a hashing algorithm is then to minimize the number of collisions across all possible keys. A truly random hash function can assure that there are no collision at all. Unfortunately, to implement such a function would require at least $|U|\log_2 m$ bits\cite{dikuHash}, defeating the purpose of hash functions altogether. Fixed hashing algorithms have attempted to solve this problem. Unfortunately, its dependence on input causes a worst case average retrieval time of $\Theta(m)$.\cite{introToAlg}\\
+for a given hashfunction $h$ and two keys $x$ and $y$. The goal of a hashing algorithm is then to minimize the number of collisions across all possible keys. A truly random hash function can assure that there are no collision at all. Unfortunately, to implement such a function would require at least $|U|\log_2 m$ bits\cite{dikuHash}, defeating the purpose of hash functions altogether. Fixed hashing algorithms have attempted to solve this problem. Unfortunately, its dependence on input causes a worst case average retrieval time of $\Theta(n)$.\cite{introToAlg}\\
 
 Universal hashing can circumvent the memory and computation cost of both random- and fixed hashing, without losing much precision. An introduction to universal hashing will follow, alongside two applications of said hashing which will be tested later in this paper.
 
@@ -22,7 +22,7 @@ The first mention of universal hashing was in \cite{carterWegman}, in which they
 
 Given a class of hash functions $H:U\rightarrow [r]$, $H$ is said to be universal if $\forall x \forall y \in U$
 $$
-	\delta_H (x,y) \leq |H|/|[r]|
+	\delta_H (x,y) \leq \frac{|H|}{|[r]|}
 $$
 where, with $S\subset U$
 $$
@@ -30,10 +30,10 @@ $$
 $$
 That is, $H$ is said to be universal if 
 \begin{equation}\label{universalProb}
-\mathrm{Pr}_h[h(x)=h(y)]\leq 1/m
+\mathrm{Pr}_h[h(x)=h(y)]\leq \frac{1}{m}
 \end{equation}
 for a random $h \in H$.
- In many applications, Pr$_h[h(x)=h(y)]\leq c/m$ for $c=O(1)$ is sufficiently low.
+In many applications, Pr$_h[h(x)=h(y)]\leq c/m$ for $c=O(1)$ is sufficiently low.
 
 \subsubsection{Carter and Wegman\cite{carterWegman}}
 Given a prime $p\geq m$ and a hash function $h_{a,b}^C:[U]\rightarrow [r]$,
@@ -52,12 +52,10 @@ $$
 
 \noindent We see that $r\neq q$ since 
 $$
-r - s \equiv a(k-l) (\mod p)
+r - s \equiv a(k-l) ( \mod p)
 $$
 must be non-zero since $p$ is prime and both $a$ and $(k-l)$ are non-zero module $p$, and therefore $a(k-l) > 0$ as two non-zero multiplied by each other cannot be positive, and therefore must also be non-zero module $p$.
-Therefore, $\forall a\forall b, h_{a,b}$ will map to distinct values for the given $x$ and $y$, at least at the mod $p$ level.\\
-
-
+Therefore, $\forall a\forall b, h_{a,b}$ will map to distinct values for the given $x$ and $y$, at least at the mod $p$ level.
 
 \subsubsection*{Dietzfelbinger et al.\cite{Dietzfelbinger}}
 Also commonly refered to as \textbf{multiply-shift}, this state of the art scheme described in \cite{Dietzfelbinger} reduces computation time by eliminating the need for the \textbf{mod} operator. This is especially useful when the key is larger than 32 bits, in which case Carter and Wegman's suggestion is quite costly\cite{dikuHash}.\\

@@ -1,4 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{protominwise}
+A.~Broder.
+\newblock On the resemblance and containment of documents.
+\newblock In {\em Compression and Complexity of Sequences 1997. Proceedings},
+  pages 21--29, Jun 1997.
+
+\bibitem{MinwiseIndependent}
+A.~Z. Broder, M.~Charikar, A.~M. Frieze, and M.~Mitzenmacher.
+\newblock Min-wise independent permutations.
+\newblock {\em Journal of Computer and System Sciences}, 60:327--336, 1998.
 
 \bibitem{carterWegman}
 J.~Carter and M.~N. Wegman.
@@ -16,16 +27,25 @@ M.~Dietzfelbinger, T.~Hagerup, J.~Katajainen, and M.~Penttonen.
 \newblock A reliable randomized algorithm for the closest-pair problem.
 \newblock {\em Journal of Algorithms}, 25(1):19 -- 51, 1997.
 
-\bibitem{thorupEven}
-M.~Thorup.
-\newblock Even strongly universal hashing is pretty fast.
-\newblock In {\em Proceedings of the Eleventh Annual ACM-SIAM Symposium on
-  Discrete Algorithms}, SODA '00, pages 496--497, Philadelphia, PA, USA, 2000.
-  Society for Industrial and Applied Mathematics.
+\bibitem{minmaxhash}
+J.~Ji, J.~Li, S.~Yan, Q.~Tian, and B.~Zhang.
+\newblock Min-max hash for jaccard similarity.
+\newblock In {\em Data Mining (ICDM), 2013 IEEE 13th International Conference
+  on}, pages 301--309, Dec 2013.
+
+\bibitem{MinhashMapreduce}
+Z.~Rasheed and H.~Rangwala.
+\newblock A map-reduce framework for clustering metagenomes.
+\newblock In {\em Parallel and Distributed Processing Symposium Workshops PhD
+  Forum (IPDPSW), 2013 IEEE 27th International}, pages 549--558, May 2013.
 
 \bibitem{dikuHash}
 M.~Thorup.
 \newblock High speed hashing for integers and strings, 2014.
+
+\bibitem{errorMinhash}
+S.~Vassilvitskii.
+\newblock Lesson 1: Duplication detection, 2011.
 
 \bibitem{multiplyshiftTruly}
 P.~Wölfel.

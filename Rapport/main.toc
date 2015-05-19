@@ -1,7 +1,9 @@
-\contentsline {section}{Minhash}{3}
 \contentsline {section}{Hashing}{3}
 \contentsline {subsection}{Introduction to hash functions}{3}
 \contentsline {subsection}{Universal hash functions}{3}
 \contentsline {subsubsection}{Carter and Wegman\cite {carterWegman}}{4}
-\contentsline {section}{Hash Performance Test}{5}
-\contentsline {section}{Appendices}{7}
+\contentsline {section}{Minwise Hashing}{5}
+\contentsline {subsection}{Max-wise hashing}{6}
+\contentsline {subsection}{Combining Max-wise and Min-wise}{6}
+\contentsline {section}{Hash Performance Test}{7}
+\contentsline {section}{Appendices}{10}

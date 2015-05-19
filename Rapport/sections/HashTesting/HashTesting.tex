@@ -8,7 +8,7 @@ To perform these tests, I wrote a short java program. It randomized a given numb
 
 The results of the tests can be seen in Table \ref{table:hashTest}. As we can note, the Carter Wegman implementation is consequently smaller than multiply-shift, in addition to having larger margin of error. We may note that the difference in speed is most notable at $k=10$, diminishing at higher $k$. It should be noted however that the differences in speed are less than 50 ms, even at 100 mio. input hash values. Also, as the time increases linearly with the number of input values, so will the difference in speed.\\
 
-Conclusively, since the multiply-shift proved slightly quicker than the Carter Wegman scheme, I shall use {\bf multiply-shift} for my algorithm.
+As the difference in speed is quite minimal, the method used in the algorithm will be the Carter Wegman scheme, as it is easier to implement for input of such different sizes as k-mers.
 \begin{table}[h]
 \begin{tabular}{| l | l | l | l | l | l | l |}
 \hline

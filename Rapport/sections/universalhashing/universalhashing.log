@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  26 APR 2015 14:25
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  19 MAY 2015 17:46
 entering extended mode
 **universalhashing.tex
 
@@ -198,12 +198,8 @@ LaTeX Font Info:    ... okay on input line 2.
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 \c@lstlisting=\count111
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
 LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -242,50 +238,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--44
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--59
+LaTeX Warning: Citation `Dietzfelbinger' on page 2 undefined on input line 60.
+
+
+LaTeX Warning: Citation `Dietzfelbinger' on page 2 undefined on input line 61.
+
+
+LaTeX Warning: Citation `dikuHash' on page 2 undefined on input line 61.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
-
-LaTeX Warning: Citation `Dietzfelbinger' on page 2 undefined on input line 62.
-
-
-LaTeX Warning: Citation `Dietzfelbinger' on page 2 undefined on input line 63.
-
-
-LaTeX Warning: Citation `dikuHash' on page 2 undefined on input line 63.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 71.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 71.
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 71.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 69.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 71.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 69.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 
 LaTeX Warning: Citation `multiplyshiftTruly' on page 2 undefined on input line 
-79.
+77.
 
 
 LaTeX Warning: Citation `multiplyshiftTruly' on page 2 undefined on input line 
-83.
+81.
 
-[2] [3]
+[2]
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\universa
 lhashing\universalhashing.aux)
 
@@ -293,11 +284,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3767 strings out of 493921
- 48991 string characters out of 3144878
+ 3765 strings out of 493921
+ 48970 string characters out of 3144878
  105232 words of memory out of 3000000
- 7036 multiletter control sequences out of 15000+200000
- 10303 words of font info for 40 fonts, out of 3000000 for 9000
+ 7035 multiletter control sequences out of 15000+200000
+ 9957 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  36i,12n,34p,606b,1210s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
@@ -311,11 +302,10 @@ es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on universalhashing.pdf (3 pages, 148524 bytes).
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on universalhashing.pdf (2 pages, 139424 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
