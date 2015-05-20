@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  19 MAY 2015 17:46
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  20 MAY 2015 18:27
 entering extended mode
 **Minhash.tex
 
@@ -206,46 +206,55 @@ LaTeX Warning: Citation `MinwiseIndependent' on page 1 undefined on input line
 LaTeX Warning: Citation `MinhashMapreduce' on page 1 undefined on input line 4.
 
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 7.
+
+LaTeX Warning: Citation `minmaxhash' on page 1 undefined on input line 4.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 7.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Reference `universalProb' on page 1 undefined on input line 21.
+LaTeX Warning: Reference `universalProb' on page 1 undefined on input line 20.
 
 
-LaTeX Warning: Citation `protominwise' on page 1 undefined on input line 24.
+LaTeX Warning: Citation `protominwise' on page 1 undefined on input line 23.
 
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 
-LaTeX Warning: Citation `errorMinhash' on page 2 undefined on input line 45.
+LaTeX Warning: Reference `universalProb' on page 2 undefined on input line 44.
 
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 53.
+LaTeX Warning: Citation `errorMinhash' on page 2 undefined on input line 44.
 
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 69.
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 52.
 
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 73.
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 68.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 72.
 
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 73.
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 72.
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
-
-Overfull \hbox (0.71065pt too wide) detected at line 90
+[2]
+Overfull \hbox (0.71065pt too wide) detected at line 89
 \OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) = \OML
 /cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )\OMS/cmsy/m
 /n/10 j\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 )
@@ -254,12 +263,12 @@ Overfull \hbox (0.71065pt too wide) detected at line 90
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
@@ -271,13 +280,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2984 strings out of 493921
- 41241 string characters out of 3144878
- 102264 words of memory out of 3000000
- 6263 multiletter control sequences out of 15000+200000
+ 3479 strings out of 493921
+ 46376 string characters out of 3144878
+ 103264 words of memory out of 3000000
+ 6755 multiletter control sequences out of 15000+200000
  9957 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,16n,34p,529b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,16n,34p,554b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
@@ -288,7 +297,7 @@ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Minhash.pdf (3 pages, 129291 bytes).
+Output written on Minhash.pdf (3 pages, 129437 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

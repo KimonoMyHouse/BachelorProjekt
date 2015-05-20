@@ -57,7 +57,7 @@ $$
 must be non-zero since $p$ is prime and both $a$ and $(k-l)$ are non-zero module $p$, and therefore $a(k-l) > 0$ as two non-zero multiplied by each other cannot be positive, and therefore must also be non-zero module $p$.
 Therefore, $\forall a\forall b, h_{a,b}$ will map to distinct values for the given $x$ and $y$, at least at the mod $p$ level.
 
-\subsubsection*{Dietzfelbinger et al.\cite{Dietzfelbinger}}
+\subsubsection{Dietzfelbinger et al.\cite{Dietzfelbinger}}
 Also commonly refered to as \textbf{multiply-shift}, this state of the art scheme described in \cite{Dietzfelbinger} reduces computation time by eliminating the need for the \textbf{mod} operator. This is especially useful when the key is larger than 32 bits, in which case Carter and Wegman's suggestion is quite costly\cite{dikuHash}.\\
 
 \noindent Take a universe $U\geq 2^k$ which is all $k$-bit numbers. For $l=\{1,..,k\}$, the hash functions $h_a^D(x):\{0,...,2^k-1\}\rightarrow\{0,...,2^l-1\}$ are then defined as

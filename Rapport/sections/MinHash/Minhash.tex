@@ -1,15 +1,14 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
-\section{Minwise Hashing}
-The core of the clustering algorithm in this paper will be based on the concepts of minwise hashing as described in \cite{MinwiseIndependent}. Minwise hashing has repeatedly proven a powerful tool when comparing large sets of strings rapidly, especially for duplicate detection of long articles. The use of minwise hashing for rRNA sequences has already been done in \cite{MinhashMapreduce}, but not with the slight modification that will be described at the end of this section.
-
-\subsection*{Introduction to Minwise Hashing}
+\section{Minwise and Maxwise Hashing}
+The core of the clustering algorithm in this paper will be based on the concepts of minwise hashing as described in \cite{MinwiseIndependent}. Minwise hashing has repeatedly proven a powerful tool when comparing large sets of strings rapidly, especially for duplicate detection of long articles. The use of minwise hashing for rRNA sequences has already been done in \cite{MinhashMapreduce}, however the method of this paper will be extended by applying two methods of maxwise hashing as described in \cite{minmaxhash}.
+\subsection{Introduction to Minwise Hashing}
 Let there be two sets $A$ and $B$. To find the similarity between the two sets, minwise hashing uses is the Jaccard similarity measure, which is defined as
 \begin{equation}\label{jaccard}
 J(A,B)=\frac{|A\cap B|}{|A\cup B|}
 \end{equation}
 To increase the speed of calculating the Jaccard similarity, it however uses hash functions to find the value. Let us observe how the hash functions are used in this case.
-\subsubsection*{Min-wise Independency}
+\subsubsection{Min-wise Independency}
 Let $H: U \rightarrow [r]$ be a class of hashfunctions. Then for any set $X\subseteq [r]$ and any $x \in X$ and let $h\in H$ be chosen uniformly at random, it is considered minwise independent if
 \begin{equation}\label{minwise}
 \mathrm{Pr}(h_{\min}(X)=h(x))=\frac{1}{|X|}
@@ -20,7 +19,7 @@ h_{\min}(X) = \min\{\forall x \in X, h(x)\}
 $$
 Meaning that all elements in $X$ must have an equal probability of having the minimum value going through $h$. As seen in Eq. \ref{universalProb}, this probability is reachable using universal hash functions, which is a great increase in speed over perfect hashing functions.
 
-\subsubsection*{Min-wise sketch}
+\subsubsection{Min-wise sketch}
 For two sets $A$ and $B$ it has been proven in \cite{protominwise} that Eq. \ref{minwise} can be linked to the Jaccard similarity in Eq. \ref{jaccard} as
 \begin{equation}\label{minwisejaccard}
 \mathrm{Pr}(h_{\min}(A)=h_{\min}(B))=\frac{|A\cap B|}{|A\cup B|}
@@ -42,7 +41,7 @@ $$
 												0, \ \ otherwise
 											  \end{array}\right.
 $$
-which is called the \textbf{minwise sketch}. As we discussed earlier in the universal hashing section, there will be a slight error in the calculation of $h_min$. Therefore we must see what influence the size of $k$ will have on the error. A proof of the error using Chernoff Bounds\footnote{A probablistic method to find the exponentially decreasing bounds between two independent variates.} is found in \cite{errorMinhash}. The result is that the relation between $k$ and $\epsilon$, the error, is 
+which is called the \textbf{minwise sketch}. As we see from Eq. \ref{universalProb}, there will be a slight error in the calculation of $h_min$. Therefore we must see what influence the size of $k$ will have on the error. A proof of the error using Chernoff Bounds\footnote{A probablistic method to find the exponentially decreasing bounds between two independent variates.} is found in \cite{errorMinhash}, shows that the relation between $k$ and $\epsilon$, the error, is 
 $$
 k=O\left(\log \frac{1}{\epsilon}\right)
 $$
@@ -50,12 +49,12 @@ Thus, k influences the error inversely exponentially, meaning that $k\approx 100
 
 \subsection{Max-wise hashing}
 
-The aforementioned modification is one inspired by the method in the paper \cite{minmaxhash}. It is an extension of the minwise sketch where in addition to using the minwise independent sets, we add the maxwise independent set too. Very literally, this means that instead of using the minimum hashvalue, we use the maximal hashvalue such the maxwise independence means
+The aforementioned modification is one inspired by the method in the paper \cite{minmaxhash}. It is an extension of the minwise sketch where in addition to using the minwise independent sets, we add the maxwise independent set too. Very literally, this means that instead of using the minimum hashvalue, we use the maximal hashvalue such that a set $X$ is said to be maxwise independent if
 \begin{equation}\label{maxwise}
 \mathrm{Pr}(h_{\max}(X)=h(x))=\frac{1}{|X|}, h_{\max}=\max\{\forall x \in X, h(x)\} 
 \end{equation}
 
-the Jaccard similarity measure for two sets $A$ and $B$ is
+for any $x\in X$. The Jaccard similarity measure for two sets $A$ and $B$ is
 \begin{equation}\label{maxwisejaccard}
 \mathrm{Pr}(h_{\max}(A)=h_{\max}(B))=\frac{|A\cap B|}{|A\cup B|}
 \end{equation}
@@ -63,14 +62,14 @@ and finally for a random set $S_1$ we may create a table of random $h_{\max,i},i
 $$
 \tilde{S_1} = \{ h_{\max,1}(S_1),h_{\max,2}(S_1),...,h_{\max,k}(S_1)\}
 $$
-This sketch alone is not very different from minwise, and first becomes interesting once combining the two sketches.
+This sketch will function almost like the minwise sketch. It is first when combining the two sketches that they have interesting properties.
 \subsection{Combining Max-wise and Min-wise}
 
 There are two ways of combining the max-wise and the min-wise algorithm. One is the method in \cite{minmaxhash}, where they halve the amount of hashfunctions, so that for $i=1,..,k/2$
 \begin{equation}\label{minmaxhalfjaccard}
 J(A,B)=\frac{1}{K}\sum_{i=1}^{K/2}(h_{\min,i}(A) = h_{\min,i}(B) + h_{\max,i}(A) = h_{\max,i}(B))
 \end{equation}
-Let this method be called \textbf{Max-minwise halved sketch}. This method has been proven to be double as quick as the min-wise hashing, without loss of precision\cite{minmaxhash}. It is also shown in Lemma 2 in \cite{minmaxhash} that for $i=1,..,k/2$
+Let this method be called \textbf{Max-minwise halved sketch} (abbr. {\bf Mm½}). This method has been proven to be double as quick as the min-wise hashing, without loss of precision\cite{minmaxhash}. It is also shown in Lemma 2 in \cite{minmaxhash} that for $i=1,..,k/2$
 $$
 \mathrm{Pr}(h_{\min,i}(A) = h_{\min,i}(B) | h_{\max,i}(A) = h_{\max,i}(B)) = \frac{|A\cap B|-1}{|A\cup B| -1}
 $$
@@ -89,15 +88,16 @@ h_{\min,i}(A) = h_{\min,i}(B) | h_{\max,i}(A) = h_{\max,i}(B) = \left\{ \begin{a
 											  \end{array}\right.
 $$
 
-Let this method be called \textbf{Max-minwise sketch}. This also has finds the Jaccard similarity by the following proof:\\
+Let this method be called \textbf{Max-minwise sketch} (abbr. {\bf Mm}). This also has finds the Jaccard similarity by the following proof:\\
 \begin{equation}\label{proofofMinmax}
 \begin{split}
 \frac{1}{k}\sum_{i=1}^{k}(h_{\min,i}(A) = h_{\min,i}(B) | h_{\max,i}(A) = h_{\max,i}(B)) =\\\frac{1}{k}\sum_{i=1}^{k}(J(A,B) | J(A,B)) = J(A,B)|J(A,B) = J(A,B)
 \end{split}
 \end{equation}
 
-the final two steps follow from Eq. \ref{jacsketch} and Eq. \ref{maxwisejaccard}. Therefore we see that this method also finds the jaccard similarity.\\
+the final three steps follow from Eq. \ref{jacsketch} and Eq. \ref{maxwisejaccard}. Therefore we see that this method also finds the jaccard similarity.\\
 
-As one may have noted, the difference between \textbf{Max-minwise halved sketch} and \textbf{Max-minwise sketch} is that the first runs only half as many times as the second.
+As one may have noted, the difference between \textbf{Mm½} and \textbf{Mm} is that the first runs only half as many times as the second for each comparison between two sets.
+
 \end{document}
 

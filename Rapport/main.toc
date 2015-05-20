@@ -2,8 +2,15 @@
 \contentsline {subsection}{Introduction to hash functions}{3}
 \contentsline {subsection}{Universal hash functions}{3}
 \contentsline {subsubsection}{Carter and Wegman\cite {carterWegman}}{4}
-\contentsline {section}{Minwise Hashing}{5}
+\contentsline {subsubsection}{Dietzfelbinger et al.\cite {Dietzfelbinger}}{4}
+\contentsline {section}{Minwise and Maxwise Hashing}{5}
+\contentsline {subsection}{Introduction to Minwise Hashing}{5}
+\contentsline {subsubsection}{Min-wise Independency}{5}
+\contentsline {subsubsection}{Min-wise sketch}{5}
 \contentsline {subsection}{Max-wise hashing}{6}
 \contentsline {subsection}{Combining Max-wise and Min-wise}{6}
-\contentsline {section}{Hash Performance Test}{7}
-\contentsline {section}{Appendices}{10}
+\contentsline {section}{Additional Tools}{7}
+\contentsline {subsection}{$k$-mers}{7}
+\contentsline {subsection}{MapReduce}{8}
+\contentsline {subsection}{Pig}{8}
+\contentsline {section}{Hash Performance Test}{8}

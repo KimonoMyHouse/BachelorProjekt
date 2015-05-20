@@ -22,6 +22,11 @@ T.~H. Cormen, C.~E. Leiserson, R.~L. Rivest, and C.~Stein.
 \newblock {\em Introduction to Algorithms, Third Edition}.
 \newblock The MIT Press, 3rd edition, 2009.
 
+\bibitem{mapreduceExplained}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: Simplified data processing on large clusters.
+\newblock {\em Commun. ACM}, 51(1):107--113, Jan. 2008.
+
 \bibitem{Dietzfelbinger}
 M.~Dietzfelbinger, T.~Hagerup, J.~Katajainen, and M.~Penttonen.
 \newblock A reliable randomized algorithm for the closest-pair problem.
@@ -38,6 +43,11 @@ Z.~Rasheed and H.~Rangwala.
 \newblock A map-reduce framework for clustering metagenomes.
 \newblock In {\em Parallel and Distributed Processing Symposium Workshops PhD
   Forum (IPDPSW), 2013 IEEE 27th International}, pages 549--558, May 2013.
+
+\bibitem{compForkMapRed}
+R.~Stewart and J.~Singer.
+\newblock Comparing fork/join and mapreduce.
+\newblock 2013.
 
 \bibitem{dikuHash}
 M.~Thorup.
