@@ -23,6 +23,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{Dietzfelbinger et al.\cite  {Dietzfelbinger}}{4}}
 \newlabel{dietzhash}{{4}{4}}
 \newlabel{probDietz}{{5}{4}}
+\citation{MinwiseIndependent}
 \citation{protominwise}
 \@writefile{toc}{\contentsline {section}{Minwise and Maxwise Hashing}{5}}
 \@writefile{toc}{\contentsline {subsection}{Introduction to Minwise Hashing}{5}}
@@ -31,12 +32,12 @@
 \newlabel{minwise}{{7}{5}}
 \@writefile{toc}{\contentsline {subsubsection}{Min-wise sketch}{5}}
 \newlabel{minwisejaccard}{{8}{5}}
-\newlabel{jacsketch}{{9}{5}}
 \citation{errorMinhash}
 \citation{minmaxhash}
 \citation{minmaxhash}
 \citation{minmaxhash}
 \citation{minmaxhash}
+\newlabel{jacsketch}{{9}{6}}
 \@writefile{toc}{\contentsline {subsection}{Max-wise hashing}{6}}
 \newlabel{maxwise}{{10}{6}}
 \newlabel{maxwisejaccard}{{11}{6}}
@@ -45,13 +46,31 @@
 \newlabel{minmaxjaccard}{{13}{7}}
 \newlabel{proofofMinmax}{{14}{7}}
 \@writefile{toc}{\contentsline {section}{Additional Tools}{7}}
-\@writefile{toc}{\contentsline {subsection}{$k$-mers}{7}}
+\@writefile{toc}{\contentsline {subsection}{$k$-mer}{7}}
 \citation{mapreduceExplained}
 \citation{compForkMapRed}
 \citation{pig}
+\@writefile{toc}{\contentsline {subsubsection}{$k$-mer transformation}{8}}
 \@writefile{toc}{\contentsline {subsection}{MapReduce}{8}}
 \@writefile{toc}{\contentsline {subsection}{Pig}{8}}
-\@writefile{toc}{\contentsline {section}{Hash Performance Test}{8}}
+\@writefile{toc}{\contentsline {section}{Hash Performance Test}{9}}
+\newlabel{sec:hashtest}{{}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces $ms$ for multiply-shift- and Carter Wegman hashing schemes to 4 different numbers of randomized k-mer transformations.}}{9}}
+\newlabel{table:hashTest}{{1}{9}}
+\@writefile{toc}{\contentsline {section}{Implementation}{9}}
+\@writefile{toc}{\contentsline {subsection}{Algorithm}{9}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Transforms sequence $s$ into its $k$-mer transformation}}{10}}
+\newlabel{alg:trans}{{1}{10}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Uses transformed $k$-mer to find {\bf  MM} of a sequence}}{11}}
+\newlabel{alg:minmax}{{2}{11}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Uses transformed $k$-mer to find {\bf  MM\IeC {\textonehalf }} of a sequence}}{11}}
+\newlabel{alg:minmaxhalf}{{3}{11}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Greedy Clustering using {\bf  MM}}}{12}}
+\newlabel{alg:minmaxclust}{{4}{12}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Greedy Clustering using {\bf  MM\IeC {\textonehalf }}}}{13}}
+\newlabel{alg:minmaxhalfclust}{{5}{13}}
+\@writefile{toc}{\contentsline {subsection}{MapReduce Flow}{14}}
+\@writefile{toc}{\contentsline {section}{Precision Tests}{15}}
 \bibstyle{abbrv}
 \bibdata{bibliography/mylib}
 \bibcite{protominwise}{1}
@@ -61,10 +80,9 @@
 \bibcite{mapreduceExplained}{5}
 \bibcite{Dietzfelbinger}{6}
 \bibcite{minmaxhash}{7}
-\bibcite{MinhashMapreduce}{8}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces $ms$ for multiply-shift- and Carter Wegman hashing schemes to 4 different numbers of randomized k-mer transformations.}}{9}}
-\newlabel{table:hashTest}{{1}{9}}
-\bibcite{compForkMapRed}{9}
-\bibcite{dikuHash}{10}
-\bibcite{errorMinhash}{11}
-\bibcite{multiplyshiftTruly}{12}
+\bibcite{pig}{8}
+\bibcite{MinhashMapreduce}{9}
+\bibcite{compForkMapRed}{10}
+\bibcite{dikuHash}{11}
+\bibcite{errorMinhash}{12}
+\bibcite{multiplyshiftTruly}{13}

@@ -43,7 +43,7 @@ public class MinHashMain {
 		double seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
 		*/
-		
+		/*
 		// FOR TESTING THE LARGE PICTURE OF KMER AND HASHSIZE
 		for(int n = 1; n < 6; n++){
 			
@@ -85,7 +85,9 @@ public class MinHashMain {
 
 		double seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
+		*/
 		
+		/*
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
@@ -126,6 +128,8 @@ public class MinHashMain {
 
 		seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
+		*/
+		
 		
 		for(int n = 1; n < 6; n++){
 			
@@ -148,25 +152,26 @@ public class MinHashMain {
 	
 			
 			int[] kmerTestSizes = {5};
-			int[] hashTestSizes = {60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78};
 	
 			for (int i : kmerTestSizes) {
 				System.out.println(n + " " + i);
 				ic.KMER_SIZE = i;
-				for (int j=12;j<20;j++) {
+				for (int j=50;j<81;j++) {
 					hm.HASH_SIZE = j;
 					MinHash minHash = new MinHash(mg, ic, hm);
 				}
 			}
 			ic.pw.close();
 		}
-		now = System.nanoTime();
+		long now = System.nanoTime();
 		
-		taken = now - then;
+		long taken = now - then;
 
-		seconds =(double) taken / 1000000000.0; 
+		double seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
-
+		
+		
+		/*
 		// for Testing at k=6
 		for(int n = 1; n < 6; n++){
 			
@@ -201,7 +206,9 @@ public class MinHashMain {
 			ic.pw.close();
 		}
 		
+		*/
 		
+		/*
 		// for Testing at k=10
 		
 		for(int n = 1; n < 6; n++){
@@ -243,9 +250,10 @@ public class MinHashMain {
 		seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
 		
+		*/
 		
 		// The big one
-		
+		/*
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
@@ -266,22 +274,24 @@ public class MinHashMain {
 	
 			io.ReadMetagenomeData(mg, strmap, ic);
 	
-			for (int i = 5; i< 11; i++) {
+			for (int i = 5; i< 14; i++) {
 				System.out.println(n + " " + i);
 				ic.KMER_SIZE = i;
-				for (int j =15;j<70;j++) {
+				for (int j =10;j<80;j++) {
 					hm.HASH_SIZE = j;
 					MinHash minHash = new MinHash(mg, ic, hm);
 				}
 			}
 			ic.pw.close();
 		}
-		now = System.nanoTime();
+		long now = System.nanoTime();
 		
-		taken = now - then;
+		long taken = now - then;
 
-		seconds =(double) taken / 1000000000.0; 
+		double seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
+		
+		*/
 		/*
 			String filein = "C:/Users/User/Desktop/long.fasta";
 			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/TheLargeOne/longpreciselarge.fna";

@@ -1,15 +1,15 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
 \section{Minwise and Maxwise Hashing}
-The core of the clustering algorithm in this paper will be based on the concepts of minwise hashing as described in \cite{MinwiseIndependent}. Minwise hashing has repeatedly proven a powerful tool when comparing large sets of strings rapidly, especially for duplicate detection of long articles. The use of minwise hashing for rRNA sequences has already been done in \cite{MinhashMapreduce}, however the method of this paper will be extended by applying two methods of maxwise hashing as described in \cite{minmaxhash}.
+Minwise hashing, as described in \cite{MinwiseIndependent}, has repeatedly proven a powerful tool when comparing large sets of strings rapidly, especially for duplicate detection of long articles. The use of minwise hashing for rRNA sequences has already been done in \cite{MinhashMapreduce}, however the method of this paper will be extended by applying two methods of maxwise hashing as described in \cite{minmaxhash}.
 \subsection{Introduction to Minwise Hashing}
 Let there be two sets $A$ and $B$. To find the similarity between the two sets, minwise hashing uses is the Jaccard similarity measure, which is defined as
 \begin{equation}\label{jaccard}
 J(A,B)=\frac{|A\cap B|}{|A\cup B|}
 \end{equation}
-To increase the speed of calculating the Jaccard similarity, it however uses hash functions to find the value. Let us observe how the hash functions are used in this case.
+To increase the speed of calculating the Jaccard similarity, it however uses hash functions to find the value. In contrast to calculating the Hamming Distance or the Levenshtein distance\footnote{two popular distance metrics that have high precision, but demand long computation time}, minwise reduces the number of operations needed for the calculation of the Jaccard similarity, by taking advantage of the properties of minwise independent sets\cite[pp. 3]{MinwiseIndependent}. This property will be described below, as well as its application.
 \subsubsection{Min-wise Independency}
-Let $H: U \rightarrow [r]$ be a class of hashfunctions. Then for any set $X\subseteq [r]$ and any $x \in X$ and let $h\in H$ be chosen uniformly at random, it is considered minwise independent if
+Let $H: U \rightarrow [r]$ be a class of hashfunctions. Then for any set $X\subseteq [U]$ and any $x \in X$ and let $h\in H$ be chosen uniformly at random, it is considered minwise independent if
 \begin{equation}\label{minwise}
 \mathrm{Pr}(h_{\min}(X)=h(x))=\frac{1}{|X|}
 \end{equation}
@@ -17,7 +17,7 @@ where
 $$
 h_{\min}(X) = \min\{\forall x \in X, h(x)\} 
 $$
-Meaning that all elements in $X$ must have an equal probability of having the minimum value going through $h$. As seen in Eq. \ref{universalProb}, this probability is reachable using universal hash functions, which is a great increase in speed over perfect hashing functions.
+Meaning that all elements in $X$ must have an equal probability of having the minimum value going through $h$. As seen in Eq. \ref{universalProb}, this probability is reachable using universal hash functions.
 
 \subsubsection{Min-wise sketch}
 For two sets $A$ and $B$ it has been proven in \cite{protominwise} that Eq. \ref{minwise} can be linked to the Jaccard similarity in Eq. \ref{jaccard} as
@@ -25,18 +25,18 @@ For two sets $A$ and $B$ it has been proven in \cite{protominwise} that Eq. \ref
 \mathrm{Pr}(h_{\min}(A)=h_{\min}(B))=\frac{|A\cap B|}{|A\cup B|}
 \end{equation}
 
-For a random set $S_1$, we may create a table of random $h_{\min,i},i=1,..,k$ such that
+For a random set $S_1$, we may create a table of random $h_{\min,i},i=1,..,nh$ such that
 $$
-\hat{S_1} = \{ h_{\min,1}(S_1),h_{\min,2}(S_1),...,h_{\min,k}(S_1)\}
+\hat{S_1} = \{ h_{\min,1}(S_1),h_{\min,2}(S_1),...,h_{\min,nh}(S_1)\}
 $$
 
 We may then compute the similarity of two sets $\hat{S_1}$ and $\hat{S_2}$ defined by the above equation as
 \begin{equation}\label{jacsketch}
-J(A,B)=\frac{1}{k}\cdot \sum_{i=1}^k (h_{\min,i}(S_1) = h_{\min,i}(S_2))
+J(A,B)=\frac{1}{nh}\cdot \sum_{i=1}^{nh} (h_{\min,i}(S_1) = h_{\min,i}(S_2))
 \end{equation}
 where
 $$
-(h_{\min,i}(S_1) = h_{\min,i}(S_1)) = \left\{ \begin{array}{ll}
+(h_{\min,i}(S_1) = h_{\min,i}(S_2)) = \left\{ \begin{array}{ll}
 												1, \ \ h_{\min,i}(S_1)=h_{\min,i}(S_2)\\
 												0, \ \ otherwise
 											  \end{array}\right.
@@ -88,7 +88,7 @@ h_{\min,i}(A) = h_{\min,i}(B) | h_{\max,i}(A) = h_{\max,i}(B) = \left\{ \begin{a
 											  \end{array}\right.
 $$
 
-Let this method be called \textbf{Max-minwise sketch} (abbr. {\bf Mm}). This also has finds the Jaccard similarity by the following proof:\\
+Let this method be called \textbf{Max-minwise sketch} (abbr. {\bf Mm}). The expected value of {\bf Mm} is also the Jaccard similarity by the following proof:\\
 \begin{equation}\label{proofofMinmax}
 \begin{split}
 \frac{1}{k}\sum_{i=1}^{k}(h_{\min,i}(A) = h_{\min,i}(B) | h_{\max,i}(A) = h_{\max,i}(B)) =\\\frac{1}{k}\sum_{i=1}^{k}(J(A,B) | J(A,B)) = J(A,B)|J(A,B) = J(A,B)

@@ -10,10 +10,24 @@
 \usepackage{amssymb} %Math ting
 \usepackage{amsthm}
 \usepackage{listings}
+\usepackage{graphicx}
+\usepackage[noend]{algpseudocode}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
 
+\usepackage{algorithm}
 \title{Max-Minhash Clustering Algorithm of RNA sequences}
 \author{Mehdi Asser Husum Nadif}
 \setcounter{secnumdepth}{0}
+
+\makeatletter
+\let\org@subfile\subfile
+\renewcommand*{\subfile}[1]{%
+  \filename@parse{#1}% LaTeX's file name parser
+  \expandafter
+  \graphicspath\expandafter{\expandafter{\filename@area}}%
+  \org@subfile{#1}%
+}
+\makeatother
 
 \setlength{\parindent}{0pt}
 
@@ -28,8 +42,11 @@
 \subfile{sections/Minhash/Minhash}
 \subfile{sections/Tools/tools}
 \subfile{sections/HashTesting/HashTesting}
+\subfile{sections/Implementation/Implementation}
+\newpage
+\subfile{sections/PrecisionTests/PrecisionTests}
 
-
+\newpage
 \bibliographystyle{abbrv}
 \bibliography{bibliography/mylib}{}
 \newpage

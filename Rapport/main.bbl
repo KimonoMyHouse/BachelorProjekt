@@ -38,6 +38,13 @@ J.~Ji, J.~Li, S.~Yan, Q.~Tian, and B.~Zhang.
 \newblock In {\em Data Mining (ICDM), 2013 IEEE 13th International Conference
   on}, pages 301--309, Dec 2013.
 
+\bibitem{pig}
+C.~Olston, B.~Reed, U.~Srivastava, R.~Kumar, and A.~Tomkins.
+\newblock Pig latin: A not-so-foreign language for data processing.
+\newblock In {\em Proceedings of the 2008 ACM SIGMOD International Conference
+  on Management of Data}, SIGMOD '08, pages 1099--1110, New York, NY, USA,
+  2008. ACM.
+
 \bibitem{MinhashMapreduce}
 Z.~Rasheed and H.~Rangwala.
 \newblock A map-reduce framework for clustering metagenomes.

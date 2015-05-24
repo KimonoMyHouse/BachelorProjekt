@@ -1,0 +1,192 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+\section{Implementation}
+
+In the following section we will describe how each step of the algorithm is performed in pseudo code. Then, in order to describe the MapReduce flow, we shall explore the Pig script written for the algorithm.
+
+
+\subsection{Algorithm}
+The algorithm will take a few input parameters from the user before running
+\begin{itemize}
+\item a list of sequences $S={s_0,s_1,...,s_{N-1}}$ of length $N$
+\item $k$-mer size $k$.
+\item $H$, the number of hash functions in the sketch
+\item $\epsilon$, the threshold for similarity.  
+\end{itemize}
+
+Initially, the sequences had to be  transformed into meaningful input for the hash functions used to produce the sketches {\bf MM} and {\bf MM½}. Natural numbers fit the purpose well, and are exactly what $k$-mer transformations constitute. The function \texttt{kmerTransformation}($s,k$), as seen in Alg. \ref{alg:trans}, are how the transfomations were got. The function \texttt{transformChar} uses the same transformation as described in the Tools section. 
+
+\begin{algorithm}
+\caption{Transforms sequence $s$ into its $k$-mer transformation}\label{alg:trans}
+\textbf{Input:} a sequence $s$, a $k$-mer size $k$\\
+\textbf{Functions:} \texttt{transformChar}($s,k$) maps the characters of a $k$-mer to 2-bit values, \texttt{generateKmer}($s,k$) returns the $k$-mer of $s$.\\
+\textbf{Output:} The transformed $k$-mer in a list kmerTransformed.
+\begin{algorithmic}[1]
+\Statex
+\Function{kmerTransformation}{$s, k$}
+	
+	\Let{kmer}{\texttt{generateKmer}($s,k$)} \Comment{saves $k$-mer of $s$}
+	\For{gram \textbf{in} kmer}
+		\Let{prod}{1}
+		\Let{sum}{0}
+		\For{$i \gets 0 \textrm{ to gram.length } - 1$}
+			\Let{sum}{sum + prod $\cdot$ \texttt{transformChar}(gram.charAt(i))}
+			\Let{prod}{prod $\cdot$ 4}
+		\EndFor
+		\State kmerTransformed.append(sum)
+	\EndFor
+\State \Return{kmerTransformed}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+Once the transformations were done, we needed to produce {\bf MM} and {\bf MM½}. As we concluded in the Hash Performance Test, we were to use the Carter Wegman hash function (Eq. \ref{carterhash}), which are referred to as $h_i(x)$ from now on. For the sketch, we generate $H$ hashfunctions for {\bf MM} and $H/2$ hash functions for {\bf MM½}, each with a different $a$ and $b$. Alg. \ref{alg:minmax} shows how {\bf MM} was produced. As we can see, it runs through all $H$ hash functions to find the value that is smallest and highest in the transformed $k$-mer list. Alg. \ref{alg:minmaxhalf} shows the pseudocode for calculating {\bf MM½}, where the only change needed was to divide the number of hash functions by two.
+
+\begin{algorithm}
+\caption{Uses transformed $k$-mer to find {\bf MM} of a sequence}\label{alg:minmax}
+\textbf{Input:} a list of transformed $k$-mer $kT$ of a sequence, $H$ number of hashfunctions.\\
+\textbf{Parameters:} $h_i(x)$ the ith hash function of the $H$ hash functions initiated.\\
+\textbf{Output:} {\bf MM} of a sequence.
+\begin{algorithmic}[1]
+\Statex
+\Function{toMMSketch}{$kT$}
+	\Let{MM}{Ø}
+	\For{$i \gets 0 \textrm{ to } H - 1$}
+		\Let{hmin}{$\infty$}
+		\Let{hmax}{$-\infty$}		
+		\For{$kt$ in $kT$}
+			\Let{val}{$h_i(kt)$}
+			\If{val $<$ hmin}
+				hmin = val
+			\EndIf
+			\If{val $>$ hmax}
+				hmax = val
+			\EndIf
+		\EndFor
+		\State MM.append([hmin,hmax])
+	\EndFor
+\State \Return{kmerTransformed}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Uses transformed $k$-mer to find {\bf MM½} of a sequence}\label{alg:minmaxhalf}
+\textbf{Input:} a list of transformed $k$-mer $kT$ of a sequence, $H$ number of hashfunctions.\\
+\textbf{Parameters:} $h_i(x)$ the ith hash function of the $H/2$ hash functions initiated.\\
+\textbf{Output:} {\bf MM½} of a sequence.
+\begin{algorithmic}[1]
+\Statex
+\Function{toMMSketch}{$kT$}
+	\Let{MMhalf}{Ø}
+	\For{$i \gets 0 \textrm{ to } H/2 - 1$}
+		\Let{hmin}{$\infty$}
+		\Let{hmax}{$-\infty$}		
+		\For{$kt$ in $kT$}
+			\Let{val}{$h_i(kt)$}
+			\If{val $<$ hmin}
+				hmin = val
+			\EndIf
+			\If{val $>$ hmax}
+				hmax = val
+			\EndIf
+		\EndFor
+		\State MMhalf.append([hmin,hmax])
+	\EndFor
+\State \Return{kmerTransformed}
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+The sketches ready, what remained was to compare all sequences' sketches to each other. As speed was a main concern, a greedy algorithm was developed for both {\bf MM} and {\bf MM½}.\\
+
+The greed lays in that if the similarity between two sequences is above $\epsilon$, they are immediately placed in the same cluster, regardless of whether there are other clusters that the other sequence is more similar to. \\
+
+Alg. \ref{alg:minmaxclust} shows the algorithm for {\bf MM} greedy clustering. In line 1-7 the sketches are prepared for the comparison; the remainder is the greedy algorithm. The most interesting part of this algorithm is line 15-22, where the similarity between two strings is determined. Running through all $H$ hash functions, in line 16-20 it checks that if either $h_{min,i}$ or $h_{max,i}$ of both are equal to the other's counterpart, they are an intersection. When all hash functions have been run through, the similarity between the two strings is determined in line 21. If the similarity then surpasses the given $\epsilon$ the strings are placed in the same cluster.\\
+
+Alg. \ref{alg:minmaxhalfclust} has a very similar method as Alg. \ref{alg:minmaxhalfclust}. The main difference lies in line 15-22, where the intersections are determined by the number of $h_{min,i}$ that are equal plus the number of $h_{max,i]}$ that are equal. This means that each hash function can result in two intersections, instead of one in Alg. \ref{alg:minmaxclust}. Line 20 the shows the similarity measure, which is the same as in Alg. \ref{alg:minmaxclust}, since the potential number of intersections was doubled.
+
+\begin{algorithm}
+\caption{Greedy Clustering using {\bf MM}}\label{alg:minmaxclust}
+\textbf{Input:} a list of DNA/RNA sequences $S=\{s_0,s_1,...,s_{N-1}\}$ of length $N$.\\
+\textbf{Parameters:} $H$ number of hash functions, $k$ size of $k$-mer,	$\epsilon$ threshold for string similarity, $c$ current cluster \\
+\textbf{Output:} A list of the cluster $C$ each sequence belongs to.
+\begin{algorithmic}[1]
+\State Initialize $h_i(x)$ for $i=0,1,...,H$
+\State Initialize $kT$,$C$, and $MM$ as lists of length $N$
+\For{$i \gets 0 \textrm{ to } N -1$}
+	\Let{$C$[i]}{0}
+	\Let{$kT$[i]}{kmerTransformation($s_i$)}
+	\Let{$MM$[i]}{toMMSketch($kT$[i])}
+\EndFor
+\Let{$c$}{0}
+\For{$i \gets 0 \textrm{ to } N - 1$}
+	\If{$C$[i] == 0}
+		\Let{$c$}{$c$ + 1}
+		\Let{$C$[i]}{$c$}
+		\For{$j \gets 0 \textrm{ to } N - 1$}
+			\Let{$intersections$}{0}
+			\If{$C$[i] == 0}
+				\For{$k \gets 0 \textrm{ to } H-1$}
+					\If{$MM$[i][k][0] == $MM$[j][k][0]}
+						\Let{$intersections$}{$intersections + 1$}
+					\Else
+						\If{$MM$[i][k][1] == $MM$[j][k][1]}
+							\Let{$intersections$}{$intersections + 1$}
+						\EndIf
+					\EndIf
+				\EndFor
+				\If{$\frac{intersections}{H} \geq \epsilon$}
+					\Let{$C$[j]}{$C$[i]}				
+				\EndIf
+			\EndIf
+		\EndFor
+	\EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{Greedy Clustering using {\bf MM½}}\label{alg:minmaxhalfclust}
+\textbf{Input:} a list of DNA/RNA sequences $S=\{s_0,s_1,...,s_{N-1}\}$ of length $N$.\\
+\textbf{Parameters:} $H$ number of hash functions, $k$ size of $k$-mer,	$\epsilon$ threshold for string similarity, $c$ current cluster \\
+\textbf{Output:} A list of the cluster $C$ each sequence belongs to.
+\begin{algorithmic}[1]
+\State Initialize $h_i(x)$ for $i=0,1,...,H/2$
+\State Initialize $kT$,$C$, and $MM$ as lists of length $N$
+\For{$i \gets 0 \textrm{ to } N -1$}
+	\Let{$C$[i]}{0}
+	\Let{$kT$[i]}{kmerTransformation($s_i$)}
+	\Let{$MM$[i]}{toMMhalfSketch($kT$[i])}
+\EndFor
+\Let{$c$}{0}
+\For{$i \gets 0 \textrm{ to } N - 1$}
+	\If{$C$[i] == 0}
+		\Let{$c$}{$c$ + 1}
+		\Let{$C$[i]}{$c$}
+		\For{$j \gets 0 \textrm{ to } N - 1$}
+			\Let{$intersections$}{0}
+			\If{$C$[i] == 0}
+				\For{$k \gets 0 \textrm{ to } H/2-1$}
+					\If{$MM$[i][k][0] == $MM$[j][k][0]}
+						\Let{$intersections$}{$intersections + 1$}
+					\EndIf
+					\If{$MM$[i][k][1] == $MM$[j][k][1]}
+						\Let{$intersections$}{$intersections + 1$}
+					\EndIf
+				\EndFor
+				\If{$\frac{intersections}{H} \geq \epsilon$}
+					\Let{$C$[j]}{$C$[i]}				
+				\EndIf
+			\EndIf
+		\EndFor
+	\EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+\newpage
+
+\subsection{MapReduce Flow}
+
+
+\end{document}

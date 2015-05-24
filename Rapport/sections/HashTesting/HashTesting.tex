@@ -1,8 +1,9 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
 \section{Hash Performance Test}
+\label{sec:hashtest}
 
-Two hashing functions are described in the Hashing section. In order two decide which of these I would use in the algorithm, a few tests were performed in order to determine the speed of both.\\
+Two hashing functions are described in the Hashing section. In order two decide which of these I would use in the algorithm, a few tests were performed in order to determine the speed of each.\\
 
 To perform these tests, I wrote a short java program. It randomized a given number of k-mer transformations\footnote{which are 2$\cdot$k bits long}, and then counted the number of nanoseconds it took the Carter Wegman- and multiply-shift hashing schemes to hash all the transformations. The multiply-shift algorithm was set to shift only if the input was longer than 32 bits. In this case, the shift was $2\cdot k - 32$.\\
 

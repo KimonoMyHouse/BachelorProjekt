@@ -10,7 +10,12 @@
 \contentsline {subsection}{Max-wise hashing}{6}
 \contentsline {subsection}{Combining Max-wise and Min-wise}{6}
 \contentsline {section}{Additional Tools}{7}
-\contentsline {subsection}{$k$-mers}{7}
+\contentsline {subsection}{$k$-mer}{7}
+\contentsline {subsubsection}{$k$-mer transformation}{8}
 \contentsline {subsection}{MapReduce}{8}
 \contentsline {subsection}{Pig}{8}
-\contentsline {section}{Hash Performance Test}{8}
+\contentsline {section}{Hash Performance Test}{9}
+\contentsline {section}{Implementation}{9}
+\contentsline {subsection}{Algorithm}{9}
+\contentsline {subsection}{MapReduce Flow}{14}
+\contentsline {section}{Precision Tests}{15}

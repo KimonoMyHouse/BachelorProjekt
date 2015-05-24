@@ -4,11 +4,11 @@
 Hashing functions are an integral part of minwise hashing, as it uses the values of hashing functions to determine similarity between two sets. Therefore, it is necessary that we have a small insight into universal hash functions before moving on to minwise hashing in the next section.
 
 \subsection{Introduction to hash functions}
-Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{n-1}\}$ and a range $[r]=\{0,1,...,m-1\}$. Given a hash function $h(x)\rightarrow [r]$ which takes any $u_i,i=0,1,..n-1$ as argument, it should hold that $\forall u_i,\exists r_j \in [r]$ such that $h(u_i)= r_j$. What remains is to consider collisions, which we define as
+Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{n-1}\}$ and a range $[r]=\{0,1,...,m-1\}$. Given a hash function $h:U\rightarrow [r]$ which takes any $u_i,i=0,1,..n-1$ as argument, it should hold that $\forall u_i,\exists r_j \in [r]$ such that $h(u_i)= r_j$. What remains is to consider collisions, which we define as
 \begin{equation}\label{collision}
 \delta_h(x,y) = \left\{ 
   \begin{array}{l l}
-    1 & \quad \text{if $x\neq y$ and $f(x)=f(y)$}\\
+    1 & \quad \text{if $x\neq y$ and $h(x)=h(y)$}\\
     0 & \quad \text{else}
   \end{array} \right.
 \end{equation}
@@ -20,9 +20,9 @@ Universal hashing can circumvent the memory and computation cost of both random-
 \subsection{Universal hash functions}
 The first mention of universal hashing was in \cite{carterWegman}, in which they define universality of hash functions as follows:\\
 
-Given a class of hash functions $H:U\rightarrow [r]$, $H$ is said to be universal if $\forall x \forall y \in U$
+Given a class of hash functions $H = \{h:U\rightarrow [r]\}$, $H$ is said to be universal if $\forall x \forall y \in U$
 $$
-	\delta_H (x,y) \leq \frac{|H|}{|[r]|}
+	\delta_H (x,y) \leq \frac{|H|}{m}
 $$
 where, with $S\subset U$
 $$
