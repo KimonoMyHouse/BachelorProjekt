@@ -28,7 +28,7 @@ Given a sizeable amount of sequences per file, it was quite essential to have a 
 \item Reduce step: For each region, a worker is set to run a Reduce job on it, in parallel.
 \end{enumerate}
 
-MapReduce has been shown to scaler better than other parallel programming tools for input sizes that surpass 100 Mb, which is why it chosen.\cite{compForkMapRed} Apache Hadoop MapReduce was used, as it is free source.
+MapReduce has been shown to scaler better than other parallel programming tools for input sizes that surpass 100 Mb, which is why it chosen.\cite{compForkMapRed} Apache Hadoop MapReduce was used, as it is free source. However, since the startup time of Hadoop MapReduce is around 4 seconds, MapReduce is directly slower at small input files.
 
 \subsection{Pig}
 Pig Latin is a high level language for compiling and executing MapReduce jobs over Hadoop. Advantageous when performing a pipeline of MapReduce jobs\cite{pig}, it also demands very few lines of code compared to Hadoop MapReduce code. Additionally, users may write User Defined Functions (abbr. UDF), completely eliminating the need to write any map or reduce function, as they are on the lower level.

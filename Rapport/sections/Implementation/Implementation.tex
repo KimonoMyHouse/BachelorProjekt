@@ -14,7 +14,7 @@ The algorithm will take a few input parameters from the user before running
 \item $\epsilon$, the threshold for similarity.  
 \end{itemize}
 
-Initially, the sequences had to be  transformed into meaningful input for the hash functions used to produce the sketches {\bf MM} and {\bf MM½}. Natural numbers fit the purpose well, and are exactly what $k$-mer transformations constitute. The function \texttt{kmerTransformation}($s,k$), as seen in Alg. \ref{alg:trans}, are how the transfomations were got. The function \texttt{transformChar} uses the same transformation as described in the Tools section. 
+Initially, the sequences had to be  transformed into meaningful input for the hash functions used to produce the sketches {\bf MM} and {\bf MM½}. Natural numbers fit the purpose well, and are exactly what $k$-mer transformations constitute. The function \texttt{kmerTransformation}($s,k$), as seen in Alg. \ref{alg:trans}, is how the $k$-mer were transformed. \texttt{transformChar} applies the same bit-wise transformation as described in the Tools section. 
 
 \begin{algorithm}
 \caption{Transforms sequence $s$ into its $k$-mer transformation}\label{alg:trans}
@@ -40,7 +40,13 @@ Initially, the sequences had to be  transformed into meaningful input for the ha
 \end{algorithmic}
 \end{algorithm}
 
-Once the transformations were done, we needed to produce {\bf MM} and {\bf MM½}. As we concluded in the Hash Performance Test, we were to use the Carter Wegman hash function (Eq. \ref{carterhash}), which are referred to as $h_i(x)$ from now on. For the sketch, we generate $H$ hashfunctions for {\bf MM} and $H/2$ hash functions for {\bf MM½}, each with a different $a$ and $b$. Alg. \ref{alg:minmax} shows how {\bf MM} was produced. As we can see, it runs through all $H$ hash functions to find the value that is smallest and highest in the transformed $k$-mer list. Alg. \ref{alg:minmaxhalf} shows the pseudocode for calculating {\bf MM½}, where the only change needed was to divide the number of hash functions by two.
+Once the transformations were done, we needed to produce {\bf MM} and {\bf MM½}. As we concluded in the Hash Performance Test, we were to use the Carter Wegman hash function (Eq. \ref{carterhash}), which are referred to as $h_i(x)$ from now on. For the sketch, we generate $H$ hashfunctions for {\bf MM} and $H/2$ hash functions for {\bf MM½}, each with a different $a$ and $b$. They take the form 
+$$
+h_i(x)=((a_i\cdot x + b_i) \mod p )\mod 10000
+$$
+where $a=i+1$,$b=i$, and $p=1845587707$ for $i=0,1,...,H-1$. The $10000$ at the end was to assert that the change of collision was $0.01\%$, a sufficient precision for the purpose.\\
+
+Alg. \ref{alg:minmax} shows how {\bf MM} was produced. As we can see, it runs through all $H$ hash functions to find the value that is smallest and highest in the transformed $k$-mer list. Alg. \ref{alg:minmaxhalf} shows the pseudocode for calculating {\bf MM½}, where the only change needed was to divide the number of hash functions by two.
 
 \begin{algorithm}
 \caption{Uses transformed $k$-mer to find {\bf MM} of a sequence}\label{alg:minmax}
@@ -98,14 +104,25 @@ Once the transformations were done, we needed to produce {\bf MM} and {\bf MM½}
 \end{algorithmic}
 \end{algorithm}
 
-The sketches ready, what remained was to compare all sequences' sketches to each other. As speed was a main concern, a greedy algorithm was developed for both {\bf MM} and {\bf MM½}.\\
+The sketches ready, what remained was to compare all sequences' sketches to each other. As speed was the main goal, a greedy algorithm was developed for both {\bf MM} and {\bf MM½}.\\
 
 The greed lays in that if the similarity between two sequences is above $\epsilon$, they are immediately placed in the same cluster, regardless of whether there are other clusters that the other sequence is more similar to. \\
 
-Alg. \ref{alg:minmaxclust} shows the algorithm for {\bf MM} greedy clustering. In line 1-7 the sketches are prepared for the comparison; the remainder is the greedy algorithm. The most interesting part of this algorithm is line 15-22, where the similarity between two strings is determined. Running through all $H$ hash functions, in line 16-20 it checks that if either $h_{min,i}$ or $h_{max,i}$ of both are equal to the other's counterpart, they are an intersection. When all hash functions have been run through, the similarity between the two strings is determined in line 21. If the similarity then surpasses the given $\epsilon$ the strings are placed in the same cluster.\\
+Alg. \ref{alg:minmaxclust} shows the algorithm for {\bf MM} greedy clustering. In line 1-7 the sketches are prepared for the comparison; the remainder is the greedy algorithm. The most interesting part of this algorithm is line 15-22, where the similarity between two strings is determined. Running through all $H$ hash functions, in line 16-20 it checks: if either $h_{min,i}$ or $h_{max,i}$ of both sequences are equal to the other sequence's counterpart, an intersection occurs. When all hash functions have been run through, the similarity between the two strings is determined in line 21 as the intersections over the number of hash functions. If the similarity then surpasses the given $\epsilon$ the strings are placed in the same cluster.\\
 
-Alg. \ref{alg:minmaxhalfclust} has a very similar method as Alg. \ref{alg:minmaxhalfclust}. The main difference lies in line 15-22, where the intersections are determined by the number of $h_{min,i}$ that are equal plus the number of $h_{max,i]}$ that are equal. This means that each hash function can result in two intersections, instead of one in Alg. \ref{alg:minmaxclust}. Line 20 the shows the similarity measure, which is the same as in Alg. \ref{alg:minmaxclust}, since the potential number of intersections was doubled.
+Alg. \ref{alg:minmaxhalfclust} has a very similar method as Alg. \ref{alg:minmaxhalfclust}. The main difference lies in line 15-22, where the intersections are determined by the number of $h_{min,i}$ that are equal plus the number of $h_{max,i]}$ that are equal. This means that each hash function can result in two intersections, instead of one in Alg. \ref{alg:minmaxclust}. Line 20 the shows the similarity measure, which is the same as in Alg. \ref{alg:minmaxclust}, since the potential number of intersections per hash function was doubled.\\
 
+To render more intelligible the difference between the two algorithms, let us analyze the order of growth of both algorithms.
+\subsubsection{Order of Growth: MM}
+Each line is analyzed in Alg. \ref{alg:minmaxclust}.\\
+line 5: \texttt{kmerTransformation} for a string of length $l$, loops $(l - k + 1)$ times through the string to produce all $k$-mer. Each $k$-mer is then iterated over $k$ times. This gives a $\Theta((l-k+1)k)$.\\
+line 6: \texttt{toMMSketch} for a string of length $l$, repeats $H$ times $(l-k+1)$ comparisons. This gives $\Theta((l-k+1)H)$.\\
+line 3 - 6: Together, the lines 5 and 6 are repeated $N$ times, giving a runtime of $\Theta(N (l-k+1)(k + H))$.\\
+line 8 - 22: Let us first analyse the lower bound. If we assume all sequences will be assigned to the same cluster, line 8 will be run once. Line 12 will be run $N$ times, and line 15 will be run $H$ times per iteration of line 12. The lower bound will therefore be $\Omega(N\cdot H)$. In worst case, all string belong in different clusters. In this case, line 8 will be run $N$ times, line 12 $N$ times per iteration of line 8, and line 15 $H$ times per iteration of line 12. This gives an upper bound of $O(N\cdot N\cdot H)$.\\
+
+Conclusively, the runtime will be $\Theta(N (l-k+1)(k + H)) + O(N\cdot N\cdot H)$. Assuming that $l=1500$\footnote{the maximal length of sequences we wish to test our program on.}, we would need a $N>1500$ to conclusively say that the runtime is $O(N\cdot N\cdot H)$.
+\subsubsection{Order of Growth: MM½}
+As the analysis is completely parallel to the one performed for {\bf MM} immediately above, we shall simply conclude that the runtime will be $\Theta(N (l-k+1)(k + H/2)) + O(N\cdot N\cdot (H/2))$.
 \begin{algorithm}
 \caption{Greedy Clustering using {\bf MM}}\label{alg:minmaxclust}
 \textbf{Input:} a list of DNA/RNA sequences $S=\{s_0,s_1,...,s_{N-1}\}$ of length $N$.\\
@@ -186,7 +203,30 @@ Alg. \ref{alg:minmaxhalfclust} has a very similar method as Alg. \ref{alg:minmax
 \end{algorithm}
 \newpage
 
-\subsection{MapReduce Flow}
+\subsection{MapReduce Framework}
+In order to parallellize and distribute the algorithm, MapReduce and Pig were used. Fig. \ref{fig:mapredflow} shows the flow of this setup is. As we can see, the fasta file is first dealt out, so that each sequence is assigned to a worker. Then, each sequence has the transformation from sequence to sketch performed in parallel. When this transformation is done, all the sequences are passed to the Greedy Clustering algorithm at once, were the clusters are found. Finally, this is saved into an output.
 
+\begin{figure}[h]
+\includegraphics[scale=0.5]{data/MapReduce}
+\caption{The flow of the MapReduce FrameWork using Pig}\label{fig:mapredflow}
+\end{figure}
+
+The Pig Script used to create this flow for the {\bf MM} algorithm can be seen in Alg. \ref{alg:pigscript}. Line 1 loads all the sequences from the file. Then, in line 2 the sequences are converted to bytes, which facilitates the conversion of the $k$-mer. The \$PROGRAM variable defines whether the input is DNA or RNA. In line 3, all files that contained an unknown character are sorted out. Line 4 produces the $k$-mer transformations for $k$-mer size \$KMER\_SIZE. The {\bf MM} sketch is then produced in line 5, using \$HASH\_SIZE hash functions. Line 6 and 7 are used to count the number of sequences to cluster. Finally, line 8 takes all sequences in to run the Greedy Clustering on them. $\epsilon$ is given by \$THRESHOLD. In line 8 MapReduce is not applied, as it runs the function on all sequences at once. So, the advantage of MapReduce over a non-parallel solution will only affect line 1 through 7.
+\begin{algorithm}
+\caption{Pig Script for MapReduce {\bf MM} Greedy Cluster Algorithm}\label{alg:pigscript}
+\textbf{Input:} a list of DNA/RNA sequences $S=\{s_0,s_1,...,s_{N-1}\}$ of length $N$.\\
+\textbf{Parameters:} \$HASH\_SIZE number of hash functions, \$KMER\_SIZE size of $k$-mer,	\$THRESHOLD is $\epsilon$\\
+\textbf{Output:} list of the cluster each sequence belongs to in \textbf{results}.
+\begin{algorithmic}[1]
+\State sequences = LOAD '\$INPUT' USING FastaReader AS (line: chararray);
+\State converted = FOREACH sequences GENERATE SequenceToByteArray(line, \$PROGRAM);
+\State NoN = FILTER converted BY byteSeq is not null;
+\State kmers = FOREACH NoN GENERATE toKmerTransformations(byteSeq, \$KMER\_SIZE);
+\State minmaxvalues = FOREACH kmers GENERATE FLATTEN (ComputeMaxMinHashValues (kmerlist, \$HASH\_SIZE, \$KMER\_SIZE));
+\State grouped = GROUP minmaxvalues ALL;
+\State a\_count = FOREACH grouped GENERATE COUNT (minmaxvalues);
+\State results = FOREACH grouped GENERATE FLATTEN (ComputeMaxMinSimilarity (minmaxvalues, a\_count.\$0, \$HASH\_SIZE, \$THRESHOLD));
+\end{algorithmic}
+\end{algorithm}
 
 \end{document}

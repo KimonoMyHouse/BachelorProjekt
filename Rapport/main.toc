@@ -17,5 +17,8 @@
 \contentsline {section}{Hash Performance Test}{9}
 \contentsline {section}{Implementation}{9}
 \contentsline {subsection}{Algorithm}{9}
-\contentsline {subsection}{MapReduce Flow}{14}
-\contentsline {section}{Precision Tests}{15}
+\contentsline {subsubsection}{Order of Growth: MM}{12}
+\contentsline {subsubsection}{Order of Growth: MM\IeC {\textonehalf }}{12}
+\contentsline {subsection}{MapReduce Framework}{15}
+\contentsline {section}{Dataset Description}{15}
+\contentsline {section}{Precision Tests}{16}

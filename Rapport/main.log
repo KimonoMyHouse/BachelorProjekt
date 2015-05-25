@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  24 MAY 2015 18:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  25 MAY 2015 17:11
 entering extended mode
 **main.tex
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.tex
@@ -385,33 +385,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 )
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections/Implemen
 tation/Implementation.tex [9]
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
-[10] [11] [12] [13]) [14]
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--122
+
+ []
+
+[12] [13] [14]
+<sections/Implementation/data/MapReduce.png, id=65, 651.18282pt x 233.37187pt>
+File: sections/Implementation/data/MapReduce.png Graphic file (type png)
+
+<use sections/Implementation/data/MapReduce.png>
+Package pdftex.def Info: sections/Implementation/data/MapReduce.png used on inp
+ut line 210.
+(pdftex.def)             Requested size: 325.5906pt x 116.68564pt.
+
+Underfull \hbox (badness 2970) in paragraph at lines 222--223
+[]\OT1/cmr/m/n/10 con-verted = FORE-ACH se-quences GEN-ER-ATE Se-quence-To-Byte
+Ar-
+ []
+
+
+Underfull \hbox (badness 2556) in paragraph at lines 225--226
+[]\OT1/cmr/m/n/10 min-max-val-ues = FORE-ACH kmers GEN-ER-ATE FLAT-TEN (Com-
+ []
+
+)
+(C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections/Dataset/
+Dataset.tex) [15 <C:/Users/User/Documents/KU/Attending/BachelorProjekt/Rapport/
+sections/Implementation/data/MapReduce.png>]
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections/Precisio
-nTests/PrecisionTests.tex) [15]
+nTests/PrecisionTests.tex) [16]
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.bbl)
-[16] (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.aux) ) 
+[17] (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\main.aux) ) 
 Here is how much of TeX's memory you used:
- 5352 strings out of 493921
- 72228 string characters out of 3144878
- 135424 words of memory out of 3000000
- 8535 multiletter control sequences out of 15000+200000
+ 5369 strings out of 493921
+ 72812 string characters out of 3144878
+ 140442 words of memory out of 3000000
+ 8544 multiletter control sequences out of 15000+200000
  13558 words of font info for 52 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 28i,16n,32p,807b,1267s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,16n,32p,991b,1267s stack positions out of 5000i,500n,10000p,200000b,50000s
 <
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/P
@@ -432,9 +469,9 @@ type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (16 pages, 283691 bytes).
+Output written on main.pdf (17 pages, 308795 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 137 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

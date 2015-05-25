@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  24 MAY 2015 18:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  25 MAY 2015 17:10
 entering extended mode
 **Implementation.tex
 
@@ -301,23 +301,56 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 LaTeX Warning: Reference `carterhash' on page 1 undefined on input line 43.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
 [1
 
-{C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+{C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
-[3] [4] [5] [6]
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--122
+
+ []
+
+[3] [4] [5] <data/MapReduce.png, id=29, 651.18282pt x 233.37187pt>
+File: data/MapReduce.png Graphic file (type png)
+
+<use data/MapReduce.png>
+Package pdftex.def Info: data/MapReduce.png used on input line 210.
+(pdftex.def)             Requested size: 325.5906pt x 116.68564pt.
+
+Underfull \hbox (badness 2970) in paragraph at lines 222--223
+[]\OT1/cmr/m/n/10 con-verted = FORE-ACH se-quences GEN-ER-ATE Se-quence-To-Byte
+Ar-
+ []
+
+
+Underfull \hbox (badness 2556) in paragraph at lines 225--226
+[]\OT1/cmr/m/n/10 min-max-val-ues = FORE-ACH kmers GEN-ER-ATE FLAT-TEN (Com-
+ []
+
+[6 <C:/Users/User/Documents/KU/Attending/BachelorProjekt/Rapport/sections/Imple
+mentation/data/MapReduce.png>] [7]
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\Implemen
 tation\Implementation.aux)
 
@@ -325,27 +358,28 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4979 strings out of 493921
- 67577 string characters out of 3144878
- 137334 words of memory out of 3000000
- 8211 multiletter control sequences out of 15000+200000
- 7625 words of font info for 30 fonts, out of 3000000 for 9000
+ 5008 strings out of 493921
+ 67930 string characters out of 3144878
+ 135350 words of memory out of 3000000
+ 8231 multiletter control sequences out of 15000+200000
+ 10426 words of font info for 41 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,5n,34p,768b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,8n,34p,952b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Implementation.pdf (6 pages, 143545 bytes).
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Implementation.pdf (7 pages, 182416 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
+ 77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
