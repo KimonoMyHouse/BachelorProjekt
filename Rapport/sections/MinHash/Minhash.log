@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  24 MAY 2015 15:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.12)  2 JUN 2015 15:41
 entering extended mode
 **Minhash.tex
 
@@ -229,20 +229,43 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip51
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@tempdima=\dimen121
+\caption@indent=\dimen122
+\caption@parindent=\dimen123
+\caption@hangindent=\dimen124
+)
+\c@ContinuedFloat=\count119
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count120
+\c@subtable=\count121
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count119
+\c@float@type=\count122
 \float@exts=\toks34
 \float@box=\box30
 \@float@everytoks=\toks35
 \@floatcapt=\box31
 )
 \@float@every@algorithm=\toks36
-\c@algorithm=\count120
+\c@algorithm=\count123
 )))
 (C:\Users\User\Documents\KU\Attending\BachelorProjekt\Rapport\sections\MinHash\
 Minhash.aux)
@@ -261,22 +284,26 @@ LaTeX Font Info:    ... okay on input line 2.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-\c@lstlisting=\count121
+\c@lstlisting=\count124
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
-\scratchdimen=\dimen118
+\scratchcounter=\count125
+\scratchdimen=\dimen125
 \scratchbox=\box32
-\nofMPsegments=\count123
-\nofMParguments=\count124
+\nofMPsegments=\count126
+\nofMParguments=\count127
 \everyMPshowfont=\toks37
-\MPscratchCnt=\count125
-\MPscratchDim=\dimen119
-\MPnumerator=\count126
-\makeMPintoPDFobject=\count127
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen126
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
 \everyMPtoPDFconversion=\toks38
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
 
 LaTeX Warning: Citation `MinwiseIndependent' on page 1 undefined on input line 
 4.
@@ -311,33 +338,30 @@ LaTeX Warning: Citation `protominwise' on page 1 undefined on input line 23.
 
 {C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 
-LaTeX Warning: Reference `universalProb' on page 2 undefined on input line 44.
-
-
 LaTeX Warning: Citation `errorMinhash' on page 2 undefined on input line 44.
 
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 52.
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 53.
 
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 68.
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 69.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 72.
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 73.
 
 
-LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 72.
+LaTeX Warning: Citation `minmaxhash' on page 2 undefined on input line 73.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 75--77
+Underfull \hbox (badness 10000) in paragraph at lines 76--78
 
  []
 
 
-Overfull \hbox (0.71065pt too wide) detected at line 89
+Overfull \hbox (0.71065pt too wide) detected at line 90
 \OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) = \OML
 /cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )\OMS/cmsy/m
 /n/10 j\OML/cmm/m/it/10 h[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A\OT1/cmr/m/n/10 )
@@ -346,12 +370,12 @@ Overfull \hbox (0.71065pt too wide) detected at line 89
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
@@ -363,13 +387,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4937 strings out of 493921
- 66685 string characters out of 3144878
- 128366 words of memory out of 3000000
- 8168 multiletter control sequences out of 15000+200000
+ 6007 strings out of 493921
+ 86123 string characters out of 3144878
+ 151713 words of memory out of 3000000
+ 9229 multiletter control sequences out of 15000+200000
  9957 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 36i,16n,34p,581b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 51i,16n,42p,581b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
@@ -380,7 +404,7 @@ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Minhash.pdf (3 pages, 130994 bytes).
+Output written on Minhash.pdf (3 pages, 130936 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

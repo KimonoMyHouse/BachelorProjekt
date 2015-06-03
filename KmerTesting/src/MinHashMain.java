@@ -87,6 +87,46 @@ public class MinHashMain {
 		System.out.println("The time it took in seconds was " + seconds);
 		*/
 		
+		// FOR TESTING THE LARGE PICTURE OF KMER AND HASHSIZE
+				for(int n = 1; n < 6; n++){
+					
+					String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
+					String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMaxHalf/test2/test" + n + "outprecise.fna";
+
+					PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
+					
+					ic.inputfileString = filein;
+					ic.pw = pw;
+					
+			        ic.threshold = 0.95;
+			        ic.program = "dna";
+			        
+			
+					StringMapper strmap = new StringMapper(ic.program);
+					mg.BASES_LENGTH = 4;
+			        hm.prime_div = 1845587707;	
+			
+					io.ReadMetagenomeData(mg, strmap, ic);
+			
+			
+					for (int i = 5; i< 16; i++) {
+						System.out.println(n + " " + i);
+						ic.KMER_SIZE = i;
+						for (int j = 2; j < 70; j = j + 2) {
+							hm.HASH_SIZE = j;
+							MinMaxHalf minHash = new MinMaxHalf(mg, ic, hm);
+						}
+					}
+					ic.pw.close();
+				}
+				long now = System.nanoTime();
+				
+				long taken = now - then;
+
+				double seconds =(double) taken / 1000000000.0; 
+				System.out.println("The time it took in seconds was " + seconds);
+		 
+
 		/*
 		for(int n = 1; n < 6; n++){
 			
@@ -129,12 +169,52 @@ public class MinHashMain {
 		seconds =(double) taken / 1000000000.0; 
 		System.out.println("The time it took in seconds was " + seconds);
 		*/
-		
-		
+		/*
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
-			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "outprecise5.fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMaxHalf/test" + n + "outprecise5.fna";
+
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
+			
+			ic.inputfileString = filein;
+			ic.pw = pw;
+			
+	        ic.threshold = 0.95;
+	        ic.program = "dna";
+	        
+	
+			StringMapper strmap = new StringMapper(ic.program);
+			mg.BASES_LENGTH = 4;
+	        hm.prime_div = 1845587707;
+	
+			io.ReadMetagenomeData(mg, strmap, ic);
+	
+			
+			int[] kmerTestSizes = {5};
+	
+			for (int i : kmerTestSizes) {
+				System.out.println(n + " " + i);
+				ic.KMER_SIZE = i;
+				for (int j = 2; j < 30; j = j + 2) {
+					hm.HASH_SIZE = j;
+					MinMaxHalf minHash = new MinMaxHalf(mg, ic, hm);
+				}
+			}
+			ic.pw.close();
+		}
+		double now = System.nanoTime();
+		
+		double taken = now - then;
+
+		double seconds =(double) taken / 1000000000.0; 
+		System.out.println("The time it took in seconds was " + seconds);
+		*/
+				/*
+		for(int n = 1; n < 6; n++){
+			
+			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMaxHalf/test" + n + "outprecise12.fna";
 
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
 			
@@ -149,16 +229,16 @@ public class MinHashMain {
 	        hm.prime_div = 1845587707;
 	
 			io.ReadMetagenomeData(mg, strmap, ic);
-	
-			
-			int[] kmerTestSizes = {5};
+
+
+			int[] kmerTestSizes = {12};
 	
 			for (int i : kmerTestSizes) {
 				System.out.println(n + " " + i);
 				ic.KMER_SIZE = i;
-				for (int j=50;j<81;j++) {
+				for (int j=2;j<30;j=j+2) {
 					hm.HASH_SIZE = j;
-					MinHash minHash = new MinHash(mg, ic, hm);
+					MinMaxHalf minHash = new MinMaxHalf(mg, ic, hm);
 				}
 			}
 			ic.pw.close();
@@ -167,9 +247,9 @@ public class MinHashMain {
 		
 		long taken = now - then;
 
-		double seconds =(double) taken / 1000000000.0; 
+		double seconds =(double) taken / 1000000000.0;
 		System.out.println("The time it took in seconds was " + seconds);
-		
+		*/
 		
 		/*
 		// for Testing at k=6
@@ -198,23 +278,22 @@ public class MinHashMain {
 			for (int i : kmerTestSizes) {
 				System.out.println(n + " " + i);
 				ic.KMER_SIZE = i;
-				for (int j =20;j<30;j++) {
+				for (int j =10;j<31;j++) {
 					hm.HASH_SIZE = j;
 					MinHash minHash = new MinHash(mg, ic, hm);
 				}
 			}
 			ic.pw.close();
 		}
-		
 		*/
+		
 		
 		/*
 		// for Testing at k=10
-		
 		for(int n = 1; n < 6; n++){
 			
 			String filein = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test" + n + ".fna";
-			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "outprecise10.fna";
+			String fileout = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/MinMax/test" + n + "outprecise12.fna";
 
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(fileout)));
 			
@@ -231,24 +310,18 @@ public class MinHashMain {
 			io.ReadMetagenomeData(mg, strmap, ic);
 	
 			
-			int[] kmerTestSizes = {10};
+			int[] kmerTestSizes = {12};
 	
 			for (int i : kmerTestSizes) {
 				System.out.println(n + " " + i);
 				ic.KMER_SIZE = i;
-				for (int j =15;j<40;j++) {
+				for (int j =10;j<41;j++) {
 					hm.HASH_SIZE = j;
 					MinHash minHash = new MinHash(mg, ic, hm);
 				}
 			}
 			ic.pw.close();
 		}
-		now = System.nanoTime();
-		
-		taken = now - then;
-
-		seconds =(double) taken / 1000000000.0; 
-		System.out.println("The time it took in seconds was " + seconds);
 		
 		*/
 		

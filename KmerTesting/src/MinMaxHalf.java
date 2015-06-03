@@ -91,8 +91,8 @@ public class MinMaxHalf{
 					if(seq_cluster[j]!= 0){}
 					else{
 						for(intersections=0,unions=0,k=0;k<hm.HASH_SIZE/2;k++){
-							intersections += (hm.minhash_values[i][k] == hm.minhash_values[j][k]) ? 1: 0;
-							intersections += (hm.maxhash_values[i][k]== hm.maxhash_values[j][k])? 1 : 0;
+							intersections = (hm.minhash_values[i][k] == hm.minhash_values[j][k]) ? intersections + 1: intersections;
+							intersections = (hm.maxhash_values[i][k]== hm.maxhash_values[j][k])? intersections + 1 : intersections;
 							unions = unions + 2;
 						}
 						similarity =((float) intersections) / ((float) unions);
@@ -105,6 +105,6 @@ public class MinMaxHalf{
 		}
 
 		
-		ic.pw.println(ic.KMER_SIZE + " " + hm.HASH_SIZE + " " + current_cluster);
+		ic.pw.println(ic.KMER_SIZE + " " + hm.HASH_SIZE/2 + " " + current_cluster);
 	}
 }

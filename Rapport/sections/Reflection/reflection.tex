@@ -1,0 +1,23 @@
+\documentclass[../../main.tex]{subfiles}
+\begin{document}
+\section{Discussion}
+
+Looking back at the project, there are a few things that i would have done differently had i had more time.\\
+
+First of all, the use of MapReduce had both pros and cons for my project. As i only had one computer to run the tests on, the distributed aspect of MapReduce was not taken in use. Higher speeds could therefore probably have been achieved with a more resource-optimized approach in a non-distributed environment. However, using another setup than MapReduce might have caused memory problems which MapReduce doesn't run into.\\
+
+The results of the tests gave an exciting prospect for the {\bf MM} algorithm. However i wish they had been more comprehensive, so that they could have cemented {\bf MM} furthermore as a good contender. For the precision tests, I would have extended and done the following things:
+\begin{itemize}
+\item I would have used another precision measure. The error metric does not properly show how similar the clusters in the Gold standard were to those in {\bf MM},{\bf MM½} or {\tt uClust}, which could have been achieved with one of the clustering accuracy method from \cite{measuringcluster}.
+\item The samples all originated from the same bacteria's DNA. Had i used DNA samples from a diverse origin, i could more confidently have certified the precision of {\bf MM} and {\bf MM½}.
+\item An extension to the above point, i wish the samples in the precision tests were of both DNA and RNA, to see whether there was a difference between when $k$ and $H$ were most precise for RNA, and when they were most precise for DNA. If there were such a distinction, it could be used to determine what value $k$ and $H$ should have depending on the input.    
+\end{itemize}
+
+The speed tests were those that showed most potential, but needed a few more tests before they could have been conclusive. There were a few things i would have done differently here too, such as:
+\begin{itemize}
+\item I had mentioned that the {\tt Silva} samples and {\tt Actino} samples had a different average length of sequences. While this was true, the single experiment was not sufficient to test the hypothesis. I would have liked to test the speed on more samples, and for each of these samples to assure that they had the same number of sequences, but a different average length of sequences. The samples should not differ too much in type, maybe even belong to the same bacteria. Thereby, i could have confirmed whether the average length of the sequences had a positive influnce on the speed of {\bf MM} over {\tt uClust}.
+\item I would also have liked to check whether there was correlation between whether the sample was DNA or RNA and the runtime of {\bf MM} and {\tt uClust}. The few experiments suggested that {\bf MM} runs faster than {\tt uClust} with DNA as input, but there was not enough data to cement this. 
+\end{itemize}
+So, while the results showed some interesting findings, I would need more testing before i could properly prove that {\bf MM} were a proper contender to {\tt uClust}.
+\end{document}
+

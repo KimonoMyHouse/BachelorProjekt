@@ -93,7 +93,7 @@ public class MinHash{
 					if(seq_cluster[j]!= 0){}
 					else{
 						for(intersections=0,unions=0,k=0;k<hm.HASH_SIZE;k++){
-							intersections += (((hm.minhash_values[i][k] == hm.minhash_values[j][k]) | hm.maxhash_values[i][k]== hm.maxhash_values[j][k])?1:0);
+							intersections += (((hm.minhash_values[i][k] == hm.minhash_values[j][k]) || hm.maxhash_values[i][k]== hm.maxhash_values[j][k])?1:0);
 							unions++;
 						}
 						similarity =((float) intersections) / ((float) unions);

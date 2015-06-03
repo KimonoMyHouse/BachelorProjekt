@@ -38,13 +38,15 @@
 \citation{minmaxhash}
 \citation{minmaxhash}
 \newlabel{jacsketch}{{9}{6}}
+\newlabel{minwiseerror}{{10}{6}}
 \@writefile{toc}{\contentsline {subsection}{Max-wise hashing}{6}}
-\newlabel{maxwise}{{10}{6}}
-\newlabel{maxwisejaccard}{{11}{6}}
+\newlabel{maxwise}{{11}{6}}
+\newlabel{maxwisejaccard}{{12}{6}}
 \@writefile{toc}{\contentsline {subsection}{Combining Max-wise and Min-wise}{6}}
-\newlabel{minmaxhalfjaccard}{{12}{6}}
-\newlabel{minmaxjaccard}{{13}{7}}
-\newlabel{proofofMinmax}{{14}{7}}
+\newlabel{minmaxhalfjaccard}{{13}{6}}
+\newlabel{minmaxjaccard}{{14}{7}}
+\newlabel{proofofMinmax}{{15}{7}}
+\newlabel{minmaxerror}{{16}{7}}
 \@writefile{toc}{\contentsline {section}{Additional Tools}{7}}
 \@writefile{toc}{\contentsline {subsection}{$k$-mer}{7}}
 \citation{mapreduceExplained}
@@ -52,32 +54,58 @@
 \citation{pig}
 \@writefile{toc}{\contentsline {subsubsection}{$k$-mer transformation}{8}}
 \@writefile{toc}{\contentsline {subsection}{MapReduce}{8}}
-\@writefile{toc}{\contentsline {subsection}{Pig}{8}}
+\@writefile{toc}{\contentsline {subsection}{Pig}{9}}
+\@writefile{toc}{\contentsline {subsection}{Levenshtein Distance}{9}}
+\newlabel{levenshteindistance}{{17}{9}}
 \@writefile{toc}{\contentsline {section}{Hash Performance Test}{9}}
 \newlabel{sec:hashtest}{{}{9}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces $ms$ for multiply-shift- and Carter Wegman hashing schemes to 4 different numbers of randomized k-mer transformations.}}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces $ms$ for multiply-shift- and Carter Wegman hashing schemes to 4 different numbers of randomized k-mer transformations.\relax }}{9}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{table:hashTest}{{1}{9}}
-\@writefile{toc}{\contentsline {section}{Implementation}{9}}
-\@writefile{toc}{\contentsline {subsection}{Algorithm}{9}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Transforms sequence $s$ into its $k$-mer transformation}}{10}}
+\@writefile{toc}{\contentsline {section}{Implementation}{10}}
+\@writefile{toc}{\contentsline {subsection}{Algorithm}{10}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Transforms sequence $s$ into its $k$-mer transformation\relax }}{10}}
 \newlabel{alg:trans}{{1}{10}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Uses transformed $k$-mer to find {\bf  MM} of a sequence}}{11}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Uses transformed $k$-mer to find {\bf  MM} of a sequence\relax }}{11}}
 \newlabel{alg:minmax}{{2}{11}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Uses transformed $k$-mer to find {\bf  MM\IeC {\textonehalf }} of a sequence}}{11}}
-\newlabel{alg:minmaxhalf}{{3}{11}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Uses transformed $k$-mer to find {\bf  MM\IeC {\textonehalf }} of a sequence\relax }}{12}}
+\newlabel{alg:minmaxhalf}{{3}{12}}
 \@writefile{toc}{\contentsline {subsubsection}{Order of Growth: MM}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{Order of Growth: MM\IeC {\textonehalf }}{12}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Greedy Clustering using {\bf  MM}}}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{Order of Growth: MM\IeC {\textonehalf }}{13}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Greedy Clustering using {\bf  MM}\relax }}{13}}
 \newlabel{alg:minmaxclust}{{4}{13}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Greedy Clustering using {\bf  MM\IeC {\textonehalf }}}}{14}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces Greedy Clustering using {\bf  MM\IeC {\textonehalf }}\relax }}{14}}
 \newlabel{alg:minmaxhalfclust}{{5}{14}}
 \@writefile{toc}{\contentsline {subsection}{MapReduce Framework}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The flow of the MapReduce FrameWork using Pig}}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The flow of the MapReduce FrameWork using Pig\relax }}{15}}
 \newlabel{fig:mapredflow}{{1}{15}}
-\@writefile{toc}{\contentsline {section}{Dataset Description}{15}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces Pig Script for MapReduce {\bf  MM} Greedy Cluster Algorithm}}{16}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces Pig Script for MapReduce {\bf  MM} Greedy Cluster Algorithm\relax }}{16}}
 \newlabel{alg:pigscript}{{6}{16}}
-\@writefile{toc}{\contentsline {section}{Precision Tests}{16}}
+\@writefile{toc}{\contentsline {section}{Test Data}{16}}
+\@writefile{toc}{\contentsline {subsection}{Data used for precision tests}{16}}
+\@writefile{toc}{\contentsline {subsection}{Data used for speed tests}{16}}
+\@writefile{toc}{\contentsline {subsection}{Hardware}{17}}
+\@writefile{toc}{\contentsline {section}{Experiments}{17}}
+\@writefile{toc}{\contentsline {subsection}{Precision tests}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{MM precision tests}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Heat map of the error of {\bf  MM} at a widely dispersed array of $k$ and $H$, run on \texttt  {Cecum1}. Darkness increases as the error decreases.\relax }}{18}}
+\newlabel{fig:wideCminmax}{{2}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Heat maps of the error of {\bf  MM} at a narrow array of $k$ and $H$ at all 5 samples of \texttt  {Cecum} DNA. Darkness increases as the error decreases.\relax }}{20}}
+\newlabel{fig:Cpreciseminmax}{{3}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Plots with $H$ on the $x$-axis and error $E_p$ in percent $(0.5 = 50\%)$ the $y$-axis, each plot at different $k$. The lines in the plots signify the error at the given $k$ and $H$ of {\bf  MM}, while the dotted lines signify the error of \texttt  {uClust} at each file. The colours define the sample file.\relax }}{21}}
+\newlabel{fig:allKminmax}{{4}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{MM\IeC {\textonehalf } precision tests}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Heat map of the error of {\bf  MM\IeC {\textonehalf }} at a widely dispersed array of $k$ and $H$, run on \texttt  {Cecum1}. Darkness increases as the error decreases.\relax }}{22}}
+\newlabel{fig:wiseCminmaxhalf}{{5}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Heat maps of the error of {\bf  MM\IeC {\textonehalf }} at a narrow array of $k$ and $H$ at all 5 samples of \texttt  {Cecum} DNA. Darkness increases as the error decreases\relax }}{23}}
+\newlabel{fig:cpreciseminmaxhalf}{{6}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Plots with $H$ on the $x$-axis and error $E_p$ in percent $(0.5 = 50\%)$ on the $y$-axis, each plot at different $k$. The lines in the plots signify the error at the given $k$ and $H$ of {\bf  MM\IeC {\textonehalf }}, while the dotted lines signify the error of \texttt  {uClust} at each file. The colours define the sample file.\relax }}{24}}
+\newlabel{fig:allKminmaxhalf}{{7}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{Comparison}{24}}
+\@writefile{toc}{\contentsline {subsection}{Speed tests}{25}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Comparison of clustering speed of three algorithms on 10 samples. \texttt  {uClust} is run with \texttt  {cluster\_fast} option, {\bf  MM} with $k=6$ and $H=13$, {\bf  MM\IeC {\textonehalf }} has $k=5$ and $H=12$. The runtime the clustering speed is given in seconds.\relax }}{26}}
+\newlabel{tab:speedtest}{{2}{26}}
+\@writefile{toc}{\contentsline {section}{Conclusion}{26}}
 \bibstyle{abbrv}
 \bibdata{bibliography/mylib}
 \bibcite{protominwise}{1}

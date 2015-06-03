@@ -6,7 +6,7 @@ public class MinHashMain {
 		InputController ic = new InputController();
 		HashManager hm = new HashManager();
 		IOManager io = new IOManager();
-		String file = "C:/Users/User/Documents/KU/Attending/BachelorProjekt/KmerTesting/testData/test1.fna";
+		String file = "C:/Users/User/Desktop/long.fasta";
 		
 		ic.inputfileString = file;
 		
@@ -15,7 +15,7 @@ public class MinHashMain {
         ic.program = "dna";
         
         hm.prime_div = 1845587707;
-		hm.HASH_SIZE = 30;
+		hm.HASH_SIZE = 100;
 		long now = System.nanoTime();
 		StringMapper strmap = new StringMapper(ic.program);
 		io.ReadMetagenomeData(mg, strmap, ic);

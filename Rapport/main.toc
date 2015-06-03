@@ -13,12 +13,22 @@
 \contentsline {subsection}{$k$-mer}{7}
 \contentsline {subsubsection}{$k$-mer transformation}{8}
 \contentsline {subsection}{MapReduce}{8}
-\contentsline {subsection}{Pig}{8}
+\contentsline {subsection}{Pig}{9}
+\contentsline {subsection}{Levenshtein Distance}{9}
 \contentsline {section}{Hash Performance Test}{9}
-\contentsline {section}{Implementation}{9}
-\contentsline {subsection}{Algorithm}{9}
+\contentsline {section}{Implementation}{10}
+\contentsline {subsection}{Algorithm}{10}
 \contentsline {subsubsection}{Order of Growth: MM}{12}
-\contentsline {subsubsection}{Order of Growth: MM\IeC {\textonehalf }}{12}
+\contentsline {subsubsection}{Order of Growth: MM\IeC {\textonehalf }}{13}
 \contentsline {subsection}{MapReduce Framework}{15}
-\contentsline {section}{Dataset Description}{15}
-\contentsline {section}{Precision Tests}{16}
+\contentsline {section}{Test Data}{16}
+\contentsline {subsection}{Data used for precision tests}{16}
+\contentsline {subsection}{Data used for speed tests}{16}
+\contentsline {subsection}{Hardware}{17}
+\contentsline {section}{Experiments}{17}
+\contentsline {subsection}{Precision tests}{17}
+\contentsline {subsubsection}{MM precision tests}{18}
+\contentsline {subsubsection}{MM\IeC {\textonehalf } precision tests}{22}
+\contentsline {subsubsection}{Comparison}{24}
+\contentsline {subsection}{Speed tests}{25}
+\contentsline {section}{Conclusion}{26}

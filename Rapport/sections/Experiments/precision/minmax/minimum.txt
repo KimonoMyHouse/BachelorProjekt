@@ -1,0 +1,6 @@
+               k  H   dev
+cecum1precise: 6, 11, 0
+cecum2precise: 5, 52, 2
+cecum3precise: 5, 66, 0
+cecum4precise: 5, 65, 1
+cecum5precise: 6, 12, 1

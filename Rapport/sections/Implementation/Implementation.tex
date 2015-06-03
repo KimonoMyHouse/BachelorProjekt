@@ -2,11 +2,11 @@
 \begin{document}
 \section{Implementation}
 
-In the following section we will describe how each step of the algorithm is performed in pseudo code. Then, in order to describe the MapReduce flow, we shall explore the Pig script written for the algorithm.
+In the following section, each step of the algorithm  will be described using pseudo code. Then, in order to describe the MapReduce flow, the Pig scripts written for the algorithms are analyzed.
 
 
 \subsection{Algorithm}
-The algorithm will take a few input parameters from the user before running
+The algorithm takes a few input parameters from the user before running
 \begin{itemize}
 \item a list of sequences $S={s_0,s_1,...,s_{N-1}}$ of length $N$
 \item $k$-mer size $k$.
@@ -40,13 +40,13 @@ Initially, the sequences had to be  transformed into meaningful input for the ha
 \end{algorithmic}
 \end{algorithm}
 
-Once the transformations were done, we needed to produce {\bf MM} and {\bf MM½}. As we concluded in the Hash Performance Test, we were to use the Carter Wegman hash function (Eq. \ref{carterhash}), which are referred to as $h_i(x)$ from now on. For the sketch, we generate $H$ hashfunctions for {\bf MM} and $H/2$ hash functions for {\bf MM½}, each with a different $a$ and $b$. They take the form 
+Once the transformations were done, a function for producing {\bf MM}- and {\bf MM½} sketches should be made. As concluded in the Hash Performance Test, the Carter Wegman hash function (Eq. \ref{carterhash}) was most applicable. These hash functions will be referred to as $h_i(x)$ from now on. For the sketch, $H$ hashfunctions are generated for {\bf MM} and $H/2$ hash functions for {\bf MM½}, each with a different $a$ and $b$. They take the form 
 $$
 h_i(x)=((a_i\cdot x + b_i) \mod p )\mod 10000
 $$
 where $a=i+1$,$b=i$, and $p=1845587707$ for $i=0,1,...,H-1$. The $10000$ at the end was to assert that the change of collision was $0.01\%$, a sufficient precision for the purpose.\\
 
-Alg. \ref{alg:minmax} shows how {\bf MM} was produced. As we can see, it runs through all $H$ hash functions to find the value that is smallest and highest in the transformed $k$-mer list. Alg. \ref{alg:minmaxhalf} shows the pseudocode for calculating {\bf MM½}, where the only change needed was to divide the number of hash functions by two.
+Alg. \ref{alg:minmax} shows how {\bf MM} was produced. It runs through all $H$ hash functions to find the value that is smallest and highest in the transformed $k$-mer list. Alg. \ref{alg:minmaxhalf} shows the pseudocode for calculating {\bf MM½}, where the only change needed was to divide the number of hash functions by two.
 
 \begin{algorithm}
 \caption{Uses transformed $k$-mer to find {\bf MM} of a sequence}\label{alg:minmax}
@@ -118,11 +118,11 @@ Each line is analyzed in Alg. \ref{alg:minmaxclust}.\\
 line 5: \texttt{kmerTransformation} for a string of length $l$, loops $(l - k + 1)$ times through the string to produce all $k$-mer. Each $k$-mer is then iterated over $k$ times. This gives a $\Theta((l-k+1)k)$.\\
 line 6: \texttt{toMMSketch} for a string of length $l$, repeats $H$ times $(l-k+1)$ comparisons. This gives $\Theta((l-k+1)H)$.\\
 line 3 - 6: Together, the lines 5 and 6 are repeated $N$ times, giving a runtime of $\Theta(N (l-k+1)(k + H))$.\\
-line 8 - 22: Let us first analyse the lower bound. If we assume all sequences will be assigned to the same cluster, line 8 will be run once. Line 12 will be run $N$ times, and line 15 will be run $H$ times per iteration of line 12. The lower bound will therefore be $\Omega(N\cdot H)$. In worst case, all string belong in different clusters. In this case, line 8 will be run $N$ times, line 12 $N$ times per iteration of line 8, and line 15 $H$ times per iteration of line 12. This gives an upper bound of $O(N\cdot N\cdot H)$.\\
+line 8 - 22: Let us first analyse the lower bound. Assuming all sequences will be assigned to the same cluster, line 8 will be run once. Line 12 will be run $N$ times, and line 15 will be run $H$ times per iteration of line 12. The lower bound will therefore be $\Omega(N\cdot H)$. In worst case, all string belong in different clusters. In this case, line 8 will be run $N$ times, line 12 $N$ times per iteration of line 8, and line 15 $H$ times per iteration of line 12. This gives an upper bound of $O(N\cdot N\cdot H)$.\\
 
-Conclusively, the runtime will be $\Theta(N (l-k+1)(k + H)) + O(N\cdot N\cdot H)$. Assuming that $l=1500$\footnote{the maximal length of sequences we wish to test our program on.}, we would need a $N>1500$ to conclusively say that the runtime is $O(N\cdot N\cdot H)$.
+Conclusively, the runtime will be $\Theta(N (l-k+1)(k + H)) + O(N\cdot N\cdot H)$. Assuming that $l=1500$\footnote{the limit of length of sequences the program shall be tested on.}, it would necessitate an $N>1500$ to conclusively say that the runtime is $O(N\cdot N\cdot H)$.
 \subsubsection{Order of Growth: MM½}
-As the analysis is completely parallel to the one performed for {\bf MM} immediately above, we shall simply conclude that the runtime will be $\Theta(N (l-k+1)(k + H/2)) + O(N\cdot N\cdot (H/2))$.
+As the analysis is completely parallel to the one performed for {\bf MM} immediately above, the runtime will be $\Theta(N (l-k+1)(k + H/2)) + O(N\cdot N\cdot (H/2))$, halving the number of hash functions needed.
 \begin{algorithm}
 \caption{Greedy Clustering using {\bf MM}}\label{alg:minmaxclust}
 \textbf{Input:} a list of DNA/RNA sequences $S=\{s_0,s_1,...,s_{N-1}\}$ of length $N$.\\
@@ -204,7 +204,7 @@ As the analysis is completely parallel to the one performed for {\bf MM} immedia
 \newpage
 
 \subsection{MapReduce Framework}
-In order to parallellize and distribute the algorithm, MapReduce and Pig were used. Fig. \ref{fig:mapredflow} shows the flow of this setup is. As we can see, the fasta file is first dealt out, so that each sequence is assigned to a worker. Then, each sequence has the transformation from sequence to sketch performed in parallel. When this transformation is done, all the sequences are passed to the Greedy Clustering algorithm at once, were the clusters are found. Finally, this is saved into an output.
+In order to parallellize and distribute the algorithm, MapReduce and Pig were used. Fig. \ref{fig:mapredflow} shows the flow of this setup is. The fasta file is first partitioned, so that each sequence is assigned to a worker. Then, each sequence has the transformation from sequence to sketch performed in parallel. When this transformation is done, all the sequences are passed to the Greedy Clustering algorithm at once, where the clusters are found. Finally, this is saved into an output.
 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{data/MapReduce}
