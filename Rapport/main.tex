@@ -10,6 +10,8 @@
 \usepackage{amssymb} %Math ting
 \usepackage{amsthm}
 \usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage[noend]{algpseudocode}
 \newcommand*\Let[2]{\State #1 $\gets$ #2}
@@ -18,7 +20,7 @@
 \usepackage{algorithm}
 \title{Max-Minhash Clustering Algorithm of RNA sequences}
 \author{Mehdi Asser Husum Nadif}
-\setcounter{secnumdepth}{0}
+
 
 \makeatletter
 \let\org@subfile\subfile
@@ -33,27 +35,25 @@
 \setlength{\parindent}{0pt}
 
 \begin{document}
-
 \maketitle
 \newpage
-
+\subfile{sections/Abstract/abstract}
+\newpage
 \tableofcontents
 \newpage
+\subfile{sections/Introduction/introduction}
 \subfile{sections/universalhashing/universalhashing}
 \subfile{sections/Minhash/Minhash}
 \subfile{sections/Tools/tools}
 \subfile{sections/HashTesting/HashTesting}
 \subfile{sections/Implementation/Implementation}
-\newpage
 \subfile{sections/TestData/TestData}
 \subfile{sections/Experiments/experiments}
 \subfile{sections/Conclusion/conclusion}
 
-\newpage
 \bibliographystyle{abbrv}
 \bibliography{bibliography/mylib}{}
 \newpage
-
 %\begin{appendices}
 %\subfile{sections/planning/planning}
 %\end{appendices}

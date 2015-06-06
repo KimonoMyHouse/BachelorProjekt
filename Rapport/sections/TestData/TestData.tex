@@ -1,34 +1,34 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
 \section{Test Data}
-For the experiments, it was important that the data used was representative of real life data sets. Therefore, all data used were DNA and RNA sequences extracted from bacteria and  biological tissues. As we shall perform two different sets of experiments, each will have a seperate data set for tests; these will be described below.
+For the experiments, it was important that the data used was representative of real life data sets. Therefore, all data used were DNA and RNA sequences from bacteria and a multitude of Eukaryota. As we shall perform two different sets of experiments, each will have a seperate data set for tests; these will be described below.
 \subsection{Data used for precision tests}
-In order to test the precision of both algorithms, it was necessary to have relatively small sets, since we had to calculate a gold standard\footnote{which is a very costly affair}. We used a clean sample of Cecum DNA data consisiting of 81.029 sequences. These were divided into 5 seperate sample files, each of which contained a sample of 10.000 sequences. These files will be refered to as \texttt{Cecum1}, \texttt{Cecum2}, \texttt{Cecum3}, \texttt{Cecum4}, and \texttt{Cecum5}. Each file contained a unique sample of the original file, none of which intersect with any of the other files.
+In order to test the precision of both algorithms, it was necessary to have relatively small sets, since we had to calculate a gold standard\footnote{which is a very costly affair}. We used a clean sample of Cecum DNA data consisiting of 81,029 sequences. These were divided into 5 seperate sample files, each of which contained a sample of 10,000 sequences. These files will be refered to as \texttt{Cecum1}, \texttt{Cecum2}, \texttt{Cecum3}, \texttt{Cecum4}, and \texttt{Cecum5}. Each file contained a unique sample of the original file, none of which intersect with any of the other files.
 
 
 \subsection{Data used for speed tests}
-For the speed tests, two seperate files were taken in use, one DNA and one RNA. The DNA sample was of uncultured Actinobacteria, consisting of 2.879.170 sequences. This file was divided into five samples for the speed tests.
+For the speed tests, two seperate files were taken in use, one DNA and one RNA. The DNA sample was of uncultured Actinobacteria, consisting of 2,879,170 sequences. This file was divided into five samples for the speed tests.
 \begin{enumerate}
-\item \texttt{Actino50K}: A sample of 50.000 sequences. Size = 72.5 MB
-\item \texttt{Actino100K}: A sample of 100.000 sequences. Size = 146.6 MB
-\item \texttt{Actine200K}: A sample of 200.000 sequences. Size = 283.5 MB
-\item \texttt{Actino500K}: A sample of 500.000 sequences. Size = 663.4 MB
-\item \texttt{Actino1mio}: A sample of 1.000.000 sequences. Size = 1286 MB
+\item \texttt{Actino50K}: A sample of 50,000 sequences. Size = 72.5 MB
+\item \texttt{Actino100K}: A sample of 100,000 sequences. Size = 146.6 MB
+\item \texttt{Actine200K}: A sample of 200,000 sequences. Size = 283.5 MB
+\item \texttt{Actino500K}: A sample of 500,000 sequences. Size = 663.4 MB
+\item \texttt{Actino1mio}: A sample of 1,000,000 sequences. Size = 1286 MB
 \end{enumerate}
 
-The SILVA SSU 119\footnote{http://www.arb-silva.de/documentation/release-119/} database was taken into use as the RNA sample for the speed tests. It consists of all aligned sequences with a high alignment identity, without any sequences of 99\% similarity. Just as the DNA sample, five samples from this file were used for testing
+The SILVA SSU 119\footnote{\url{http://www.arb-silva.de/documentation/release-119/}} database was taken into use as the RNA sample for the speed tests. It consists of all aligned sequences from both bacteria and a multitude of Eukaryota with a high alignment identity, without any sequences with 99\% similarity. Just as the DNA sample, five samples from this file were used for testing
 \begin{enumerate}
-\item \texttt{Silva50K}: A sample of 50.000 sequences. Size = 80 MB
-\item \texttt{Silva100K}: A sample of 100.000 sequences. Size = 160 MB
-\item \texttt{Silva200K}: A sample of 200.000 sequences. Size = 320 MB
-\item \texttt{Silva500K}: A sample of 500.000 sequences. Size = 790.5 MB
-\item \texttt{Silva1mio}: A sample of 1.000.000 sequences. Size = 1573 MB
+\item \texttt{Silva50K}: A sample of 50,000 sequences. Size = 80 MB
+\item \texttt{Silva100K}: A sample of 100,000 sequences. Size = 160 MB
+\item \texttt{Silva200K}: A sample of 200,000 sequences. Size = 320 MB
+\item \texttt{Silva500K}: A sample of 500,000 sequences. Size = 790.5 MB
+\item \texttt{Silva1mio}: A sample of 1,000,000 sequences. Size = 1573 MB
 \end{enumerate}
 
-All samples consist of clean sequences, meaning they only contain the four characters DNA or RNA consist of. As one may note, the RNA samples are bigger than the DNA samples. This is caused by the fact that the sequences are longer in the RNA samples. These two files were chosen to see how the size of the sequences would affect the speed of the {\bf MM} and {\bf MM½} algorithms compared to \texttt{uClust}.
+All samples consist of clean sequences, meaning they only contain the four characters DNA or RNA consist of. As one may note, the RNA samples are bigger than the DNA samples. This is caused by the fact that the sequences are longer in the RNA samples. These two files were chosen to see how the size of the sequences would affect the speed of the {\bf MM} and {\bf MM½} algorithms compared to \texttt{Uclust}.
 
 \subsection{Hardware}
-A Lenovo IdeaPad Y500 laptop was taken in use for the tests. Its processor is a Quad-Core 2.4 GHz, it has 8 GB RAM, and finally a NVIDIA GeForce GT 650M graphics card. As only one computer was taken in use for the tests, the MapReduce Framework was not used to its full potential. With more computers, the speed of both {\bf MM} and {\bf MM½} could be increased drastically. 
+A Lenovo IdeaPad Y500 laptop was taken in use for the tests. Its processor is a Quad-Core 2.4 GHz, it has 8 GB RAM, and finally a hybrid HD with 25 GB SSD and 1 TB HDD. As only one computer was taken in use for the tests, the MapReduce Framework was not used to its full potential. With more computers, the speed of both the greedy algorithms for {\bf MM} and {\bf MM½} could be increased drastically. 
 
 \end{document}
 

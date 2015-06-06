@@ -1,7 +1,18 @@
 \documentclass[../../main.tex]{subfiles}
 \begin{document}
-\section{Introduction}
+\section{Background}
 
+With the recent advances in sequencing technologies, the amount of available DNA and RNA data is growing exponentially\footnote{\url{http://www.ncbi.nlm.nih.gov/genbank/statistics}}. Such a high growth rate has made it necessary to remove the redundancies and reduce the storage space of the sequence data. In recent years, a common way of doing this is through clustering~\cite{clusteringIntro}~\cite{russell}, which can help to adress other biological questions~\cite{modelClust}~\cite{Edgar1}.\\
+
+Clustering is defined as the grouping of uncategorised objects such that objects in the same group (cluster) have a higher similarity than those in other groups (clusters). A notable word here is uncategorised, which means that there is no prior knowledge about the objects. Habitually, the grouping is determined by a distance metric, so that objects closest to each other are placed in the same cluster. As a testament to the plentitude of ways there are of doing this is the number of clustering algorithms available~\cite{Comparison16S}. Among these, {\tt UCLUST} has repeatedly been shown to be the best clustering algorithm for RNA~\cite{Edgar1}~\cite{Comparison16S}. Using a centroid based approach inspired by ICAtools~\cite{icatools}, it has achieved speeds unheard of, without sacrificing much precision. Unfortunately, access to the 64-bit version of {\tt UCLUST} requires a costly subscription.\\
+
+The Molecular Microbiology Ecology Group of the Department of Biology, University of Copenhagen are amassing huge amounts of sequence data which they have no other tool than {\tt UCLUST} to cluster. Searching for a free alternative to the costly algorithm, they sought out computer scientists to help them develop this free alternate.\\
+
+In the course of this project, I have tried to develop an algorithm that could compete with {\tt UCLUST}. Having confidence that Edgar, R.C., the creator of {\tt UCLUST}, has optimized his approach efficiently, I used a different approach to the centroids based one. Studies have suggested that MinHash has approached the speed and precision of {\tt UCLUST}~\cite{MinhashMapreduce}. Modifying this approach furthermore for increased speed, i hoped to achieve speed that could rival that of {\tt UCLUST} without losing precision\footnote{Also, the Microbiology Group promised a good Scotch to the developer of an algorithm that could compete with {\tt UCLUST}, which would fit right into the empty space on my shelf.}.\\
+
+\section{Related Works}
+
+My main inspiration for this work was \textit{Rasheed and Rangwala} 2013~\cite{MinhashMapreduce}, in which a MapReduce MinHash clustering algorithm was developed. What inspired be to improve upon this framework was \textit{Jianqiu Ji et al.} 2013~\cite{minmaxhash}, who the same year found a way to double the speed of MinHash without losing precision. Their approach was quite ingenious and simple, and with only a slight modification to it I developed the final method which turned out to be the seminal algorithm of this work.
 
 \end{document}
 

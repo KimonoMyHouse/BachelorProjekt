@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.1}{Background}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Works}{}% 2
+\BOOKMARK [1][-]{section.3}{Hashing}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Introduction to hash functions}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Universal hash functions}{section.3}% 5
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Carter and Wegman}{subsection.3.2}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Multiply-shift}{subsection.3.2}% 7
+\BOOKMARK [1][-]{section.4}{Minwise and Maxwise Hashing}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Introduction to Minwise Hashing}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Min-wise Independency}{subsection.4.1}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Min-wise sketch}{subsection.4.1}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Max-wise hashing}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Max-wise and Min-wise similarity measures}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Additional Tools}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{k-mer}{section.5}% 15
+\BOOKMARK [3][-]{subsubsection.5.1.1}{k-mer transformation}{subsection.5.1}% 16
+\BOOKMARK [2][-]{subsection.5.2}{MapReduce}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.3}{Levenshtein Distance}{section.5}% 18
+\BOOKMARK [1][-]{section.6}{Hash Performance Test}{}% 19

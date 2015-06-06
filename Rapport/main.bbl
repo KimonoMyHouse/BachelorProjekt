@@ -17,6 +17,17 @@ J.~Carter and M.~N. Wegman.
 \newblock {\em Journal of Computer and System Sciences}, 18(2):143 -- 154,
   1979.
 
+\bibitem{icatools}
+K.-M. Chao, W.~R. Pearson, and W.~Miller.
+\newblock Aligning two sequences within a specified diagonal band.
+\newblock {\em Computer applications in the biosciences : CABIOS},
+  8(5):481--487, 1992.
+
+\bibitem{Comparison16S}
+W.~Chen, C.~K. Zhang, Y.~Cheng, S.~Zhang, and H.~Zhao.
+\newblock A comparison of methods for clustering 16s rrna sequences into otus.
+\newblock {\em PLoS ONE}, 8(8):e70837, 08 2013.
+
 \bibitem{introToAlg}
 T.~H. Cormen, C.~E. Leiserson, R.~L. Rivest, and C.~Stein.
 \newblock {\em Introduction to Algorithms, Third Edition}.
@@ -31,6 +42,11 @@ J.~Dean and S.~Ghemawat.
 M.~Dietzfelbinger, T.~Hagerup, J.~Katajainen, and M.~Penttonen.
 \newblock A reliable randomized algorithm for the closest-pair problem.
 \newblock {\em Journal of Algorithms}, 25(1):19 -- 51, 1997.
+
+\bibitem{clusteringIntro}
+A.~K. Jain, M.~N. Murty, and P.~J. Flynn.
+\newblock Data clustering: A review.
+\newblock {\em ACM Comput. Surv.}, 31(3):264--323, Sept. 1999.
 
 \bibitem{minmaxhash}
 J.~Ji, J.~Li, S.~Yan, Q.~Tian, and B.~Zhang.

@@ -4,7 +4,7 @@
 Hashing functions are an integral part of minwise hashing, as it uses the values of hashing functions to determine similarity between two sets. Therefore, it is necessary that we have a small insight into universal hash functions before moving on to minwise hashing in the next section.
 
 \subsection{Introduction to hash functions}
-Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{n-1}\}$ and a range $[r]=\{0,1,...,m-1\}$. Given a hash function $h:U\rightarrow [r]$ which takes any $u_i,i=0,1,..n-1$ as argument, it should hold that $\forall u_i,\exists r_j \in [r]$ such that $h(u_i)= r_j$. What remains is to consider collisions, which we define as
+Imagine a universe of keys $U=\{u_{0},u_{1},\ldots,u_{n-1}\}$ and a range $[r]=\{0,1,\ldots,m-1\}$. Given a hash function $h:U\rightarrow [r]$ which takes any $u_i,i=0,1,\ldots,n-1$ as argument, it should hold that $\forall u_i,\exists r_j \in [r]$ such that $h(u_i)= r_j$. What remains is to consider collisions, which we define as
 \begin{equation}\label{collision}
 \delta_h(x,y) = \left\{ 
   \begin{array}{l l}
@@ -13,12 +13,12 @@ Imagine a universe of keys $U=\{u_{0},u_{1},...,u_{n-1}\}$ and a range $[r]=\{0,
   \end{array} \right.
 \end{equation}
 
-for a given hashfunction $h$ and two keys $x$ and $y$. The goal of a hashing algorithm is then to minimize the number of collisions across all possible keys. A truly random hash function can assure that there are no collision at all. Unfortunately, to implement such a function would require at least $|U|\log_2 m$ bits\cite{dikuHash}, defeating the purpose of hash functions altogether. Fixed hashing algorithms have attempted to solve this problem. Unfortunately, its dependence on input causes a worst case average retrieval time of $\Theta(n)$.\cite{introToAlg}\\
+for a given hashfunction $h$ and two keys $x$ and $y$. The goal of a hashing algorithm is then to minimize the number of collisions across all possible keys. A perfect hash function can assure that there are no collision at all. Unfortunately, to implement such a function would require at least $|U|\log_2 m$ bits~\cite{dikuHash}, defeating the purpose of hash functions altogether. Fixed hashing algorithms have attempted to solve this problem. Unfortunately, their dependence on input cause a worst case average retrieval time of $\Theta(n)$~\cite{introToAlg}.\\
 
 Universal hashing can circumvent the memory and computation cost of both random- and fixed hashing, without losing much precision. An introduction to universal hashing will follow, alongside two applications of said hashing which will be tested later in this paper.
 
 \subsection{Universal hash functions}
-The first mention of universal hashing was in \cite{carterWegman}, in which they define universality of hash functions as follows:\\
+The first mention of universal hashing was in~\cite{carterWegman}, in which they define universality of hash functions as follows:\\
 
 Given a class of hash functions $H = \{h:U\rightarrow [r]\}$, $H$ is said to be universal if $\forall x \forall y \in U$
 $$
@@ -30,17 +30,17 @@ $$
 $$
 That is, $H$ is said to be universal if 
 \begin{equation}\label{universalProb}
-\mathrm{Pr}_h[h(x)=h(y)]\leq \frac{1}{m}
+\mathrm{Pr}_h\left(h(x)=h(y)\right)\leq \frac{1}{m}
 \end{equation}
 for a random $h \in H$.
 In many applications, Pr$_h[h(x)=h(y)]\leq c/m$ for $c=O(1)$ is sufficiently low.
 
-\subsubsection{Carter and Wegman\cite{carterWegman}}
-Given a prime $p\geq m$ and a hash function $h_{a,b}^C:[U]\rightarrow [r]$,
+\subsubsection{Carter and Wegman}\label{sec:carter}
+One of the proposed universal hash functions in~\cite{carterWegman} is very easily applicable. Its definition goes as: given a prime $p\geq m$ and a hash function $h_{a,b}^C:U\rightarrow [r]$,
 \begin{equation}\label{carterhash}
-h_{a,b}^{C}(x)=((a*x + b) \mod p) \mod m
+h_{a,b}^{C}(x)=((a \cdot x + b) \mod p) \mod m
 \end{equation}
-where $a$ and $b$ are integers mod $m$, where $a\neq 0$. We want to prove that $h_{a,b}^{C}(x)$ satisfies Eq. \ref{universalProb}; thus proving that it is universal.\\
+where $a$ and $b$ are integers mod $m$, with $a\neq 0$. We want to prove that $h_{a,b}^{C}(x)$ satisfies Eq. \ref{universalProb}; thus proving that it is universal.\\
 
 \noindent Let $x$ and $y$ be two randomly selected keys in $U$ where $x\neq y$. For a given hash function $h_{a,b}^{C}$,
 $$
@@ -50,21 +50,20 @@ $$
 q = a \cdot y + b \mod p
 $$
 
-\noindent We see that $r\neq q$ since 
+\noindent If we subtract $r$ and $q$ from each other, we get 
 $$
-r - s \equiv a(k-l) ( \mod p)
+(r - q) \equiv a(x-y) \mod p
 $$
-must be non-zero since $p$ is prime and both $a$ and $(k-l)$ are non-zero module $p$, and therefore $a(k-l) > 0$ as two non-zero multiplied by each other cannot be positive, and therefore must also be non-zero module $p$.
-Therefore, $\forall a\forall b, h_{a,b}$ will map to distinct values for the given $x$ and $y$, at least at the mod $p$ level.
+We see that $(r-q)>0$ since the right-hand side (RHS) will always be a positive number by the following logic: For the RHS to equal zero, either $a(x-y)=0$ or $a(x-y)=p$. It is impossible for $a(x-y)$ to equal zero, since $a$ is a positive number, and $x\neq y$. The only condition in which $a(x-y)$ could equal the prime number were if $a=p$ and $(x-y)= 1$ which cannot hold, since $a<m<p$. By this proof it has been shown that all Carter Wegman hash functions $\forall a\forall b, h_{a,b}^C$ will map to distinct values for the given $x$ and $y$, at least at the mod $p$ level.
 
-\subsubsection{Dietzfelbinger et al.\cite{Dietzfelbinger}}
-Also commonly refered to as \textbf{multiply-shift}, this state of the art scheme described in \cite{Dietzfelbinger} reduces computation time by eliminating the need for the \textbf{mod} operator. This is especially useful when the key is larger than 32 bits, in which case Carter and Wegman's suggestion is quite costly\cite{dikuHash}.\\
+\subsubsection{Multiply-shift}\label{sec:multshift}
+This state-of-the-art scheme described in~\cite{Dietzfelbinger} reduces computation time by eliminating the need for the \textbf{mod} operator. This is especially useful when the key is larger than 32 bits, in which case Carter and Wegman's suggestion is quite costly~\cite{dikuHash}.\\
 
-\noindent Take a universe $U\geq 2^k$ which is all $k$-bit numbers. For $l=\{1,..,k\}$, the hash functions $h_a^D(x):\{0,...,2^k-1\}\rightarrow\{0,...,2^l-1\}$ are then defined as
+\noindent Take a universe $U\geq 2^k$ which is all $k$-bit numbers. For $l=\{1,..,k\}$, the hash functions $h_a^D(x):\{0,\ldots,2^k-1\}\rightarrow\{0,\ldots,2^l-1\}$ are then defined as
 \begin{equation}\label{dietzhash}
-h_a^D(x)=(a\cdot x \mod 2^k) \div 2^{k-l}
+h_a^D(x)=(a\cdot x \mod 2^k) / 2^{k-l}
 \end{equation}
-\noindent for a random odd number $0<a<2^k$. $l$ is bitsize of the value the keys map to. The following C-like code shows just how easy the implementation of such an algorithm is
+\noindent for a random odd number $0<a<2^k$. $l$ is bitsize of the value the keys map to. The following C-like code shows just how simple the implementation of such an algorithm is
 \begin{lstlisting}
 h(x)=(unsigned) (a*x) >> (k-l)
 \end{lstlisting} 
@@ -74,15 +73,14 @@ This scheme only nearly satisfies Eq. \ref{universalProb}, as for two distinct $
 \mathrm{Pr}_{h_a^D}[h_a^D(x)=h_a^D(y)]\leq \frac{1}{2^{l-1}}=\frac{2}{m}
 \end{equation}
 
-If Eq. \ref{probDietz} is not sufficently precise, Wölfel \cite[p.18-19]{multiplyshiftTruly} modified this scheme so that it met the requirement in Eq. \ref{universalProb}. The hash function is then
+If Eq. \ref{probDietz} is not sufficently precise, Wölfel~\cite[p.18-19]{multiplyshiftTruly} modified this scheme so that it met the requirement in Eq. \ref{universalProb}. The hash function is then
 $$
 h_{a,b}^{D}=((a\cdot x + b) \mod 2^k)\div 2^{k-l} 
 $$
-where $a<2^k$ is a positive odd number, and $0\leq b<2^{k-l}$. This way Eq. \ref{universalProb} is met for $x\neq y \ (\mathrm{mod}\ 2^k)$. For a proof of this, consult \cite{multiplyshiftTruly}\footnote{The text is in german}. The C-like implementation shown below reveals that the modifications are only minimal
+where $a<2^k$ is a positive odd number, and $0\leq b<2^{k-l}$. This way Eq. \ref{universalProb} is met for $x\neq y$. For a proof of this, consult~\cite{multiplyshiftTruly}. The C-like implementation shown below reveals that the modifications are only minimal
 
 \begin{lstlisting}
 h(x)=(unsigned)((a*x) + b) >> (k-l)
 \end{lstlisting}
 
 \end{document}
-
